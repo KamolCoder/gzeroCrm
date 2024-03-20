@@ -1,0 +1,328 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title%}
+{{title}}
+{% endblock title%}
+
+{% block main %}
+<div class="row mt-3">
+    <div class="col-sm-12">
+        <!--User profile header-->
+        <div class="mt-1 mb-3 button-container bg-white border shadow-sm">
+            <div class="profile-bg p-5"
+                 style="background-image:url({% static 'profilbg.png' %});background-size: cover;background-position-y: 40%;background-repeat: no-repeat;height: 150px;">
+                <img src="{{client.get_image}}" height="125px" width="125px"
+                     class="rounded-circle shadow profile-img">
+            </div>
+
+            <div class="profile-bio-main container-fluid">
+                <div class="row">
+                    <div class="col-md-5 offset-md-3 col-sm-12 offset-sm-0 col-12 bio-header">
+                        <h3 class="mt-4">{{client.name}} {{client.surname}}</h3>
+                        <div class="d-flex justify-content-between">
+                            <span class="text-muted mt-0 bio-request"><i class="bi bi-star"></i>Лояльность {{client.loyalty}}дня</span>
+                            <span class="text-muted mt-0 bio-request">
+                            Персональная скидка: -{{client.discount}}%</span>
+                            {% if client.username %}
+                            <a href="https://t.me/{{ client.username }}" class="text-primary"><i
+                                    class="bi bi-telegram p-0 m-0"> </i></a>
+                            {% endif %}
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-12 col-12 px-5 pt-4" style="text-align: right">
+                        <button type="button" class="btn btn-outline-warning" data-bs-toggle="modal"
+                                data-bs-target="#staticZakaz"><i class="bi bi-plus"></i>Заказ
+                        </button>
+                        <button type="button" class="btn btn-outline-secondary" data-bs-toggle="modal"
+                                data-bs-target="#staticBackdrop"><i class="bi bi-pencil-fill"></i>Изменить
+                        </button>
+                    </div>
+                    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false"
+                         tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h1 class="modal-title fs-5" id="staticBackdropLabel">Редактирование профиля</h1>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Закрыть"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <form action="" method="post" enctype="multipart/form-data">
+                                        {% csrf_token %}
+                                        {{ form.as_p }}
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть
+                                        </button>
+                                        <button type="submit" class="btn btn-primary">Изменить</button>
+                                    </form>
+                                </div>
+                                <div class="modal-footer">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal fade" id="staticZakaz" data-bs-backdrop="static" data-bs-keyboard="false"
+                         tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content" style="width:50rem">
+                                <div class="modal-header">
+                                    <h1 class="modal-title fs-5" id="staticZakazLabel">Новый заказ</h1>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Закрыть"></button>
+                                </div>
+                                <div class="modal-body">
+                                    {% include 'crm/components/client_detail/order_from_profile.html' %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--/User profile header-->
+    </div>
+</div>
+
+
+<div class="row mt-3">
+    <!--User левая колонка подписки -->
+    <div class="col-sm-12 col-md-4">
+        <div class="mt-1 mb-3 p-3 button-container bg-white border shadow-sm">
+            <h3 class="text-center">Подписка</h3>
+            {% if abonement.0.is_active == True %}
+            <div class="card text-bg-dark">
+                <div class="card-img" style="background-color:#201863;height:200px">
+                    <div class="card-img-overlay">
+                        <h5 class="card-title text-center" style="color:yellow">{{ abonement.0 }}</h5>
+                        <div class="d-flex justify-content-between">
+                            <p class="text-white">{{abonement.0.subscription_start}}</p>
+                            <p class="text-white">{{abonement.0.subscription_end}}</p>
+                        </div>
+                        <p class="text-center mt-5" style="font-size: 16px;">Скидочные часы для Митинг-зоны: <span
+                                style="font-size: 25px;">{{abonement.0.free_time}}</span> час.</p>
+
+                    </div>
+                </div>
+            </div>
+            {% else %}
+            <div class="card text-bg-dark border border-white">
+                <div class="card-img" style="background-color:#EFEFEF;height:200px;border:none">
+                    <div class="card-img-overlay">
+                        <h5 class="card-title text-center mb-5" style="color:grey">Нет абонемента</h5>
+                        <a href="" data-bs-toggle="modal"
+                           data-bs-target="#modalAbonement">
+                            <h5 class="card-title text-center" style="color:grey">+ Добавит абонемент</h5>
+                        </a>
+                    </div>
+                    <div class="modal fade" id="modalAbonement" tabindex="-1" aria-labelledby="exampleModalLabel"
+                         aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content text-dark">
+                                <div class="modal-header">
+                                    <h1 class="modal-title fs-5" id="exampleModalLabel">Купить Абонемент</h1>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Закрыть"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <form method="POST" action="{% url 'sale_abon' %}" enctype="multipart/form-data">
+                                        {% csrf_token %}
+                                        <label for="{{ form2.abonement.id_for_label }}" class="form-label">Абонемент</label>{{form2.abonement}}
+                                        <label for="{{ form2.client.id_for_label }}" class="form-label">Ид клиента</label>{{form2.client}}
+                                        <label for="{{ form2.subscription_start.id_for_label }}" class="form-label">День активации</label>{{form2.subscription_start}}
+                                        <label for="{{ form2.subscription_end.id_for_label }}" class="form-label">День деактивации</label>{{form2.subscription_end}}
+                                        <button type="button" class="btn btn-secondary mt-2" data-bs-dismiss="modal">
+                                            Отменить
+                                        </button>
+                                        <button type="submit" class="btn btn-primary mt-2">Подтвердить</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+    <!--/User левая колонка подписки -->
+
+    <!--User данные правая колонка -->
+    <div class="col-sm-12 col-md-8">
+        <div class="mt-1 mb-3 p-3 button-container bg-white border shadow-sm custom-tabs">
+            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home-tab-pane"
+                            type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">Заказы
+                    </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile-tab-pane"
+                            type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="false">Оплаты
+                    </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact-tab-pane"
+                            type="button" role="tab" aria-controls="contact-tab-pane" aria-selected="false">Документы
+                    </button>
+                </li>
+            </ul>
+            <div class="tab-content" id="myTabContent">
+                <div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab"
+                     tabindex="0">
+                    <table id="dtBasicExample" class="table table-hover table-bordered table-sm" cellspacing="0"
+                           width="80%">
+                        <thead>
+                        <tr>
+                            <th class="th-sm">ID</th>
+                            <th class="th-sm">Дата</th>
+                            <th class="th-sm">Филиал</th>
+                            <th class="th-sm">Комната</th>
+                            <th class="th-sm text-center"><i class="bi bi-clock-history"></i></th>
+                            <th class="th-sm">Сумма</th>
+                            <th class="th-sm">Комментарии</th>
+                            <th class="th-sm">Статус</th>
+                            <th class="text-center">Тип</th>
+                            <th class="th-sm">
+                                <div class="d-flex justify-content-center">
+                                </div>
+                            </th>
+                            <th class="th-sm">Автор</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            {% for o in orders %}
+                            <td>{{ o.pk }}</td>
+                            <td style="width:10rem">{{ o.order_start.date }}<br>{{ o.order_start.time }}-
+                                {{ o.order_end.time }}
+                            </td>
+                            <td>{{ o.filial }}</td>
+                            <td>{{ o.product }}</td>
+                            <td class="text-center">{{ o.hour }} час(а)</td>
+                            <td>{{ o.summa }}</td>
+                            {% if o.is_deleted %}
+                            <td class="text-danger text-center">Удален за неуплату</td>
+                            <td></td>
+                            {% else %}
+                            <td>{{ o.comment }}</td>
+                            <td>{{ o.status }}</td>
+                            {% endif %}
+                            <td class="text-center"> {% if o.payment == True %}
+                                💳
+                                {% else %}
+                                💵
+                                {% endif %}
+                            </td>
+                            <td class="text-center">{% if o.payment_status == True %}
+                                <i class="bi bi-check-circle-fill" style="color:green"></i>
+                                {% else %}
+                                <i class="bi bi-clock"></i>
+                                {% endif %}
+                            </td>
+                            <td>{{o.added_user}}</td>
+                        </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+
+                </div>
+                <div class="tab-pane fade" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab"
+                     tabindex="0">
+                    {% if abonement %}
+                    <table class="table table-hover table-bordered table-sm">
+                        <thead>
+                        <tr>
+                            <th>Абонемент</th>
+                            <th>День активации</th>
+                            <th>День деактивации</th>
+                            <th>Цена</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {%for a in abonement%}
+
+                        <tr>
+                            <td>{{ a.abonement.title }}</td>
+                            <td>{{ a.subscription_start }}</td>
+                            <td>{{ a.subscription_end }}</td>
+                            <td>{{ a.abonement.price }}</td>
+                        </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                    {% endif %}
+
+                    <table class="table table-hover table-bordered table-sm">
+                        <thead>
+                        <tr>
+                            <th>День оплаты</th>
+                            <th>Сумма</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {%for a in orders %}
+                        {% if a.payment_status %}
+
+                        <tr>
+                            <td>{{ a.created_at }}</td>
+                            <td>{{ a.summa }}</td>
+                        </tr>
+                        {% endif %}
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+                <div class="tab-pane fade" id="contact-tab-pane" role="tabpanel" aria-labelledby="contact-tab"
+                     tabindex="0"><a href=""></a>
+                    {% if client.file_link %}
+                    <a href="{{ client.file_link }}" class="text-danger my-4">Скачать </a>{{ client.file_link }}<br>
+                    {% else %}
+                    <div class="my-5 text-center">Нет прикрепленных документов</div>
+                    {% endif %}
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!--/User данные правая колонка -->
+</div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<!--<label for="hour">Hour:</label>-->
+<!--<input type="number" id="hour" name="hour" min="0"><br><br>-->
+
+<!--<label for="datetime-start">Datetime Start:</label>-->
+<!--<input type="datetime-local" id="datetime-start" name="datetime-start"><br><br>-->
+
+<!--<label for="datetime-end">Datetime End:</label>-->
+<!--<input type="datetime-local" id="datetime-end" name="datetime-end">-->
+
+<script>
+    // Function to update the datetime-end value
+    function updateDateTimeEnd() {
+        // Get the values of hour and datetime-start
+        const hour = parseInt($('#hourSelect').val());
+        const dateTimeStart = new Date($('#id_order_start').val());
+
+        // Calculate the datetime-end value
+        const dateTimeEnd = new Date(dateTimeStart.getTime() + 18000000 + hour * 60 * 60 * 1000);
+        // Update the datetime-end input value
+        $('#id_order_end').val(dateTimeEnd.toISOString().slice(0, 16));
+    }
+
+    // Add event listeners to update the datetime-end value when hour or datetime-start change
+    $('#hour, #id_order_start').on('input', updateDateTimeEnd);
+
+    $("#id_subscription_start").change(function () {
+        var start_date = new Date($("#id_subscription_start").val());
+        var end_date = new Date(start_date.getTime() + (30 * 24 * 60 * 60 * 1000));
+        var end_year = end_date.getFullYear();
+        var end_month = ("0" + (end_date.getMonth() + 1)).slice(-2);
+        var end_day = ("0" + end_date.getDate()).slice(-2);
+        $("#id_subscription_end").val(end_year + "-" + end_month + "-" + end_day);
+    });
+
+
+</script>
+
+{% endblock main %}

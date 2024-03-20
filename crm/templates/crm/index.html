@@ -1,0 +1,168 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title%}
+{{ title }}
+{% endblock title%}
+
+{% block main %}
+
+{% for i in abones %}
+{{ i.client }}
+{% endfor %}
+
+
+<style>.showDiv {
+  animation: showDivAnimation 1s forwards;
+  transform-origin: left;
+}
+
+.hideDiv {
+  animation: hideDivAnimation 1s forwards;
+  transform-origin: right;
+  display:none;
+}
+
+@keyframes showDivAnimation {
+  from {
+    transform: rotateY(-90deg);
+    opacity: 0;
+  }
+  to {
+    transform: rotateY(0deg);
+    opacity: 1;
+  }
+}
+#knopka:hover{
+cursor:pointer;
+opacity:0.8}
+@keyframes hideDivAnimation {
+  from {
+    transform: rotateY(0deg);
+    opacity: 1;
+  }
+  to {
+    transform: rotateY(90deg);
+    opacity: 0;
+  }
+}
+</style>
+<script>
+    function toggleDivs() {
+  var div1 = document.getElementById("div1");
+  var div2 = document.getElementById("div2");
+  var myTab = document.getElementById("myTab");
+
+  if (div1.classList.contains("showDiv")) {
+    div1.classList.remove("showDiv");
+    div1.classList.add("hideDiv");
+    myTab.classList.remove("showDiv");
+    myTab.classList.add("hideDiv");
+
+    div2.classList.remove("hideDiv");
+    div2.classList.add("showDiv");
+  } else {
+    div1.classList.remove("hideDiv");
+    div1.classList.add("showDiv");
+    myTab.classList.remove("hideDiv");
+    myTab.classList.add("showDiv");
+
+    div2.classList.remove("showDiv");
+    div2.classList.add("hideDiv");
+  }
+}
+
+</script>
+<style>
+    .nav{
+    --bs-nav-link-color:grey
+    }
+    .nav-tabs{
+    --bs-nav-tabs-border-width:0}
+    .nav-tabs .nav-link.active {
+    font-weight:bold;
+    color: white;
+    text-decoration: underline;
+    background-color:unset;
+    border-color:transparent
+    }
+    .nav-tabs .nav-link {
+    border:initial
+    }
+</style>
+<h5>События за сегодня: {{CurrentDay}} </h5>
+<div class="d-flex mt-2" style="    flex-direction: column;">
+    <div class="d-flex">
+        <div id='knopka' onclick="toggleDivs()"
+             style="margin-bottom: 10px;margin-right: 10px;width: 40px;height: 40px;    text-align: center;">
+            <i style="margin: 0;vertical-align: -webkit-baseline-middle;color: rgb(0 0 0 / 65%);"
+               class="bi bi-arrow-left-right"></i>
+        </div>
+        <ul class="nav nav-tabs"
+            style="margin-bottom:10px;box-shadow: 0 3px 5px -1px rgba(0,0,0,.2),0 6px 10px 0 rgba(0,0,0,.14),0 1px 18px 0 rgba(0,0,0,.12)!important;background-color:#fcb900;border-radius:5px;color:white"
+            id="myTab" role="tablist">
+            {% for f in filials %}
+            <li class="nav-item" role="presentation">
+                <button class="nav-link {% if f.id == 1 %}active{% endif %}" id="filial{{ f.id }}" data-bs-toggle="tab"
+                        data-bs-target="#{{ f }}"
+                        type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="false">{{ f }}
+                </button>
+            </li>
+            {% endfor %}
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="profile-tab3" data-bs-toggle="tab" data-bs-target="#profile-tab-pane"
+                        type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="false">Поиск
+                </button>
+            </li>
+        </ul>
+    </div>
+    <div id='div1' class="showDiv">
+        <div class="tab-content" style="padding-left: 8px" id="myTabContent">
+            {%for f in filials%}
+            <div class="tab-pane fade {% if f.id == 1 %}show active{% endif %}" id="{{f.title}}" role="tabpanel"
+                 aria-labelledby="home-tab"
+                 tabindex="0">
+                <div class="row">
+                    {% for room in rooms %}
+                    {% if room.filial.title == f.title %}
+                    <div class="col-xl-2 col-sm-3 px-1" style="width: 20%">
+                        <div class="card text-white bg-primary mb-3"
+                             style="border:none; max-width: 100%;min-height:35rem;height:auto">
+                            <div class="card-header">
+                                {{ room }}
+                            </div>
+                            <div class="card-body"
+                                 style="border-radius: inherit;padding: 2px;box-shadow: 0 3px 5px -1px rgba(0,0,0,.2),0 6px 10px 0 rgba(0,0,0,.14),0 1px 18px 0 rgba(0,0,0,.12)!important;">
+                                {% for o in orders %}
+                                {% if o.product.title == room.title %}
+                                {% if o.filial.title == f.title %}
+                                {% if o.status == "Active" %}
+                                {% include 'crm/components/index/_if_active.html' %}
+
+                                {% elif o.status == "Waiting" or o.status == "Ожидание" %}
+                                {% include 'crm/components/index/_if_waiting.html' %}
+
+                                {% else %}
+                                {% include 'crm/components/index/_if_else.html' %}
+
+                                {% endif%}
+                                {% endif%}
+                                {% endif%}
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                    {% endif%}
+                    {% endfor%}
+                </div>
+            </div>
+            {%endfor%}
+        </div>
+    </div>
+    <div id='div2' class="hideDiv">
+        {% for ht in html %}
+        {{ht|safe}}
+        {% endfor %}
+    </div>
+</div>
+{% endblock main %}

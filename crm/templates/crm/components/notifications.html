@@ -1,0 +1,68 @@
+<nav class="navbar navbar-expand-lg m-0 p-0">
+    <div class="collapse navbar-collapse btn-group" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle p-0 m-0" href="#" role="button" data-bs-toggle="dropdown"
+                   aria-expanded="false">
+                    <span class="position-absolute top-0 end-0 translate-middle badge rounded-pill badge-notification bg-danger mt-1">{{ counts }}</span>
+                    <i class="bi bi-bell-fill " style="font-size:1.5rem"></i>
+                </a>
+
+                <ul class="dropdown-menu" style="background-color:#EFEFEF;width:20rem;min-height:20rem">
+                    <div class="d-flex">
+                        <p  style="text-align:center;color:black;width:95%">Скорая деактивация абонементов, <br>осталось меньше 5
+                            дней!
+                        </p>
+                        <p data-toggle="tooltip" data-placement="top" title="Отправка уведомлений можно раз в день">
+                            <i class="bi bi-info-circle-fill"></i>
+                        </p>
+                    </div>
+
+                    <div class="d-flex justify-content-center my-2 p-0">
+                        {% if notifies %}
+                        {% if is_send %}
+                        <form action="{% url 'send_to_client' %}">
+                            {% csrf_token %}
+                            <button>
+                                <div class="svg-wrapper-1">
+                                    <div class="svg-wrapper">
+                                        <svg id="my-svg" height="15" width="15" viewBox="0 0 24 24"
+                                             xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M0 0h24v24H0z" fill="none"></path>
+                                            <path d="M1.946 9.315c-.522-.174-.527-.455.01-.634l19.087-6.362c.529-.176.832.12.684.638l-5.454 19.086c-.15.529-.455.547-.679.045L12 14l6-8-8 6-8.054-2.685z"
+                                                  fill="currentColor"></path>
+                                        </svg>
+                                    </div>
+                                </div>
+                                <span>Отправить уведомления</span>
+                            </button>
+                        </form>
+                        {% else %}
+                        <div class="alert alert-success p-0 m-0" role="alert" style="width:95%">
+                            <div class="text-center">
+                                <p style="font-size:12px"><b>Уведомлении успешно отправлены !!!</b><br>
+                                    Отправитель : {{ last_notify.user }}
+                                    (филиал: {{ last_notify.user.groups.all.1.name }})<br>
+                                    Отправлено в {{ last_notify.sent_time }}</p>
+                            </div>
+                        </div>
+
+                        {% endif %}
+                        {% endif %}
+                    </div>
+
+                    {% for n in notifies %}
+
+                    <li class="card m-1 text-center bg-danger text-light" style="height:4rem">
+                        <a style="cursor:pointer" onclick="location.href='{{ n.client.get_absolute_url }}'">
+                            {{ n.client }}<br>до {{ n.subscription_end }}</a>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </li>
+        </ul>
+    </div>
+</nav>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+        crossorigin="anonymous"></script>

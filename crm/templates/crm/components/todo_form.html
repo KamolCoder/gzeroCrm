@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+
+{% block title %}
+{{ title }}
+{% endblock title %}
+{% block main %}
+
+<div class="col-sm-12 col-xs-12 content pt-3 pl-0 d-flex justify-content-center">
+    <div class="card p-4 shadow h4" style="width:60rem">
+        <h3 style="text-align:center;margin-bottom:40px;text-decoration:underline">Изменить заказ</h3>
+        <form action="" method="post" class="row g-3" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="col-md-6">
+                <label for="{{ form.client.id_for_label }}" class="form-label">Клиент</label>
+                {{ form.client }}
+            </div>
+            <div class="col-md-6">
+                <label for="{{ form.product.id_for_label }}" class="form-label">Комната</label>
+                {{ form.product }}
+                <label for="{{ form.hour.id_for_label }}" class="form-label">Длительность (час)</label>
+                {{ form.hour }}
+            </div>
+            <div class="col-md-4">
+                <label for="{{ form.order_start.id_for_label }}" class="form-label">От :</label>{{form.order_start}}
+            </div>
+            <div class="col-md-4">
+                <label for="{{ form.order_end.id_for_label }}" class="form-label">До :</label>{{form.order_end}}
+            </div>
+            <div class="col-md-4">
+                <label for="{{ form.status.id_for_label }}" class="form-label">Статус заказа</label>{{form.status}}
+            </div>
+            <div class="col-md-12">
+                <label for="{{ form.comment.id_for_label }}" class="form-label">Комментарии</label>{{form.comment}}
+            </div>
+            <div class="col-md-12">
+                <div class="d-flex justify-content-between">
+                    <div>
+                        <h6>Тип оплаты</h6>
+                        {{ form.payment }}
+                    </div>
+                    <div>
+                        <h6>Оплачен</h6>
+                        {{ form.payment_status }}
+                    </div>
+                    <div>
+                        <h6>Скидка</h6>
+                        {{ form.discount }}
+                    </div>
+                </div>
+                <div class="col-12 mt-2">
+                    <button type="submit" class="btn btn-primary">Изменить заказ</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+{% endblock main %}

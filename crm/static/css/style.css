@@ -1,0 +1,134 @@
+.sidebar-menu {
+    padding: 0;
+    margin: 0;
+}
+
+
+ul {
+    display: block;
+    list-style-type: disc;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 40px;
+}
+
+
+.sidebar {
+    height: auto;
+    min-height: 100vh;
+    transition: 200ms;
+}
+
+
+i {
+    font-size: 20px;
+    margin-right: 10px;
+}
+
+.sidebar > .inner-sidebar {
+    height: 100%;
+    background: #2E2E3A;
+}
+
+a {
+    text-decoration: none;
+    color: aliceblue;
+}
+
+.sidebar-menu {
+    padding: 0;
+	margin: 0;
+}
+
+.sidebar-menu li {
+    position: relative !important;
+    display: block;
+    border-bottom: 1px solid #313246;
+}
+
+.sidebar-menu li:first-child {
+    border-top: 1px solid #313246;
+}
+
+.sidebar-menu li a {
+    display: block;
+    color: #fff;
+    font-size: 15px;
+    padding: 13px 20px;
+    transition: 300ms;
+}
+
+.sidebar-menu li a:hover {
+    padding-left: 30px;
+}
+
+.sidebar-menu li ul {
+    width: 100%;
+    height: auto;
+    background: #313246;
+    display: none;
+}
+
+.sidebar-menu li ul li {
+    border: 0px;
+}
+
+/* Style for toggling sidebar width */
+
+.sidebar.shrink-sidebar {
+    max-width: 85px !important;
+    min-width: 85px !important;
+}
+
+.sidebar.shrink-sidebar .avatar img {
+    width: 40px;
+    height: 40px;
+}
+
+.sidebar.shrink-sidebar .avatar p, 
+.sidebar.shrink-sidebar .avatar span.small {
+    display: none;
+}
+
+.sidebar.shrink-sidebar .sidebar-menu li {
+    position: relative !important;
+    border-bottom: 1px solid #313246;
+}
+
+.sidebar.shrink-sidebar .sidebar-menu li a {
+    padding-top: 10px;
+    pointer-events: none;
+}
+
+.sidebar.shrink-sidebar .sidebar-menu li a:hover {
+    padding-left: 15px;
+}
+
+.sidebar.shrink-sidebar .sidebar-menu li a span.none {
+    display: none;
+}
+
+.sidebar.shrink-sidebar .sidebar-menu li ul {
+    position: absolute;
+    z-index: 1000;
+    top: 0px;
+    left: 50px;
+    width: 270px !important;
+}
+
+.sidebar.shrink-sidebar .sidebar-menu li:hover ul {
+    display: block;
+}
+
+.sidebar.shrink-sidebar .sidebar-menu li ul li {
+    border-bottom: 1px solid #2E2E3A;
+}
+
+.sidebar.shrink-sidebar .sidebar-menu li ul li:last-child {
+    border-bottom: none;
+}
+
+.sidebar.shrink-sidebar .sidebar-menu li:hover ul li a {
+    padding-left: 2px;
+}

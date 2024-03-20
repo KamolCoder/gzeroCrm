@@ -1,0 +1,2005 @@
+[
+  {
+    "model": "admin.logentry",
+    "pk": 1,
+    "fields": {
+      "action_time": "2023-12-16T11:48:09.314",
+      "user": 1,
+      "content_type": 11,
+      "object_id": "1",
+      "object_repr": "Kitoblar Olami",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 2,
+    "fields": {
+      "action_time": "2023-12-16T11:48:16.449",
+      "user": 1,
+      "content_type": 11,
+      "object_id": "2",
+      "object_repr": "Minor",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 3,
+    "fields": {
+      "action_time": "2023-12-16T11:48:33.057",
+      "user": 1,
+      "content_type": 8,
+      "object_id": "1",
+      "object_repr": "miting",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 4,
+    "fields": {
+      "action_time": "2023-12-16T11:48:43.044",
+      "user": 1,
+      "content_type": 8,
+      "object_id": "2",
+      "object_repr": "zoom",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 5,
+    "fields": {
+      "action_time": "2023-12-16T11:48:49.427",
+      "user": 1,
+      "content_type": 8,
+      "object_id": "3",
+      "object_repr": "event-zone",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 6,
+    "fields": {
+      "action_time": "2023-12-16T11:48:56.115",
+      "user": 1,
+      "content_type": 8,
+      "object_id": "4",
+      "object_repr": "open-space",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 7,
+    "fields": {
+      "action_time": "2023-12-16T11:49:02.185",
+      "user": 1,
+      "content_type": 8,
+      "object_id": "3",
+      "object_repr": "event-zone",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"\\u041c\\u0430\\u043a\\u0441\\u0438\\u043c\\u0430\\u043b\\u044c\\u043d\\u0430\\u044f \\u0434\\u043b\\u0438\\u0442\\u0435\\u043b\\u044c\\u043d\\u043e\\u0441\\u0442\\u044c \\u0431\\u0440\\u043e\\u043d\\u0438\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 8,
+    "fields": {
+      "action_time": "2023-12-16T11:49:34.399",
+      "user": 1,
+      "content_type": 14,
+      "object_id": "1",
+      "object_repr": "Miting-room 6",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}, {\"added\": {\"name\": \"pricelists\", \"object\": \"Pricelists object (1)\"}}, {\"added\": {\"name\": \"pricelists\", \"object\": \"Pricelists object (2)\"}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 9,
+    "fields": {
+      "action_time": "2023-12-16T11:49:58.815",
+      "user": 1,
+      "content_type": 14,
+      "object_id": "2",
+      "object_repr": "Miting-room 12",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}, {\"added\": {\"name\": \"pricelists\", \"object\": \"Pricelists object (3)\"}}, {\"added\": {\"name\": \"pricelists\", \"object\": \"Pricelists object (4)\"}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 10,
+    "fields": {
+      "action_time": "2023-12-16T12:22:02.445",
+      "user": 1,
+      "content_type": 8,
+      "object_id": "5",
+      "object_repr": "office",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 11,
+    "fields": {
+      "action_time": "2023-12-16T12:22:22.512",
+      "user": 1,
+      "content_type": 14,
+      "object_id": "3",
+      "object_repr": "Office �1",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 12,
+    "fields": {
+      "action_time": "2023-12-16T13:43:39.135",
+      "user": 1,
+      "content_type": 14,
+      "object_id": "1",
+      "object_repr": "Miting-room 6",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Filial\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 13,
+    "fields": {
+      "action_time": "2023-12-16T15:50:22.640",
+      "user": 1,
+      "content_type": 14,
+      "object_id": "4",
+      "object_repr": "Miting room 6",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}, {\"added\": {\"name\": \"pricelists\", \"object\": \"Pricelists object (5)\"}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 14,
+    "fields": {
+      "action_time": "2023-12-16T15:50:35.221",
+      "user": 1,
+      "content_type": 14,
+      "object_id": "5",
+      "object_repr": "Miting room 10",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}, {\"added\": {\"name\": \"pricelists\", \"object\": \"Pricelists object (6)\"}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 15,
+    "fields": {
+      "action_time": "2023-12-16T15:50:48.087",
+      "user": 1,
+      "content_type": 14,
+      "object_id": "6",
+      "object_repr": "Miting room 8",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}, {\"added\": {\"name\": \"pricelists\", \"object\": \"Pricelists object (7)\"}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 16,
+    "fields": {
+      "action_time": "2023-12-16T15:51:28.057",
+      "user": 1,
+      "content_type": 14,
+      "object_id": "7",
+      "object_repr": "Zoom room 1",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}, {\"added\": {\"name\": \"pricelists\", \"object\": \"Pricelists object (8)\"}}, {\"added\": {\"name\": \"pricelists\", \"object\": \"Pricelists object (9)\"}}, {\"added\": {\"name\": \"pricelists\", \"object\": \"Pricelists object (10)\"}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 17,
+    "fields": {
+      "action_time": "2023-12-16T15:51:50.800",
+      "user": 1,
+      "content_type": 14,
+      "object_id": "8",
+      "object_repr": "Zoom room 2",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}, {\"added\": {\"name\": \"pricelists\", \"object\": \"Pricelists object (11)\"}}, {\"added\": {\"name\": \"pricelists\", \"object\": \"Pricelists object (12)\"}}, {\"added\": {\"name\": \"pricelists\", \"object\": \"Pricelists object (13)\"}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 18,
+    "fields": {
+      "action_time": "2023-12-16T15:52:18.775",
+      "user": 1,
+      "content_type": 14,
+      "object_id": "9",
+      "object_repr": "Zoom room 3",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}, {\"added\": {\"name\": \"pricelists\", \"object\": \"Pricelists object (14)\"}}, {\"added\": {\"name\": \"pricelists\", \"object\": \"Pricelists object (15)\"}}, {\"added\": {\"name\": \"pricelists\", \"object\": \"Pricelists object (16)\"}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 19,
+    "fields": {
+      "action_time": "2023-12-16T15:54:50.580",
+      "user": 1,
+      "content_type": 16,
+      "object_id": "3",
+      "object_repr": "3 Miting room 6",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 20,
+    "fields": {
+      "action_time": "2023-12-16T15:54:50.586",
+      "user": 1,
+      "content_type": 16,
+      "object_id": "2",
+      "object_repr": "2 Miting-room 12",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 21,
+    "fields": {
+      "action_time": "2023-12-16T15:54:50.589",
+      "user": 1,
+      "content_type": 16,
+      "object_id": "1",
+      "object_repr": "1 Miting-room 6",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 22,
+    "fields": {
+      "action_time": "2023-12-16T15:59:42.507",
+      "user": 1,
+      "content_type": 9,
+      "object_id": "1",
+      "object_repr": "Lena Nikolaevich",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 23,
+    "fields": {
+      "action_time": "2023-12-16T16:11:21.752",
+      "user": 1,
+      "content_type": 3,
+      "object_id": "1",
+      "object_repr": "Kitoblar Olami",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 24,
+    "fields": {
+      "action_time": "2023-12-16T16:11:29.939",
+      "user": 1,
+      "content_type": 4,
+      "object_id": "1",
+      "object_repr": "admin",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Groups\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 25,
+    "fields": {
+      "action_time": "2023-12-16T16:16:18.843",
+      "user": 1,
+      "content_type": 11,
+      "object_id": "3",
+      "object_repr": "Sharq",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 26,
+    "fields": {
+      "action_time": "2023-12-18T13:25:44.598",
+      "user": 1,
+      "content_type": 16,
+      "object_id": "15",
+      "object_repr": "15 Miting-room 6",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"\\u0421\\u0443\\u043c\\u043c\\u0430\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 27,
+    "fields": {
+      "action_time": "2023-12-18T13:25:56.931",
+      "user": 1,
+      "content_type": 16,
+      "object_id": "15",
+      "object_repr": "15 Miting-room 6",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 28,
+    "fields": {
+      "action_time": "2023-12-18T13:25:56.936",
+      "user": 1,
+      "content_type": 16,
+      "object_id": "14",
+      "object_repr": "14 Miting-room 6",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 29,
+    "fields": {
+      "action_time": "2023-12-18T13:25:56.940",
+      "user": 1,
+      "content_type": 16,
+      "object_id": "13",
+      "object_repr": "13 Miting-room 12",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 30,
+    "fields": {
+      "action_time": "2023-12-18T13:25:56.944",
+      "user": 1,
+      "content_type": 16,
+      "object_id": "12",
+      "object_repr": "12 Miting room 6",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 31,
+    "fields": {
+      "action_time": "2023-12-18T13:25:56.948",
+      "user": 1,
+      "content_type": 16,
+      "object_id": "11",
+      "object_repr": "11 Miting-room 12",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 32,
+    "fields": {
+      "action_time": "2023-12-18T13:25:56.951",
+      "user": 1,
+      "content_type": 16,
+      "object_id": "10",
+      "object_repr": "10 Miting-room 12",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 33,
+    "fields": {
+      "action_time": "2023-12-18T13:25:56.955",
+      "user": 1,
+      "content_type": 16,
+      "object_id": "9",
+      "object_repr": "9 Miting room 8",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 34,
+    "fields": {
+      "action_time": "2023-12-18T13:25:56.959",
+      "user": 1,
+      "content_type": 16,
+      "object_id": "8",
+      "object_repr": "8 Miting-room 6",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 35,
+    "fields": {
+      "action_time": "2023-12-18T13:25:56.963",
+      "user": 1,
+      "content_type": 16,
+      "object_id": "7",
+      "object_repr": "7 Zoom room 1",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 36,
+    "fields": {
+      "action_time": "2023-12-18T13:25:56.966",
+      "user": 1,
+      "content_type": 16,
+      "object_id": "6",
+      "object_repr": "6 Miting-room 12",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 37,
+    "fields": {
+      "action_time": "2023-12-18T13:25:56.970",
+      "user": 1,
+      "content_type": 16,
+      "object_id": "5",
+      "object_repr": "5 Miting room 6",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 38,
+    "fields": {
+      "action_time": "2023-12-18T13:27:42.803",
+      "user": 1,
+      "content_type": 16,
+      "object_id": "17",
+      "object_repr": "17 Miting-room 12",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Filial\", \"Product\", \"\\u0414\\u043b\\u0438\\u0442\\u0435\\u043b\\u044c\\u043d\\u043e\\u0441\\u0442\\u044c\", \"\\u0422\\u0438\\u043f \\u043e\\u043f\\u043b\\u0430\\u0442\\u044b\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 39,
+    "fields": {
+      "action_time": "2023-12-18T13:42:30.150",
+      "user": 1,
+      "content_type": 16,
+      "object_id": "19",
+      "object_repr": "19 Miting-room 12",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 40,
+    "fields": {
+      "action_time": "2023-12-18T13:42:30.157",
+      "user": 1,
+      "content_type": 16,
+      "object_id": "18",
+      "object_repr": "18 Miting-room 12",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 41,
+    "fields": {
+      "action_time": "2023-12-18T13:42:30.160",
+      "user": 1,
+      "content_type": 16,
+      "object_id": "17",
+      "object_repr": "17 Miting-room 12",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 42,
+    "fields": {
+      "action_time": "2023-12-18T13:42:30.164",
+      "user": 1,
+      "content_type": 16,
+      "object_id": "16",
+      "object_repr": "16 Miting room 10",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 43,
+    "fields": {
+      "action_time": "2023-12-18T13:56:22.645",
+      "user": 1,
+      "content_type": 16,
+      "object_id": "23",
+      "object_repr": "23 Miting-room 12",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 44,
+    "fields": {
+      "action_time": "2023-12-18T13:56:22.651",
+      "user": 1,
+      "content_type": 16,
+      "object_id": "22",
+      "object_repr": "22 Miting-room 12",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 45,
+    "fields": {
+      "action_time": "2023-12-18T13:56:22.654",
+      "user": 1,
+      "content_type": 16,
+      "object_id": "21",
+      "object_repr": "21 Miting-room 12",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 46,
+    "fields": {
+      "action_time": "2023-12-18T13:56:22.658",
+      "user": 1,
+      "content_type": 16,
+      "object_id": "20",
+      "object_repr": "20 Miting-room 12",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 1,
+    "fields": {
+      "name": "Can add log entry",
+      "content_type": 1,
+      "codename": "add_logentry"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 2,
+    "fields": {
+      "name": "Can change log entry",
+      "content_type": 1,
+      "codename": "change_logentry"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 3,
+    "fields": {
+      "name": "Can delete log entry",
+      "content_type": 1,
+      "codename": "delete_logentry"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 4,
+    "fields": {
+      "name": "Can view log entry",
+      "content_type": 1,
+      "codename": "view_logentry"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 5,
+    "fields": {
+      "name": "Can add permission",
+      "content_type": 2,
+      "codename": "add_permission"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 6,
+    "fields": {
+      "name": "Can change permission",
+      "content_type": 2,
+      "codename": "change_permission"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 7,
+    "fields": {
+      "name": "Can delete permission",
+      "content_type": 2,
+      "codename": "delete_permission"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 8,
+    "fields": {
+      "name": "Can view permission",
+      "content_type": 2,
+      "codename": "view_permission"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 9,
+    "fields": {
+      "name": "Can add group",
+      "content_type": 3,
+      "codename": "add_group"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 10,
+    "fields": {
+      "name": "Can change group",
+      "content_type": 3,
+      "codename": "change_group"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 11,
+    "fields": {
+      "name": "Can delete group",
+      "content_type": 3,
+      "codename": "delete_group"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 12,
+    "fields": {
+      "name": "Can view group",
+      "content_type": 3,
+      "codename": "view_group"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 13,
+    "fields": {
+      "name": "Can add user",
+      "content_type": 4,
+      "codename": "add_user"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 14,
+    "fields": {
+      "name": "Can change user",
+      "content_type": 4,
+      "codename": "change_user"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 15,
+    "fields": {
+      "name": "Can delete user",
+      "content_type": 4,
+      "codename": "delete_user"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 16,
+    "fields": {
+      "name": "Can view user",
+      "content_type": 4,
+      "codename": "view_user"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 17,
+    "fields": {
+      "name": "Can add content type",
+      "content_type": 5,
+      "codename": "add_contenttype"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 18,
+    "fields": {
+      "name": "Can change content type",
+      "content_type": 5,
+      "codename": "change_contenttype"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 19,
+    "fields": {
+      "name": "Can delete content type",
+      "content_type": 5,
+      "codename": "delete_contenttype"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 20,
+    "fields": {
+      "name": "Can view content type",
+      "content_type": 5,
+      "codename": "view_contenttype"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 21,
+    "fields": {
+      "name": "Can add session",
+      "content_type": 6,
+      "codename": "add_session"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 22,
+    "fields": {
+      "name": "Can change session",
+      "content_type": 6,
+      "codename": "change_session"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 23,
+    "fields": {
+      "name": "Can delete session",
+      "content_type": 6,
+      "codename": "delete_session"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 24,
+    "fields": {
+      "name": "Can view session",
+      "content_type": 6,
+      "codename": "view_session"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 25,
+    "fields": {
+      "name": "Can add ���������",
+      "content_type": 7,
+      "codename": "add_abonement"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 26,
+    "fields": {
+      "name": "Can change ���������",
+      "content_type": 7,
+      "codename": "change_abonement"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 27,
+    "fields": {
+      "name": "Can delete ���������",
+      "content_type": 7,
+      "codename": "delete_abonement"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 28,
+    "fields": {
+      "name": "Can view ���������",
+      "content_type": 7,
+      "codename": "view_abonement"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 29,
+    "fields": {
+      "name": "Can add ��������� �������",
+      "content_type": 8,
+      "codename": "add_category"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 30,
+    "fields": {
+      "name": "Can change ��������� �������",
+      "content_type": 8,
+      "codename": "change_category"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 31,
+    "fields": {
+      "name": "Can delete ��������� �������",
+      "content_type": 8,
+      "codename": "delete_category"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 32,
+    "fields": {
+      "name": "Can view ��������� �������",
+      "content_type": 8,
+      "codename": "view_category"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 33,
+    "fields": {
+      "name": "Can add ������",
+      "content_type": 9,
+      "codename": "add_client"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 34,
+    "fields": {
+      "name": "Can change ������",
+      "content_type": 9,
+      "codename": "change_client"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 35,
+    "fields": {
+      "name": "Can delete ������",
+      "content_type": 9,
+      "codename": "delete_client"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 36,
+    "fields": {
+      "name": "Can view ������",
+      "content_type": 9,
+      "codename": "view_client"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 37,
+    "fields": {
+      "name": "Can add duration",
+      "content_type": 10,
+      "codename": "add_duration"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 38,
+    "fields": {
+      "name": "Can change duration",
+      "content_type": 10,
+      "codename": "change_duration"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 39,
+    "fields": {
+      "name": "Can delete duration",
+      "content_type": 10,
+      "codename": "delete_duration"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 40,
+    "fields": {
+      "name": "Can view duration",
+      "content_type": 10,
+      "codename": "view_duration"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 41,
+    "fields": {
+      "name": "Can add ������",
+      "content_type": 11,
+      "codename": "add_filial"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 42,
+    "fields": {
+      "name": "Can change ������",
+      "content_type": 11,
+      "codename": "change_filial"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 43,
+    "fields": {
+      "name": "Can delete ������",
+      "content_type": 11,
+      "codename": "delete_filial"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 44,
+    "fields": {
+      "name": "Can view ������",
+      "content_type": 11,
+      "codename": "view_filial"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 45,
+    "fields": {
+      "name": "Can add ��� �������",
+      "content_type": 12,
+      "codename": "add_zoomlimit"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 46,
+    "fields": {
+      "name": "Can change ��� �������",
+      "content_type": 12,
+      "codename": "change_zoomlimit"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 47,
+    "fields": {
+      "name": "Can delete ��� �������",
+      "content_type": 12,
+      "codename": "delete_zoomlimit"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 48,
+    "fields": {
+      "name": "Can view ��� �������",
+      "content_type": 12,
+      "codename": "view_zoomlimit"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 49,
+    "fields": {
+      "name": "Can add spisok",
+      "content_type": 13,
+      "codename": "add_spisok"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 50,
+    "fields": {
+      "name": "Can change spisok",
+      "content_type": 13,
+      "codename": "change_spisok"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 51,
+    "fields": {
+      "name": "Can delete spisok",
+      "content_type": 13,
+      "codename": "delete_spisok"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 52,
+    "fields": {
+      "name": "Can view spisok",
+      "content_type": 13,
+      "codename": "view_spisok"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 53,
+    "fields": {
+      "name": "Can add ��������� � ��������",
+      "content_type": 14,
+      "codename": "add_rooms"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 54,
+    "fields": {
+      "name": "Can change ��������� � ��������",
+      "content_type": 14,
+      "codename": "change_rooms"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 55,
+    "fields": {
+      "name": "Can delete ��������� � ��������",
+      "content_type": 14,
+      "codename": "delete_rooms"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 56,
+    "fields": {
+      "name": "Can view ��������� � ��������",
+      "content_type": 14,
+      "codename": "view_rooms"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 57,
+    "fields": {
+      "name": "Can add pricelists",
+      "content_type": 15,
+      "codename": "add_pricelists"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 58,
+    "fields": {
+      "name": "Can change pricelists",
+      "content_type": 15,
+      "codename": "change_pricelists"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 59,
+    "fields": {
+      "name": "Can delete pricelists",
+      "content_type": 15,
+      "codename": "delete_pricelists"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 60,
+    "fields": {
+      "name": "Can view pricelists",
+      "content_type": 15,
+      "codename": "view_pricelists"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 61,
+    "fields": {
+      "name": "Can add �����",
+      "content_type": 16,
+      "codename": "add_order"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 62,
+    "fields": {
+      "name": "Can change �����",
+      "content_type": 16,
+      "codename": "change_order"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 63,
+    "fields": {
+      "name": "Can delete �����",
+      "content_type": 16,
+      "codename": "delete_order"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 64,
+    "fields": {
+      "name": "Can view �����",
+      "content_type": 16,
+      "codename": "view_order"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 65,
+    "fields": {
+      "name": "Can add ������ �����",
+      "content_type": 17,
+      "codename": "add_officerent"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 66,
+    "fields": {
+      "name": "Can change ������ �����",
+      "content_type": 17,
+      "codename": "change_officerent"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 67,
+    "fields": {
+      "name": "Can delete ������ �����",
+      "content_type": 17,
+      "codename": "delete_officerent"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 68,
+    "fields": {
+      "name": "Can view ������ �����",
+      "content_type": 17,
+      "codename": "view_officerent"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 69,
+    "fields": {
+      "name": "Can add �������",
+      "content_type": 18,
+      "codename": "add_officepersons"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 70,
+    "fields": {
+      "name": "Can change �������",
+      "content_type": 18,
+      "codename": "change_officepersons"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 71,
+    "fields": {
+      "name": "Can delete �������",
+      "content_type": 18,
+      "codename": "delete_officepersons"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 72,
+    "fields": {
+      "name": "Can view �������",
+      "content_type": 18,
+      "codename": "view_officepersons"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 73,
+    "fields": {
+      "name": "Can add ���� �������� ������.",
+      "content_type": 19,
+      "codename": "add_notifydate"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 74,
+    "fields": {
+      "name": "Can change ���� �������� ������.",
+      "content_type": 19,
+      "codename": "change_notifydate"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 75,
+    "fields": {
+      "name": "Can delete ���� �������� ������.",
+      "content_type": 19,
+      "codename": "delete_notifydate"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 76,
+    "fields": {
+      "name": "Can view ���� �������� ������.",
+      "content_type": 19,
+      "codename": "view_notifydate"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 77,
+    "fields": {
+      "name": "Can add �����",
+      "content_type": 20,
+      "codename": "add_managersbonus"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 78,
+    "fields": {
+      "name": "Can change �����",
+      "content_type": 20,
+      "codename": "change_managersbonus"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 79,
+    "fields": {
+      "name": "Can delete �����",
+      "content_type": 20,
+      "codename": "delete_managersbonus"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 80,
+    "fields": {
+      "name": "Can view �����",
+      "content_type": 20,
+      "codename": "view_managersbonus"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 81,
+    "fields": {
+      "name": "Can add ��������",
+      "content_type": 21,
+      "codename": "add_gallery"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 82,
+    "fields": {
+      "name": "Can change ��������",
+      "content_type": 21,
+      "codename": "change_gallery"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 83,
+    "fields": {
+      "name": "Can delete ��������",
+      "content_type": 21,
+      "codename": "delete_gallery"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 84,
+    "fields": {
+      "name": "Can view ��������",
+      "content_type": 21,
+      "codename": "view_gallery"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 85,
+    "fields": {
+      "name": "Can add ��������� ���������",
+      "content_type": 22,
+      "codename": "add_abonementbuylist"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 86,
+    "fields": {
+      "name": "Can change ��������� ���������",
+      "content_type": 22,
+      "codename": "change_abonementbuylist"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 87,
+    "fields": {
+      "name": "Can delete ��������� ���������",
+      "content_type": 22,
+      "codename": "delete_abonementbuylist"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 88,
+    "fields": {
+      "name": "Can view ��������� ���������",
+      "content_type": 22,
+      "codename": "view_abonementbuylist"
+    }
+  },
+  {
+    "model": "auth.group",
+    "pk": 1,
+    "fields": {
+      "name": "Kitoblar Olami",
+      "permissions": []
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 1,
+    "fields": {
+      "password": "pbkdf2_sha256$600000$4gWriBjbaimrQ45kEyFbw6$sZIuoM62JPVUuVMjPjK8cxpp1bWEtnvp0GBnwyBCNRk=",
+      "last_login": "2024-01-19T16:10:06.223",
+      "is_superuser": true,
+      "username": "admin",
+      "first_name": "",
+      "last_name": "",
+      "email": "",
+      "is_staff": true,
+      "is_active": true,
+      "date_joined": "2023-12-16T11:47:36",
+      "groups": [
+        1
+      ],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 1,
+    "fields": {
+      "app_label": "admin",
+      "model": "logentry"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 2,
+    "fields": {
+      "app_label": "auth",
+      "model": "permission"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 3,
+    "fields": {
+      "app_label": "auth",
+      "model": "group"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 4,
+    "fields": {
+      "app_label": "auth",
+      "model": "user"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 5,
+    "fields": {
+      "app_label": "contenttypes",
+      "model": "contenttype"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 6,
+    "fields": {
+      "app_label": "sessions",
+      "model": "session"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 7,
+    "fields": {
+      "app_label": "crm",
+      "model": "abonement"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 8,
+    "fields": {
+      "app_label": "crm",
+      "model": "category"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 9,
+    "fields": {
+      "app_label": "crm",
+      "model": "client"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 10,
+    "fields": {
+      "app_label": "crm",
+      "model": "duration"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 11,
+    "fields": {
+      "app_label": "crm",
+      "model": "filial"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 12,
+    "fields": {
+      "app_label": "crm",
+      "model": "zoomlimit"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 13,
+    "fields": {
+      "app_label": "crm",
+      "model": "spisok"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 14,
+    "fields": {
+      "app_label": "crm",
+      "model": "rooms"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 15,
+    "fields": {
+      "app_label": "crm",
+      "model": "pricelists"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 16,
+    "fields": {
+      "app_label": "crm",
+      "model": "order"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 17,
+    "fields": {
+      "app_label": "crm",
+      "model": "officerent"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 18,
+    "fields": {
+      "app_label": "crm",
+      "model": "officepersons"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 19,
+    "fields": {
+      "app_label": "crm",
+      "model": "notifydate"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 20,
+    "fields": {
+      "app_label": "crm",
+      "model": "managersbonus"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 21,
+    "fields": {
+      "app_label": "crm",
+      "model": "gallery"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 22,
+    "fields": {
+      "app_label": "crm",
+      "model": "abonementbuylist"
+    }
+  },
+  {
+    "model": "sessions.session",
+    "pk": "55kd2rjccndp051vb1rn8wse21utotc4",
+    "fields": {
+      "session_data": ".eJxVjEEOwiAQRe_C2hCgEMCle89AhplBqgaS0q6Md9cmXej2v_f-SyTY1pq2wUuaSZyFFqffLQM-uO2A7tBuXWJv6zJnuSvyoENeO_Hzcrh_BxVG_dYAmtk7YzJH8qxsoIIWrIkINhSvbUDnorZRTR6K0zGXiEZlMxEXIvH-APRtOGk:1rF61P:EBL8mprVWUdfGFrATBdco14EMtOmKLLq0Ubm5NteJIk",
+      "expire_date": "2024-01-01T10:18:31.967"
+    }
+  },
+  {
+    "model": "sessions.session",
+    "pk": "ki0q9g7w66g3m4614dqdpg0lc3ybn0yh",
+    "fields": {
+      "session_data": ".eJxVjEEOwiAQRe_C2hCgEMCle89AhplBqgaS0q6Md9cmXej2v_f-SyTY1pq2wUuaSZyFFqffLQM-uO2A7tBuXWJv6zJnuSvyoENeO_Hzcrh_BxVG_dYAmtk7YzJH8qxsoIIWrIkINhSvbUDnorZRTR6K0zGXiEZlMxEXIvH-APRtOGk:1rQmlC:4-t0akAeqGRlsb4Ka-z34zEdjkrnSc0pPy_Bjp8vB60",
+      "expire_date": "2024-02-02T16:10:06.241"
+    }
+  },
+  {
+    "model": "crm.filial",
+    "pk": 1,
+    "fields": {
+      "title": "Kitoblar Olami",
+      "is_active": true,
+      "created_at": "2023-12-16T11:48:09.312",
+      "token": "6a5sd46a54sd"
+    }
+  },
+  {
+    "model": "crm.filial",
+    "pk": 2,
+    "fields": {
+      "title": "Minor",
+      "is_active": true,
+      "created_at": "2023-12-16T11:48:16.448",
+      "token": "q9w8e79q8w7e"
+    }
+  },
+  {
+    "model": "crm.filial",
+    "pk": 3,
+    "fields": {
+      "title": "Sharq",
+      "is_active": true,
+      "created_at": "2023-12-16T16:16:18.841",
+      "token": "A32S1DW"
+    }
+  },
+  {
+    "model": "crm.category",
+    "pk": 1,
+    "fields": {
+      "title": "miting",
+      "limit": 24,
+      "discount": true
+    }
+  },
+  {
+    "model": "crm.category",
+    "pk": 2,
+    "fields": {
+      "title": "zoom",
+      "limit": 3,
+      "discount": false
+    }
+  },
+  {
+    "model": "crm.category",
+    "pk": 3,
+    "fields": {
+      "title": "event-zone",
+      "limit": 10,
+      "discount": false
+    }
+  },
+  {
+    "model": "crm.category",
+    "pk": 4,
+    "fields": {
+      "title": "open-space",
+      "limit": 4,
+      "discount": false
+    }
+  },
+  {
+    "model": "crm.category",
+    "pk": 5,
+    "fields": {
+      "title": "office",
+      "limit": 1,
+      "discount": false
+    }
+  },
+  {
+    "model": "crm.rooms",
+    "pk": 1,
+    "fields": {
+      "filial": 2,
+      "category": 1,
+      "title": "Miting-room 6",
+      "persons": 6
+    }
+  },
+  {
+    "model": "crm.rooms",
+    "pk": 2,
+    "fields": {
+      "filial": 1,
+      "category": 1,
+      "title": "Miting-room 12",
+      "persons": 12
+    }
+  },
+  {
+    "model": "crm.rooms",
+    "pk": 3,
+    "fields": {
+      "filial": 1,
+      "category": 5,
+      "title": "Office �1",
+      "persons": 6
+    }
+  },
+  {
+    "model": "crm.rooms",
+    "pk": 4,
+    "fields": {
+      "filial": 1,
+      "category": 1,
+      "title": "Miting room 6",
+      "persons": 6
+    }
+  },
+  {
+    "model": "crm.rooms",
+    "pk": 5,
+    "fields": {
+      "filial": 1,
+      "category": 1,
+      "title": "Miting room 10",
+      "persons": 10
+    }
+  },
+  {
+    "model": "crm.rooms",
+    "pk": 6,
+    "fields": {
+      "filial": 1,
+      "category": 1,
+      "title": "Miting room 8",
+      "persons": 8
+    }
+  },
+  {
+    "model": "crm.rooms",
+    "pk": 7,
+    "fields": {
+      "filial": 1,
+      "category": 2,
+      "title": "Zoom room 1",
+      "persons": 1
+    }
+  },
+  {
+    "model": "crm.rooms",
+    "pk": 8,
+    "fields": {
+      "filial": 1,
+      "category": 2,
+      "title": "Zoom room 2",
+      "persons": 1
+    }
+  },
+  {
+    "model": "crm.rooms",
+    "pk": 9,
+    "fields": {
+      "filial": 1,
+      "category": 2,
+      "title": "Zoom room 3",
+      "persons": 3
+    }
+  },
+  {
+    "model": "crm.pricelists",
+    "pk": 1,
+    "fields": {
+      "product": 1,
+      "hour": 1,
+      "price": 60000
+    }
+  },
+  {
+    "model": "crm.pricelists",
+    "pk": 2,
+    "fields": {
+      "product": 1,
+      "hour": 2,
+      "price": 120000
+    }
+  },
+  {
+    "model": "crm.pricelists",
+    "pk": 3,
+    "fields": {
+      "product": 2,
+      "hour": 1,
+      "price": 120000
+    }
+  },
+  {
+    "model": "crm.pricelists",
+    "pk": 4,
+    "fields": {
+      "product": 2,
+      "hour": 2,
+      "price": 240000
+    }
+  },
+  {
+    "model": "crm.pricelists",
+    "pk": 5,
+    "fields": {
+      "product": 4,
+      "hour": 1,
+      "price": 100000
+    }
+  },
+  {
+    "model": "crm.pricelists",
+    "pk": 6,
+    "fields": {
+      "product": 5,
+      "hour": 1,
+      "price": 140000
+    }
+  },
+  {
+    "model": "crm.pricelists",
+    "pk": 7,
+    "fields": {
+      "product": 6,
+      "hour": 1,
+      "price": 120000
+    }
+  },
+  {
+    "model": "crm.pricelists",
+    "pk": 8,
+    "fields": {
+      "product": 7,
+      "hour": 1,
+      "price": 40000
+    }
+  },
+  {
+    "model": "crm.pricelists",
+    "pk": 9,
+    "fields": {
+      "product": 7,
+      "hour": 2,
+      "price": 50000
+    }
+  },
+  {
+    "model": "crm.pricelists",
+    "pk": 10,
+    "fields": {
+      "product": 7,
+      "hour": 3,
+      "price": 60000
+    }
+  },
+  {
+    "model": "crm.pricelists",
+    "pk": 11,
+    "fields": {
+      "product": 8,
+      "hour": 1,
+      "price": 40000
+    }
+  },
+  {
+    "model": "crm.pricelists",
+    "pk": 12,
+    "fields": {
+      "product": 8,
+      "hour": 2,
+      "price": 50000
+    }
+  },
+  {
+    "model": "crm.pricelists",
+    "pk": 13,
+    "fields": {
+      "product": 8,
+      "hour": 3,
+      "price": 60000
+    }
+  },
+  {
+    "model": "crm.pricelists",
+    "pk": 14,
+    "fields": {
+      "product": 9,
+      "hour": 1,
+      "price": 40000
+    }
+  },
+  {
+    "model": "crm.pricelists",
+    "pk": 15,
+    "fields": {
+      "product": 9,
+      "hour": 2,
+      "price": 50000
+    }
+  },
+  {
+    "model": "crm.pricelists",
+    "pk": 16,
+    "fields": {
+      "product": 9,
+      "hour": 3,
+      "price": 60000
+    }
+  },
+  {
+    "model": "crm.client",
+    "pk": 2,
+    "fields": {
+      "tg_lang": "ru",
+      "name": "Zooplanet",
+      "surname": "AVAZJON",
+      "telegram_id": "K59135733",
+      "image": "",
+      "username": null,
+      "phone": "+9879816541",
+      "comment": "",
+      "docs": "",
+      "added_user": 1,
+      "created_at": "2023-12-16T16:49:19.733",
+      "discount": 0,
+      "email": "x8383322@gmail.com",
+      "loyalty": 33,
+      "activity": 4
+    }
+  },
+  {
+    "model": "crm.order",
+    "pk": 24,
+    "fields": {
+      "client": "K59135733",
+      "filial": 1,
+      "product": 2,
+      "hour": 2,
+      "payment": false,
+      "payment_status": true,
+      "summa": "240000.00",
+      "order_start": "2023-12-18T10:00:00",
+      "order_end": "2023-12-18T12:00:00",
+      "added_user": 1,
+      "comment": "",
+      "is_deleted": false,
+      "created_at": "2023-12-18T13:56:47.675",
+      "status": "Active",
+      "discount": 0
+    }
+  },
+  {
+    "model": "crm.order",
+    "pk": 25,
+    "fields": {
+      "client": "K59135733",
+      "filial": 1,
+      "product": 4,
+      "hour": 1,
+      "payment": false,
+      "payment_status": true,
+      "summa": "100000.00",
+      "order_start": "2023-12-18T15:00:00",
+      "order_end": "2023-12-18T16:00:00",
+      "added_user": 1,
+      "comment": "",
+      "is_deleted": false,
+      "created_at": "2023-12-18T13:57:07.762",
+      "status": "Cancelled",
+      "discount": 0
+    }
+  },
+  {
+    "model": "crm.order",
+    "pk": 26,
+    "fields": {
+      "client": "K59135733",
+      "filial": 1,
+      "product": 9,
+      "hour": 3,
+      "payment": false,
+      "payment_status": true,
+      "summa": "60000.00",
+      "order_start": "2023-12-18T14:00:00",
+      "order_end": "2023-12-18T17:00:00",
+      "added_user": 1,
+      "comment": "",
+      "is_deleted": false,
+      "created_at": "2023-12-18T14:40:01.829",
+      "status": "Waiting",
+      "discount": 0
+    }
+  }
+]

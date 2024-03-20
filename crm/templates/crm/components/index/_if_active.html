@@ -1,0 +1,21 @@
+<div class="d-flex justify-content-between p-2 mb-1" style="background-color:green">
+    <div class="text-start">
+        <p>{{ o.status }}</p>
+        <p class="card-text">{{ o.filial }}</p>
+
+    </div>
+    <div class="text-end">
+        {% if user.groups.all.1.name == title %}
+        <form method="POST" action="{% url 'change_status' o.pk 'Close' %}">
+            {% csrf_token %}
+            <button type="submit"
+                        style="height: 20px;width:50px;font-size: 10px"
+                    class="btn btn-danger p-0">Закрыть
+            </button>
+        </form>
+        {% endif %}
+
+        <p class="card-text mt-1 mb-0">{{o.order_start.time}} - {{o.order_end.time}}</p>
+        <a href="{{o.client.get_absolute_url}}"><p class="card-text ">{{o.client}}</p></a>
+    </div>
+</div>

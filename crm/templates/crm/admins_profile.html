@@ -1,0 +1,123 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title%}
+{{title}}
+{% endblock title%}
+
+{% block main %}
+
+<div class="container">
+    <div class="main-body mt-3">
+        <div class="row gutters-sm">
+            <div class="col-md-12">
+                <div class="row gutters-sm">
+                    <div class="col-sm-12">
+                        <!--                        <div class="barcontainer" style="background-color: lightgrey;-->
+                        <!--                                                          position: relative;-->
+                        <!--                                                          transform: translateY(-50%);-->
+                        <!--                                                          top: 50%;-->
+                        <!--                                                          margin-left: 5px;-->
+                        <!--                                                          width: 25px;-->
+                        <!--                                                          height: 270px;-->
+                        <!--                                                          float: left;"><span-->
+                        <!--                                style="color:green;writing-mode: vertical-lr;">10.000.000 сум</span>-->
+                        <!--                            <div class="bar" style="height: {{ way_to_rekord }}%;-->
+                        <!--                                                    background-color: blue;-->
+                        <!--                                                      position: absolute;-->
+                        <!--                                                      bottom: 0;-->
+                        <!--                                                      width: 100%;-->
+                        <!--                                                      box-sizing: border-box;-->
+                        <!--                                                      animation: grow 1.5s ease-out forwards;-->
+                        <!--                                                      transform-origin: bottom;">-->
+                        <!--                            </div>-->
+                        <!--                        </div>-->
+
+                        <div class="card-body ">
+                            <div class="d-flex flex-column align-items-center text-center mt-2">
+                                <img src="{% static 'admin_icon.jpg' %} " alt="Admin"
+                                     class="rounded-circle" width="150">
+                                <div class="mt-1">
+                                    <div class="m-0 p-0">
+                                        <h4>{{ user.first_name }} {{ user.last_name }}</h4>
+                                        <p class="m-0 p-0">1% Бонусы за <b>{{ month }}</b> месяц</p>
+                                    </div>
+                                    <div class="m-0 p-0">
+                                        <img src="{% static 'refund.png' %}" style="width:50px; margin:10px">
+                                        <div class="d-inline" style="vertical-align:middle;font-size:30px">
+                                            {{ bonus.0.summa }} сум
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row gutters-sm">
+                    <div class="col-sm-4 mb-3">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h6 class="d-flex align-items-center mb-3"><i class="material-icons text-warning mr-2">Бонусы
+                                    за ...</i></h6>
+                                {% for bn in bonus %}
+                                <div class="d-flex justify-content-between">
+                                    <div>{{ bn.month.date }}</div>
+                                    <div> {{ bn.summa }} сум</div>
+                                </div>
+                                <div class="progress mb-3" style="height: 5px">
+                                    <div class="progress-bar bg-primary" role="progressbar"
+                                         style="width: {{ bn.percent }}%"
+                                         aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4 mb-3">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h6 class="d-flex align-items-center mb-3"><i class="material-icons text-success mr-2">Закрытые</i>заказы
+                                </h6>
+                                {% for bn in closed %}
+                                <div class="d-flex justify-content-between">
+                                    <div>{{ bn.month.date }}</div>
+                                    <div> {{ bn.count }} штук</div>
+                                </div>
+                                <div class="progress mb-3" style="height: 5px">
+                                    <div class="progress-bar bg-primary" role="progressbar"
+                                         style="width: 100%"
+                                         aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4 mb-3">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h6 class="d-flex align-items-center mb-3"><i
+                                        class="material-icons text-danger mr-2">Отменённые</i>заказы</h6>
+                                {% for bn in cancelled %}
+                                <div class="d-flex justify-content-between">
+                                    <div>{{ bn.month.date }}</div>
+                                    <div> {{ bn.count }} штук</div>
+                                </div>
+                                <div class="progress mb-3" style="height: 5px">
+                                    <div class="progress-bar bg-primary" role="progressbar"
+                                         style="width: 100%"
+                                         aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% for i in data_month %}
+{{ i.month }} {{ i.closed }} {{ i.cancelled }} <br>
+{% endfor %}
+{% endblock %}

@@ -1,0 +1,96 @@
+{% load static %}
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+
+<div class="container mt-3" style="max-width:100%">
+    <input class="form-control" id="myInput" type="text" placeholder="Search..">
+    <br>
+    <table class="table table-bordered table-hover">
+        <thead>
+        <tr>
+            <th>#</th>
+            <th>Дата</th>
+            <th>Клиент</th>
+            <th>Комната</th>
+            <th>Филиал</th>
+            <th>Часы</th>
+            <th>Сумма</th>
+            <th>Скидка</th>
+            <th>Вид оплаты</th>
+            <th>Принял оплату</th>
+            <th>Заказ создал</th>
+            <th></th>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody id="myTable">
+        {% for o in orders %}
+        <tr>
+            <td>{{o.pk}}
+                {%if o.is_deleted %}
+                <img src="{% static 'deleted_icon.svg' %}" width="10px">
+                {%endif%}
+            </td>
+            <td>{{o.created_at}}</td>
+            <td><a href="{{ o.client.get_absolute_url }}" style="color:black;">{{o.client}}</a></td>
+            <td><a href="" class="text-dark" data-bs-toggle="modal" data-bs-target="#order{{o.pk}}"><i
+                    class="bi bi-three-dots"></i>{{o.product}}</a>
+            <td>{{ o.filial }}</td>
+            <td>{{ o.hour }}</td>
+            <td>{{ o.summa }}</td>
+            <td>-{{ o.discount }}%</td>
+            <td class="text-center">
+                {% if o.payment == True %}
+                <img src="{%static 'credit-card.png'%}" width="20px">
+                {% else %}
+                <img src="{%static 'money.png'%}" width="20px">
+                {% endif %}
+            </td>
+            <td class="text-center">
+                {% if o.payment_status == True %}
+                <span class="badge text-bg-success">{{ o.pay_accept_user }}</span>
+                {% elif o.status == 'Cancelled' %}
+                <p>Otmenen</p>
+                {% else %}
+                <a href=""></a>
+                <form method="POST" action="{% url 'confirm_payment' o.pk 'Confirm' %}">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <button type="submit" class="badge text-bg-danger">Не оплачен</button>
+                </form>
+                {% endif %}
+            </td>
+            {% if o.added_user %}
+            <td>{{ o.added_user }}</td>
+            <td>{{ o.status }}</td>
+
+            {% else %}
+            <td>MobileApp</td>
+            {% endif %}
+            {% if o.added_user == user %}
+            <td class="align-middle m-0 p-0 text-center"><a href="{% url 'delete' o.pk %}"><i
+                    class="bi bi-trash-fill m-1" style="font-size:20px;color: red;"></i></a></td>
+            {% else %}
+            <td class="align-middle m-0 p-0 text-center"><a><i class="bi bi-trash-fill m-1"
+                                                               style="font-size:20px;color: grey;"></i></a></td>
+            {% endif %}
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+
+<script>
+    $(document).ready(function(){
+      $("#myInput").on("keyup", function() {
+        var value = $(this).val().toLowerCase();
+        $("#myTable tr").filter(function() {
+          $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+        });
+      });
+    });
+
+</script>
+

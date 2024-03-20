@@ -1,0 +1,136 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title%}
+{{title}}
+{% endblock title%}
+{% block main %}
+<div style="height:100%;background-size: contain;background-color:white;display:flex;background-repeat: no-repeat')">
+    <div class='d-flex' style="flex-wrap: wrap;;margin:20px;width:65%;height:90%">
+        <div class="konteyner"
+             style="margin-left:1.5%;margin-top:3%;width:9%;height:19%"><img src="{% static 'office/ws.gif' %}"></div>
+        <div class="konteyner"
+             style="margin-left:0.5%;margin-top:3%;width:21.5%;height:19%"><img src="{% static 'office/ws2.gif' %}">
+        </div>
+        <div class="konteyner"
+             style="margin-left:0.5%;margin-top:3%;width:15%;height:15%">
+            <img src="{% static 'office/2.gif' %}"><a href="{% url 'office_detail' 11 %}"><h4>Office №3</h4></a></div>
+
+        <div class="konteyner"
+             style="margin-left:0.5%;margin-top:3%;width:15%;height:15%">
+            <img src="{% static 'office/2.gif' %}"><a href="{% url 'office_detail' 12 %}"><h4>Office №4</h4></a></div>
+
+        <div class="konteyner"
+             style="margin-left:0.5%;margin-top:3%;width:11%;height:15%"><img src="{% static 'office/1.gif' %}"></div>
+
+        <div class="konteyner"
+             style="margin-left:0.5%;margin-top:3%;width:20%;height:30%">
+            <img src="{% static 'office/66.gif' %}"><a href="{% url 'office_detail' 13 %}"><h4>Office №5</h4></a></div>
+
+        <div class="konteyner"
+             style="position:fixed;margin-left:1%;margin-top:10.5%;width:12%;height:21%">
+            <img src="{% static 'office/6.gif' %}"><a href="{% url 'office_detail' 10 %}"><h4>Office №2</h4></a></div>
+
+        <div class="konteyner"
+             style="position:fixed;margin-left:1%;margin-top:21%;width:12%;height:21%">
+            <img src="{% static 'office/6.gif' %}"><a href="{% url 'office_detail' 3 %}"><h4>Office №1</h4></a></div>
+
+        <div class="konteyner"
+             style="position:fixed;margin-left:18%;margin-top:13%;width:8.8%;height:16%">
+            <img src="{% static 'office/2centr.gif' %}"><a href="{% url 'office_detail' 16 %}"><h4>Office №8</h4></a>
+        </div>
+
+        <div class="konteyner"
+             style="position:fixed;margin-left:18%;margin-top:21%;width:8.8%;height:16%">
+            <img src="{% static 'office/2centr.gif' %}"><a href="{% url 'office_detail' 17 %}"><h4>Office №9</h4></a>
+        </div>
+
+        <div class="konteyner"
+             style="position:fixed;margin-left:18%;margin-top:29%;width:8.8%;height:16%">
+            <img src="{% static 'office/2pas.gif' %}"><a href="{% url 'office_detail' 18 %}"><h4>Office №10</h4></a>
+        </div>
+
+        <div class="konteyner"
+             style="position:fixed;margin-left:27%;margin-top:13%;width:11.4%;height:32.3%">
+            <img src="{% static 'office/7.gif' %}"><a href="{% url 'office_detail' 19 %}"><h4>Office №11</h4></a></div>
+
+        <div class="konteyner"
+             style="position:fixed;margin-left:27%;margin-top:29%;width:11.4%;height:16%">
+            <img src="{% static 'office/3.gif' %}"><a href="{% url 'office_detail' 20 %}"><h4>Office №12</h4></a></div>
+
+        <div class="konteyner"
+             style="position:fixed;margin-left:43.2%;margin-top:15.2%;width:13.3%;height:21.5%">
+            <img src="{% static 'office/6.gif' %}"><a href="{% url 'office_detail' 14 %}"><h4>Office №6</h4></a></div>
+
+        <div class="konteyner"
+             style="position:fixed;margin-left:43.2%;margin-top:26%;width:13.3%;height:21.5%">
+            <img src="{% static 'office/6.gif' %}"><a href="{% url 'office_detail' 15 %}"><h4>Office №7</h4></a></div>
+    </div>
+    <div style="margin-top:30px">
+        <table class="table">
+            <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Занято до:</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for office in offices %}
+            <tr onclick="window.location='{{ office.get_absolute_url }}'" style="cursor:pointer">
+
+                <th scope="row">{{office.desc}}</th>
+                {% for rent in rents %}
+                {% if rent.office.pk == office.pk %}
+                <td>{{ rent.rent_end}}</td>
+                {% endif %}
+                {% endfor %}
+            </tr>
+            {% endfor %}
+
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<style>
+    .konteyner {
+      display:flex;
+      justify-content: center;
+      align-items: center;
+      vertical-align:center;
+      transition-duration: 1.5s;
+      border:2px #0700dd solid;
+      border-radius:15px;
+
+    }
+
+    img {
+    height: -webkit-fill-available;
+    width: -webkit-fill-available;
+    border-radius: inherit;
+    }
+
+    h4{
+    display:None;
+    }
+
+    .konteyner:hover{
+      background-color: yellow;
+      opacity:0.6;
+      border:2px #0700dd dashed;
+    }
+
+    .konteyner:hover h4{
+      display:block;
+    }
+
+    .konteyner:hover img{
+      display:None;
+    }
+
+    a {
+    color:black;
+    }
+</style>
+
+
+{% endblock main %}

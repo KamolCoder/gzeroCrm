@@ -1,0 +1,87 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title%}
+{{title}}
+{% endblock title%}
+
+
+{% block main %}
+
+<div class="d-flex flex-row mt-2">
+    <a href="/index/" class="btn btn btn-secondary m-1 p-1 px-4"><i class="bi bi-house m-0"></i></a>
+    {% for f in filials %}
+    {% if f.title != user.groups.all.1.name %}
+    {% if f.title == title %}
+    <a href="/filial{{ f.id }}/" class="btn btn btn-success m-1 p-1 px-4">{{ f }}</a>
+    {% else %}
+    <a href="/filial{{ f.id }}/" class="btn btn btn-secondary m-1 p-1 px-4">{{ f }}</a>
+    {% endif %}
+    {% endif %}
+    {% endfor %}
+    <div class="row mt-1" style="width:60%">
+        <form method="POST">
+            {% csrf_token %}
+            <div class="row ml-4" style="width:50%">
+                <div class="col-5">
+                    <select name="filial" id="filial" class="form-control">
+                        <option selected>Выберите филиал</option>
+                        {% for filial in filials%}
+                        <option value="{{ filial.id }}">{{ filial.title }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="col-5 d-inline">
+                    <input type="date" id="date" name="date" class="form-control">
+                </div>
+                <div class="col-2 p-0">
+                    <button type="submit" class="btn btn-success"><i class="bi bi-search"></i></button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div class="row">
+    <h3>{{ filial_title }} - {{ date }}</h3>
+    <div class="row">
+        {% for room in rooms %}
+        {% if room.product.title != 'Zoom room' %}
+        <div class="col-xl-2 col-sm-3 px-1" style="width: 20%">
+            <div class="card text-white bg-primary mb-3" style="max-width: 100%;min-height:35rem;height:auto">
+                <div class="card-header">{{ room }}</div>
+                <div class="card-body" style="padding: 2px">
+                    {% for o in orders %}
+                    {% if o.product.title == room.product.title %}
+                    {% if o.status == "Active" %}
+                    {% include 'crm/components/index/_if_active.html' %}
+                    {% elif o.status == "Waiting" or o.status == "Ожидание" %}
+                    {% include 'crm/components/index/_if_waiting.html' %}
+                    {% else %}
+                    {% include 'crm/components/index/_if_else.html' %}
+                    {% endif%}
+                    {% endif%}
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        {% else %}
+        <div class="col-xl-2 col-sm-3 px-1" style="width: 60%">
+            <div class="card text-white bg-primary mb-3" style="max-width: 100%;min-height:35rem;height:auto">
+                <div class="card-header">Zoom rooms</div>
+                <div class="card-body mt-2" style="align-content: center;padding: 2px 5% 2px 5%">
+                    <div class="card">
+                        <details class="btn btn-primary">
+                            <summary>Zoom rooms</summary>
+                            {{ html_table|safe }}
+                        </details>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endif %}
+        {% endfor%}
+    </div>
+</div>
+
+{% endblock main %}

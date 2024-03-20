@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+
+{% block title%}
+{{title}}
+{% endblock title%}
+
+{% block main %}
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+<h3>Абонементы</h3>
+<div class="mt-5 mb-3 p-3 button-container bg-white border shadow-sm">
+    <div class="container-fluid mt-3">
+        <input class="form-control mb-3" id="myInput" type="text" placeholder="Search..">
+        <table class="table table-bordered">
+            <thead>
+            <tr class="text-center">
+                <th style="width:20%">Клиент</th>
+                <th style="width:20%">Абонемент</th>
+                <th style="width:20%">Начало</th>
+                <th style="width:20%">Дата окончания</th>
+                <th style="width:15%">Скидочные часы</th>
+                <th style="width:5%">Статус</th>
+            </tr>
+            </thead>
+            <tbody id="myTable">
+            {% for ab in abonements %}
+            <tr>
+                <td><a href="{{ ab.client.get_absolute_url }}" style="color:black;">{{ ab.client }}</a></td>
+                <td>{{ab.abonement.title }}</td>
+                <td>{{ ab.subscription_start }}</td>
+                <td>{{ ab.subscription_end }}</td>
+                <td>{{ ab.free_time }}</td>
+                {% if ab.is_active %}
+                <td><i class="bi bi-check-circle-fill" style="color:green"></i></td>
+                {% else %}
+                <td><i class="bi bi-slash-circle-fill" style="color:red"></i></td>
+                {% endif %}
+            </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<script>
+$(document).ready(function(){
+  $("#myInput").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#myTable tr").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
+
+
+
+
+
+
+
+
+
+
+</script>
+
+
+{% endblock main %}

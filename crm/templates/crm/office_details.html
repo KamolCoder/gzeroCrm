@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title%}
+
+{{title}}
+{% endblock title%}
+{% block main %}
+<h5>{{title}} для {{office.0.persons}} персон</h5>
+
+<table class="table">
+    <thead>
+    <tr>
+        <th scope="col">Бронирован от</th>
+        <th scope="col">Бронирован до</th>
+        <th scope="col">Клиент</th>
+        <th scope="col">Оплатил</th>
+        <th scope="col">Картой/Наличные</th>
+        <th scope="col"></th>
+    </tr>
+    </thead>
+    <tbody>
+    {%for rent in rents%}
+
+    <tr>
+        <td> {{rent.rent_start}}</td>
+        <td> {{rent.rent_end}}</td>
+        <td> {{rent.booked_user}}</td>
+        <td>@mdo</td>
+        <td>@mdo</td>
+        {% if rent.is_active %}
+        <td>
+            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="40" height="40" viewBox="0 0 48 48">
+                <path fill="#c8e6c9" d="M44,24c0,11-9,20-20,20S4,35,4,24S13,4,24,4S44,13,44,24z"></path>
+                <polyline fill="none" stroke="#4caf50" stroke-miterlimit="10" stroke-width="4"
+                          points="14,24 21,31 36,16"></polyline>
+            </svg>
+        </td>
+        {% else %}
+        <td>
+            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="40" height="40" viewBox="0 0 48 48">
+                <path fill="grey" d="M44,24c0,11-9,20-20,20S4,35,4,24S13,4,24,4S44,13,44,24z"></path>
+                <polyline fill="none" stroke="white" stroke-miterlimit="10" stroke-width="4"
+                          points="14,24 21,31 36,16"></polyline>
+            </svg>
+        </td>
+
+        {% endif %}
+    </tr>
+    {% endfor %}
+
+    </tbody>
+</table>
+{% for p in persons %}
+{{ p }}
+{% endfor %}
+
+{% endblock main %}
+

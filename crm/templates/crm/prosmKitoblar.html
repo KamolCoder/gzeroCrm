@@ -1,0 +1,69 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title%}
+{{ title }}
+{% endblock title%}
+
+{% block main %}
+
+{% for i in abones %}
+{{ i.client }}
+{% endfor %}
+<div class="d-flex flex-row mt-2">
+    <a href="/index/" class="btn btn btn-secondary m-1 p-1 px-4"><i class="bi bi-house-fill m-0"></i></a>
+    {% for f in filials %}
+    {% if f.title != user.groups.all.1.name %}
+    {% if f.title == title %}
+    <a href="/filial{{ f.id }}/" class="btn btn btn-success m-1 p-1 px-4">{{ f }}</a>
+    {% else %}
+    <a href="/filial{{ f.id }}/" class="btn btn btn-secondary m-1 p-1 px-4">{{ f }}</a>
+    {% endif %}
+    {% endif %}
+    {% endfor %}
+    <a href="/search/" class="btn btn btn-light m-1 p-1 px-3"><i class="bi bi-search"></i>Поиск</a>
+</div>
+<h3>События за сегодня: {{CurrentDay}} </h3>
+<div class="row">
+    {% for room in rooms %}
+    {% if room.product.title != 'Zoom room' %}
+    <div class="col-xl-2 col-sm-3 px-1" style="width: 20%">
+        <div class="card text-white bg-primary mb-3" style="max-width: 100%;min-height:35rem;height:auto">
+            <div class="card-header">{{ room }}</div>
+            <div class="card-body" style="padding: 2px">
+                {% for o in orders %}
+                    {% if o.product.title == room.product.title %}
+                        {% if o.status == "Active" %}
+                        {% include 'crm/components/index/_if_active.html' %}
+                        {% elif o.status == "Waiting" or o.status == "Ожидание" %}
+                        {% include 'crm/components/index/_if_waiting.html' %}
+                        {% else %}
+                        {% include 'crm/components/index/_if_else.html' %}
+                        {% endif%}
+                    {% endif%}
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    {% else %}
+    <div class="col-xl-2 col-sm-3 px-1" style="width: 40%">
+        <div class="card text-white bg-primary mb-3" style="max-width: 100%;min-height:35rem;height:auto">
+            <div class="card-header">
+                <button type="button" class="btn btn-link p-0" style="color:white"><i class="bi bi-plus-square"></i>
+                </button>
+                Zoom rooms
+            </div>
+            <div class="card-body mt-2" style="align-content: center;padding: 2px 0 2px 0">
+                <div class="card">
+                    <details class="btn btn-primary">
+                        <summary>Zoom rooms</summary>
+                        {{ html_table|safe }}
+                    </details>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endif %}
+    {% endfor%}
+</div>
+{% endblock main %}

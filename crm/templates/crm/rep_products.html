@@ -1,0 +1,201 @@
+{% extends 'base.html' %}
+
+{% block title%}
+{{title}}
+{% endblock title%}
+
+
+{% block main %}
+
+
+<h3 class="m-2 mb-5">Отчеты по продуктам</h3>
+<button onclick="location.href='{% url 'reports' %}'" class="btn  m-1">По оплатам</button>
+<button onclick="location.href='{% url 'products' %}'" class="btn btn-primary m-1">По продуктам</button>
+<button onclick="location.href='{% url 'abonements' %}'" class="btn  m-1">По абонементам</button>
+
+<div class="col-sm-12 col-md-12">
+    <div class="mt-1 mb-3 p-3 button-container bg-white border shadow-sm custom-tabs">
+        <button class="btn btn-success mb-3"><a href="{% url 'download_products' %}"><i class="bi bi-download m-0"> </i>Excel</a>
+        </button>
+
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+
+            <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home-tab-pane"
+                        type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">Дням
+                </button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="mesyats" data-bs-toggle="tab" data-bs-target="#mesyats-pane"
+                        type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="false">Месяцам
+                </button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="profile-kvartl" data-bs-toggle="tab" data-bs-target="#profile-kvartl-pane"
+                        type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="false">Кварталам
+                </button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact-tab-pane"
+                        type="button" role="tab" aria-controls="contact-tab-pane" aria-selected="false">Годам
+                </button>
+            </li>
+
+        </ul>
+        <div class="tab-content" id="myTabContent">
+
+            <div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab"
+                 tabindex="0">
+                <table id="dtBasicExample" class="table table-hover table-bordered table-sm" cellspacing="0"
+                       width="80%">
+                    <thead>
+                    <tr style="text-align:center">
+                        <th class="th-sm" style="width:15%">Период</th>
+                        <th class="th-sm">Miting room 6</th>
+                        <th class="th-sm">Miting room 8</th>
+                        <th class="th-sm">Miting room 10</th>
+                        <th class="th-sm">Miting room 12</th>
+                        <th class="th-sm">Miting room 16</th>
+                        <th class="th-sm">Ивент Зона</th>
+                        <th class="th-sm">Рабочая зона</th>
+                        <th class="th-sm">Zoom room</th>
+                        <th class="th-sm">Итого</th>
+                    </tr>
+                    </thead>
+                    <tbody style="text-align:end">
+                    {% for d in data_day %}
+                    <tr>
+                        <td style="text-align:start">{{ d.month.date }}</td>
+                        <td>{{ d.miting6 }}</td>
+                        <td>{{ d.miting8 }}</td>
+                        <td>{{ d.miting10 }}</td>
+                        <td>{{ d.miting12 }}</td>
+                        <td>{{ d.miting16 }}</td>
+                        <td>{{ d.ivent }}</td>
+                        <td>{{ d.work }}</td>
+                        <td>{{ d.zoom }}</td>
+                        <td><strong>{{ d.itogo }}</strong></td>
+                    </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+            <div class="tab-pane fade" id="mesyats-pane" role="tabpanel" aria-labelledby="profile-tab"
+                 tabindex="0">
+                <table class="table table-hover table-bordered table-sm">
+                    <thead>
+                    <tr style="text-align:center">
+                        <th class="th-sm" style="width:15%">Период</th>
+                        <th class="th-sm">Miting room 6</th>
+                        <th class="th-sm">Miting room 8</th>
+                        <th class="th-sm">Miting room 10</th>
+                        <th class="th-sm">Miting room 12</th>
+                        <th class="th-sm">Miting room 16</th>
+                        <th class="th-sm">Ивент Зона</th>
+                        <th class="th-sm">Рабочая зона</th>
+                        <th class="th-sm">Zoom room</th>
+                        <th class="th-sm">Итого</th>
+                    </tr>
+                    </thead>
+                    <tbody style="text-align:end">
+                    {% for d in data_month %}
+                    <tr>
+                        <td style="text-align:start">{{ d.month }}</td>
+                        <td>{{ d.miting6 }}</td>
+                        <td>{{ d.miting8 }}</td>
+                        <td>{{ d.miting10 }}</td>
+                        <td>{{ d.miting12 }}</td>
+                        <td>{{ d.miting16 }}</td>
+                        <td>{{ d.ivent }}</td>
+                        <td>{{ d.work }}</td>
+                        <td>{{ d.zoom }}</td>
+                        <td><strong>{{ d.itogo }}</strong></td>
+                    </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+            <div class="tab-pane fade" id="profile-kvartl-pane" role="tabpanel" aria-labelledby="profile-tab"
+                 tabindex="0">
+                <table class="table table-hover table-bordered table-sm">
+                    <thead>
+                    <tr style="text-align:center">
+                        <th class="th-sm" style="width:15%">Период</th>
+                        <th class="th-sm">Miting room 6</th>
+                        <th class="th-sm">Miting room 8</th>
+                        <th class="th-sm">Miting room 10</th>
+                        <th class="th-sm">Miting room 12</th>
+                        <th class="th-sm">Miting room 16</th>
+                        <th class="th-sm">Ивент Зона</th>
+                        <th class="th-sm">Рабочая зона</th>
+                        <th class="th-sm">Zoom room</th>
+                        <th class="th-sm">Итого</th>
+                    </tr>
+                    </thead>
+                    <tbody style="text-align:end">
+                    {% for d in data_kvartl %}
+                    <tr>
+                        {% if d.month.month == 1 %}
+                        <td style="text-align:start">1-квартал {{ d.month.year }}-год</td>
+                        {% elif d.month.month == 4 %}
+                        <td style="text-align:start">2-квартал {{ d.month.year }}-год</td>
+                        {% elif d.month.month == 7 %}
+                        <td style="text-align:start">3-квартал {{ d.month.year }}-год</td>
+                        {% elif d.month.month == 10 %}
+                        <td style="text-align:start">4-квартал {{ d.month.year }}-год</td>
+                        {% endif %}
+                        <td>{{ d.miting6 }}</td>
+                        <td>{{ d.miting8 }}</td>
+                        <td>{{ d.miting10 }}</td>
+                        <td>{{ d.miting12 }}</td>
+                        <td>{{ d.miting16 }}</td>
+                        <td>{{ d.ivent }}</td>
+                        <td>{{ d.work }}</td>
+                        <td>{{ d.zoom }}</td>
+                        <td><strong>{{ d.itogo }}</strong></td>
+                    </tr>
+                    {% endfor %}
+                    </tbody>
+
+                </table>
+            </div>
+            <div class="tab-pane fade" id="contact-tab-pane" role="tabpanel" aria-labelledby="profile-tab"
+                 tabindex="0">
+                <table class="table table-hover table-bordered table-sm">
+                    <thead>
+                    <tr style="text-align:center">
+                        <th class="th-sm" style="width:15%">Период</th>
+                        <th class="th-sm">Miting room 6</th>
+                        <th class="th-sm">Miting room 8</th>
+                        <th class="th-sm">Miting room 10</th>
+                        <th class="th-sm">Miting room 12</th>
+                        <th class="th-sm">Miting room 16</th>
+                        <th class="th-sm">Ивент Зона</th>
+                        <th class="th-sm">Рабочая зона</th>
+                        <th class="th-sm">Zoom room</th>
+                        <th class="th-sm">Итого</th>
+                    </tr>
+                    </thead>
+                    <tbody style="text-align:end">
+                    {% for d in data_year %}
+                    <tr>
+                        <td style="text-align:start">{{ d.month.year }}-год</td>
+                        <td>{{ d.miting6 }}</td>
+                        <td>{{ d.miting8 }}</td>
+                        <td>{{ d.miting10 }}</td>
+                        <td>{{ d.miting12 }}</td>
+                        <td>{{ d.miting16 }}</td>
+                        <td>{{ d.ivent }}</td>
+                        <td>{{ d.work }}</td>
+                        <td>{{ d.zoom }}</td>
+                        <td><strong>{{ d.itogo }}</strong></td>
+                    </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock main %}

@@ -1,0 +1,85 @@
+{% extends 'base.html' %}
+
+
+{% block title %}
+{{ title }}
+{% endblock title %}
+
+
+{% block main %}
+<div class="row mt-3">
+    <div class="col-xl-6 col-sm-3">
+        <div class="card" style="height:27rem">
+            <div class="m-3">
+                <strong>Активность клиента </strong>
+                <div class="mt-3">
+                    <i class="bi bi-reception-4" style="color:green;font-size:30px"></i>
+                    <h6>Активен в течении недели</h6>
+                    <i class="bi bi-reception-3" style="color:green;font-size:30px"></i>
+                    <h6>Последняя активность было 8-14 дней назад</h6>
+                    <i class="bi bi-reception-2" style="color:orange;font-size:30px"></i>
+                    <h6>Последняя активность было 15-21 дней назад</h6>
+                    <i class="bi bi-reception-1" style="color:red;font-size:30px"></i>
+                    <h6>Последняя активность было 31 дней назад</h6>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-xl-6 col-sm-3">
+        <div class="card" style="height:27rem">
+            <div class="m-3">
+                <strong>Лояльность клиента </strong>
+                <div class="mt-3">
+                    <i class="bi bi-star"></i>
+                    <h6 style="margin-bottom:20px">Ниже года (представляет собой 0% скидки)</h6>
+                    <i class="bi bi-star-half" style="color:orange"></i><i class="bi bi-star"></i><i
+                        class="bi bi-star"></i>
+                    <h6 style="margin-bottom:20px">Выше 1 года (представляет собой 5% скидки)</h6>
+                    <i class="bi bi-star-fill" style="color:orange"></i><i class="bi bi-star"></i><i
+                        class="bi bi-star"></i>
+                    <h6 style="margin-bottom:20px">Выше 2 лет (представляет собой 10% скидки)</h6>
+                    <i class="bi bi-star-fill" style="color:orange"></i><i class="bi bi-star-fill"
+                                                                           style="color:orange"></i><i
+                        class="bi bi-star"></i>
+                    <h6 style="margin-bottom:20px">Выше 3 лет (представляет собой 15% скидки)</h6>
+                    <i class="bi bi-star-fill" style="color:orange"></i><i class="bi bi-star-fill"
+                                                                           style="color:orange"></i><i
+                        class="bi bi-star-fill" style="color:orange"></i>
+                    <h6 style="margin-bottom:20px">Выше 5 лет (представляет собой 20% скидки)</h6>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-xl-6 col-sm-3 mt-3">
+        <div class="card">
+            <div class="container mt-3" style="max-width:100%">
+                <strong>Прайс-лист</strong>
+                <table class="table table-bordered">
+                    <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Комната</th>
+                        <th>Филиал</th>
+                        <th>Часы</th>
+                        <th>Сумма</th>
+                    </tr>
+                    </thead>
+                    <tbody id="myTable">
+                    {% for p in pricelist %}
+                    <tr>
+                        <td>{{p.pk}}</td>
+                        <td>{{p.product}}</td>
+                        <td>{{p.filial}}</td>
+                        <td>{{p.hour}}</td>
+                        <td>{{p.price}}</td>
+                    </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+    </div>
+</div>
+{% endblock main %}

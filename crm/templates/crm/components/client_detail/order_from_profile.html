@@ -1,0 +1,83 @@
+<form action="{% url 'order_from_profile' %}" method="post" class="row g-3" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="col-md-6">
+        <label for="{{ form3.client.id_for_label }}" class="form-label">Клиент</label>
+        {{form3.client}}
+    </div>
+    <div class="col-md-6">
+        <label for="{{ form3.filial.id_for_label }}" class="form-label">Филиал</label>
+        {{form3.filial}}
+    </div>
+    <div class="col-md-6">
+        <label for="{{ form3.hour.id_for_label }}" class="form-label">Длительность (час)</label><br>
+        {{form3.hour}}
+    </div>
+    <div class="col-md-6">
+        <label for="{{ form3.product.id_for_label }}" class="form-label">Комната</label>
+        {{form3.product}}
+    </div>
+    <div class="col-md-4">
+        <label for="{{ form3.order_start.id_for_label }}" class="form-label">От :</label>{{form3.order_start}}
+    </div>
+    <div class="col-md-4">
+        <label for="{{ form3.order_end.id_for_label }}" class="form-label">До :</label>{{form3.order_end}}
+    </div>
+    <div class="col-md-4">
+        <label for="{{ form3.status.id_for_label }}" class="form-label">Статус заказа</label>{{form3.status}}
+    </div>
+    <div class="col-md-6">
+        <h6>Тип оплаты</h6>
+        {{ form3.payment }}
+    </div>
+    <div class="col-md-6">
+        <h6>Скидка</h6>
+        {{ form3.discount }}
+    </div>
+    <div class="col-md-4">
+        <h6>Оплачен</h6>
+        {{ form3.payment_status }}
+    </div>
+    <div class="col-12">
+        <button type="submit" class="btn btn-success">Создать заказ</button>
+    </div>
+</form>
+
+
+<script>
+    const titles = JSON.parse('{{ json_data|safe }}');
+    const pricelist = JSON.parse('{{ pricelist|safe }}');
+    function updateTitleOptions() {
+      const filialSelect = document.getElementById('filialSelect');
+      const titleSelect = document.getElementById('titleSelect');
+
+      titleSelect.innerHTML = '<option value="">------</option>';
+
+      const selectedFilial = filialSelect.value;
+
+      const filteredTitles = titles.filter(title => title.filial_id === parseInt(selectedFilial));
+
+      for (let i = 0; i < filteredTitles.length; i++) {
+      const option = document.createElement('option');
+      option.value = filteredTitles[i].id;
+      option.innerText = filteredTitles[i].title;
+      titleSelect.appendChild(option);
+    }
+}
+    function updateHourOptions() {
+      const titleSelect = document.getElementById('titleSelect');
+      const hourSelect = document.getElementById('hourSelect');
+      hourSelect.innerHTML = '<option value="">------</option>';
+
+      const selectedtitle = titleSelect.value;
+      const filteredHours = pricelist.filter(hour => hour.product === parseInt(selectedtitle));
+
+      for (let i = 0; i < filteredHours.length; i++) {
+      const option = document.createElement('option');
+      option.value = filteredHours[i].hour;
+      option.innerText = filteredHours[i].hour;
+      hourSelect.appendChild(option);
+    }
+
+}
+
+</script>
