@@ -265,3 +265,8 @@ class Events(models.Model):
     class Meta:
         verbose_name = 'Мероприятия'
         verbose_name_plural = 'Мероприятии'
+    def get_image(self):
+        if self.image:
+            return self.image.url
+        else:
+            return '/static/user.png'

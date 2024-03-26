@@ -748,45 +748,45 @@ def payment_report(request):
 def product_report(request):
     orders = Order.objects.all()
     data_day = orders.annotate(month=TruncDay('created_at')).values('month').annotate(
-        work=Sum(Case(When(payment_status=True, product__title='Open Space', then='summa')),default=0),
-        miting6=Sum(Case(When(payment_status=True, product__title='Miting room 6', then='summa')),default=0),
-        miting8=Sum(Case(When(payment_status=True, product__title='Miting room 8', then='summa')),default=0),
-        miting10=Sum(Case(When(payment_status=True, product__title='Miting room 10', then='summa')),default=0),
-        miting12=Sum(Case(When(payment_status=True, product__title='Miting room 12', then='summa')),default=0),
-        miting16=Sum(Case(When(payment_status=True, product__title='Miting room 16', then='summa')),default=0),
-        ivent=Sum(Case(When(payment_status=True, product__title='Event-Zone', then='summa')),default=0),
-        zoom=Sum(Case(When(payment_status=True, product__title='Zoom room', then='summa')),default=0),
-        itogo=Sum(Case(When(payment_status=True, then='summa')),default=0)).order_by('-month')
+        work=Sum(Case(When(payment_status=True, product__title='Open Space', then='summa')), default=0),
+        miting6=Sum(Case(When(payment_status=True, product__title='Miting room 6', then='summa')), default=0),
+        miting8=Sum(Case(When(payment_status=True, product__title='Miting room 8', then='summa')), default=0),
+        miting10=Sum(Case(When(payment_status=True, product__title='Miting room 10', then='summa')), default=0),
+        miting12=Sum(Case(When(payment_status=True, product__title='Miting room 12', then='summa')), default=0),
+        miting16=Sum(Case(When(payment_status=True, product__title='Miting room 16', then='summa')), default=0),
+        ivent=Sum(Case(When(payment_status=True, product__title='Event-Zone', then='summa')), default=0),
+        zoom=Sum(Case(When(payment_status=True, product__title='Zoom room', then='summa')), default=0),
+        itogo=Sum(Case(When(payment_status=True, then='summa')), default=0)).order_by('-month')
     data_month = orders.annotate(month=TruncMonth('created_at')).values('month').annotate(
-        work=Sum(Case(When(payment_status=True, product__title='Open Space', then='summa')),default=0),
-        miting6=Sum(Case(When(payment_status=True, product__title='Miting room 6', then='summa')),default=0),
-        miting8=Sum(Case(When(payment_status=True, product__title='Miting room 8', then='summa')),default=0),
-        miting10=Sum(Case(When(payment_status=True, product__title='Miting room 10', then='summa')),default=0),
-        miting12=Sum(Case(When(payment_status=True, product__title='Miting room 12', then='summa')),default=0),
-        miting16=Sum(Case(When(payment_status=True, product__title='Miting room 16', then='summa')),default=0),
-        ivent=Sum(Case(When(payment_status=True, product__title='Event-Zone', then='summa')),default=0),
-        zoom=Sum(Case(When(payment_status=True, product__title='Zoom room', then='summa')),default=0),
-        itogo=Sum(Case(When(payment_status=True, then='summa')),default=0)).order_by('-month')
+        work=Sum(Case(When(payment_status=True, product__title='Open Space', then='summa')), default=0),
+        miting6=Sum(Case(When(payment_status=True, product__title='Miting room 6', then='summa')), default=0),
+        miting8=Sum(Case(When(payment_status=True, product__title='Miting room 8', then='summa')), default=0),
+        miting10=Sum(Case(When(payment_status=True, product__title='Miting room 10', then='summa')), default=0),
+        miting12=Sum(Case(When(payment_status=True, product__title='Miting room 12', then='summa')), default=0),
+        miting16=Sum(Case(When(payment_status=True, product__title='Miting room 16', then='summa')), default=0),
+        ivent=Sum(Case(When(payment_status=True, product__title='Event-Zone', then='summa')), default=0),
+        zoom=Sum(Case(When(payment_status=True, product__title='Zoom room', then='summa')), default=0),
+        itogo=Sum(Case(When(payment_status=True, then='summa')), default=0)).order_by('-month')
     data_kvartl = orders.annotate(month=TruncQuarter('created_at')).values('month').annotate(
-        work=Sum(Case(When(payment_status=True, product__title='Open Space', then='summa')),default=0),
-        miting6=Sum(Case(When(payment_status=True, product__title='Miting room 6', then='summa')),default=0),
-        miting8=Sum(Case(When(payment_status=True, product__title='Miting room 8', then='summa')),default=0),
-        miting10=Sum(Case(When(payment_status=True, product__title='Miting room 10', then='summa')),default=0),
-        miting12=Sum(Case(When(payment_status=True, product__title='Miting room 12', then='summa')),default=0),
-        miting16=Sum(Case(When(payment_status=True, product__title='Miting room 16', then='summa')),default=0),
-        ivent=Sum(Case(When(payment_status=True, product__title='Event-Zone', then='summa')),default=0),
-        zoom=Sum(Case(When(payment_status=True, product__title='Zoom room', then='summa')),default=0),
-        itogo=Sum(Case(When(payment_status=True, then='summa')),default=0)).order_by('-month')
+        work=Sum(Case(When(payment_status=True, product__title='Open Space', then='summa')), default=0),
+        miting6=Sum(Case(When(payment_status=True, product__title='Miting room 6', then='summa')), default=0),
+        miting8=Sum(Case(When(payment_status=True, product__title='Miting room 8', then='summa')), default=0),
+        miting10=Sum(Case(When(payment_status=True, product__title='Miting room 10', then='summa')), default=0),
+        miting12=Sum(Case(When(payment_status=True, product__title='Miting room 12', then='summa')), default=0),
+        miting16=Sum(Case(When(payment_status=True, product__title='Miting room 16', then='summa')), default=0),
+        ivent=Sum(Case(When(payment_status=True, product__title='Event-Zone', then='summa')), default=0),
+        zoom=Sum(Case(When(payment_status=True, product__title='Zoom room', then='summa')), default=0),
+        itogo=Sum(Case(When(payment_status=True, then='summa')), default=0)).order_by('-month')
     data_year = orders.annotate(month=TruncYear('created_at')).values('month').annotate(
-        work=Sum(Case(When(payment_status=True, product__title='Open Space', then='summa')),default=0),
-        miting6=Sum(Case(When(payment_status=True, product__title='Miting room 6', then='summa')),default=0),
-        miting8=Sum(Case(When(payment_status=True, product__title='Miting room 8', then='summa')),default=0),
-        miting10=Sum(Case(When(payment_status=True, product__title='Miting room 10', then='summa')),default=0),
-        miting12=Sum(Case(When(payment_status=True, product__title='Miting room 12', then='summa')),default=0),
-        miting16=Sum(Case(When(payment_status=True, product__title='Miting room 16', then='summa')),default=0),
-        ivent=Sum(Case(When(payment_status=True, product__title='Event-Zone', then='summa')),default=0),
-        zoom=Sum(Case(When(payment_status=True, product__title='Zoom room', then='summa')),default=0),
-        itogo=Sum(Case(When(payment_status=True, then='summa')),default=0)).order_by('-month')
+        work=Sum(Case(When(payment_status=True, product__title='Open Space', then='summa')), default=0),
+        miting6=Sum(Case(When(payment_status=True, product__title='Miting room 6', then='summa')), default=0),
+        miting8=Sum(Case(When(payment_status=True, product__title='Miting room 8', then='summa')), default=0),
+        miting10=Sum(Case(When(payment_status=True, product__title='Miting room 10', then='summa')), default=0),
+        miting12=Sum(Case(When(payment_status=True, product__title='Miting room 12', then='summa')), default=0),
+        miting16=Sum(Case(When(payment_status=True, product__title='Miting room 16', then='summa')), default=0),
+        ivent=Sum(Case(When(payment_status=True, product__title='Event-Zone', then='summa')), default=0),
+        zoom=Sum(Case(When(payment_status=True, product__title='Zoom room', then='summa')), default=0),
+        itogo=Sum(Case(When(payment_status=True, then='summa')), default=0)).order_by('-month')
 
     context = {
         'title': 'Продукты',
@@ -930,27 +930,10 @@ def abonements_list(request):
     return render(request, 'crm/abonements_list.html', context=context)
 
 
-def send_to_client(request):
-    # bot_token = ""
-    users = AbonementBuyList.objects.filter(subscription_end__lt=datetime.date.today() + datetime.timedelta(days=5),
-                                            is_active=True)
-    for i in users:
-        chat_id = i.client.telegram_id
-        message = f"""Добрый день, {i.client}!
-Как ваши дела ? 
-
-Спешу напомнить Вам о том, что до окончания действия вашего абонемента {i} осталось меньше 5 дней.
-
-По желанию можете приобрести новый абонемент у нас на кассе.
-
-Оплатить можно наличными либо картой Uzcard или Humo😊"""
-        url = f"https://api.telegram.org/bot{bot_token}/sendMessage?chat_id={chat_id}&text={message}"
-        requests.get(url)
-    current_date = datetime.date.today()
-    NotifyDate.objects.create(user=request.user, last_send=current_date)
-    messages.success(request, "📨 Отправлено")
-
-    return redirect('index')
+def event_list(request):
+    events = Events.objects.all().order_by('-event_start_date')
+    context = {'events': events, 'title': 'events'}
+    return render(request, 'crm/events.html', context=context)
 
 
 def offices_view(request):

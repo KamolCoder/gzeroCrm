@@ -28,47 +28,48 @@
         <div class="sidebar-menu-container">
             <ul class="sidebar-menu mt-0 mb-4">
                 <li class="parent">
-                    <a href="/index/" style="text-decoration:none"><i class="fa fa-dashboard mr-3"></i>
+                    <a href="/index/" style="padding:2px 7px;text-decoration:none"><i class="fa fa-dashboard mr-3"></i>
                         <i class="bi bi-speedometer2" style="font-size:25px"></i>
                         <span>Главная</span>
                     </a>
                 </li>
                 <li class="parent">
-                    <a href="/clients/" style="text-decoration:none" ><i class="fas fa-user mr-3"></i>
+                    <a href="/clients/" style="padding:2px 7px;text-decoration:none"><i class="fas fa-user mr-3"></i>
                         <span class="none"><i class="bi bi-people-fill" style="font-size:25px"></i>Клиенты</span>
                     </a>
                 </li>
                 <li class="parent">
-                    <a href="/orders/" style="text-decoration:none" ><i class="fa fa-shopping-cart mr-3"></i>
+                    <a href="/orders/" style="padding:2px 7px;text-decoration:none"><i class="fa fa-shopping-cart mr-3"></i>
                         <span class="none"><i class="bi bi-cart-plus-fill" style="font-size:25px"></i>Заказы </span>
                     </a>
                 </li>
                 <li class="parent">
-                    <a href="/offices/" style="text-decoration:none" ><i class="fa fa-shopping-cart mr-3"></i>
+                    <a href="/offices/" style="padding:2px 7px;text-decoration:none"><i class="fa fa-shopping-cart mr-3"></i>
                         <span class="none"><i class="bi bi-door-closed-fill" style="font-size:25px"></i>Офисы </span>
                     </a>
 
                 </li>
                 {% if user.is_superuser%}
                 <li class="parent">
-                    <a href="/reports/" style="text-decoration:none" ><i class="fa fa-shopping-cart mr-3"></i>
+                    <a href="/reports/" style="padding:2px 7px;text-decoration:none"><i class="fa fa-shopping-cart mr-3"></i>
                         <span class="none"><i class="bi bi-cash-coin" style="font-size:25px"></i>Отчёты </span>
                     </a>
                 </li>
                 {% endif %}
                 <li class="parent">
-                    <a href="/abonements_list/" style="text-decoration:none" ><i
+                    <a href="/abonements_list/" style="padding:2px 7px;text-decoration:none"><i
                             class="fa fa-suitcase mr-3"> </i>
                         <span class="none"><i class="bi bi-briefcase-fill" style="font-size:25px"></i>Абонементы </span>
                     </a>
                 </li>
                 <li class="parent">
-                    <a href="/abonements_list/" style="text-decoration:none" >
-                        <span class="none">Мероприятии </span>
+                    <a href="/event_list/" style="padding:2px 7px;text-decoration:none">
+                        <i class="fa fa-suitcase mr-3"> </i>
+                        <span class="none"><i class="bi bi-briefcase-fill" style="font-size:25px"></i>Ивенты </span>
                     </a>
                 </li>
                 <li class="parent">
-                    <a href="/documentation/" style="text-decoration:none"><i class="fa fa-suitcase mr-3"> </i>
+                    <a href="/documentation/" style="padding:2px 7px;text-decoration:none"><i class="fa fa-suitcase mr-3"> </i>
                         <span class="none"><i class="bi bi-info-square" style="font-size:25px"></i>Справка</span>
                     </a>
                 </li>
