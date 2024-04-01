@@ -58,6 +58,8 @@ class Rooms(models.Model):
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
     title = models.CharField(max_length=255)
     persons = models.PositiveIntegerField()
+    is_working = models.BooleanField(default=True, blank=True, null=True)
+    image = models.ImageField(upload_to='images/rooms/', null=True, blank=True, verbose_name='Фото Комнат')
 
     def __str__(self):
         return f"{self.title}"
@@ -151,13 +153,15 @@ class AbonementBuyList(models.Model):
     # subscription_end = models.DateField(default=subscription_start + datetime.timedelta(days=29),verbose_name='Конец подписки')
     free_time = models.SmallIntegerField(default=15, validators=[MinValueValidator(0), MaxValueValidator(15)])
     is_active = models.BooleanField(default=True)
+    created_at = models.DateTimeField(auto_now_add=True, blank=True, null=True)
+    added_user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, null=True, blank=True)
 
     def __str__(self):
         return f'{self.abonement.title}'
 
     class Meta:
-        verbose_name = 'Купленный абонемент'
-        verbose_name_plural = 'Купленные абонементы'
+        verbose_name = 'Данные покупки абонемента'
+        verbose_name_plural = 'Журнал покупок абонементов'
 
 
 class Gallery(models.Model):
@@ -186,6 +190,7 @@ class Order(models.Model):
     payment = models.BooleanField(choices=IS_PAID_CHOICES, default=False, verbose_name='Тип оплаты')
     payment_status = models.BooleanField(verbose_name="Оплачен", default=False)
     summa = models.DecimalField(decimal_places=2, max_digits=12, verbose_name='Сумма', blank=True, null=True)
+    after_discount = models.DecimalField(decimal_places=2, max_digits=12, verbose_name='Сумма после скидки', blank=True, null=True)
     order_start = models.DateTimeField(verbose_name='Бронировать от :')
     order_end = models.DateTimeField(verbose_name='Бронировать до :')
     added_user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, null=True, blank=True)
@@ -265,6 +270,7 @@ class Events(models.Model):
     class Meta:
         verbose_name = 'Мероприятия'
         verbose_name_plural = 'Мероприятии'
+
     def get_image(self):
         if self.image:
             return self.image.url

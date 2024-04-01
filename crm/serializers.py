@@ -33,6 +33,7 @@ class Roomsapiview(APIView):
     def get(self, request, company_id):
         lst = Filial.objects.filter(company=company_id).values("company__title", "title", "images", 'address',
                                                                'is_active')
+
         data = [
             {
                 'title': item['title'],

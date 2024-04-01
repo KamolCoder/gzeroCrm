@@ -4,16 +4,6 @@
 <div class="col-sm-2  p-0"
      style="width:10%; background-color: #2e2e3a;height: auto;min-height: 95vh  ;transition: 200ms;">
     <div class="inner-sidebar mr-3">
-        {% block notifier %}
-        {% if messages %}
-        {% for message in messages %}
-        <!--        <br>-->
-        <div class="alert alert-{{ message.tags }} mx-3" role="alert">
-            {{ message }}
-        </div>
-        {% endfor %}
-        {% endif %}
-        {% endblock notifier %}
         <!--        <div class="avatar text-center pt-3">-->
         <!--            {% if user.is_superuser %}-->
         <!--            <a href="/admins_profile/"><img src="{% static 'admin_icon.jpg' %}" style='width: 80px;'-->

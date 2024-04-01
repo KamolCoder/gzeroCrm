@@ -45,11 +45,10 @@ class IndexView(ListView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         filials = Filial.objects.filter(company=self.get_group())
-        rooms = Rooms.objects.all().exclude(category__title='office')
+        rooms = Rooms.objects.filter(is_working=True).exclude(category__title='office')
         orders = Order.objects.filter(order_start__month=datetime.date.today().month,
                                       order_start__day=datetime.date.today().day, payment_status=1).order_by(
             '-order_start')
-
         # Generate the HTML table
         tablitsa = []
         for filial in filials:
@@ -154,7 +153,7 @@ def order_delete(request, pk):
 
 
 def profile_view(request, telegram_id):
-    res = Rooms.objects.all().values('filial_id', 'filial__title', 'id', 'title').exclude(category__title='office')
+    res = Rooms.objects.filter(is_working=True).values('filial_id', 'filial__title', 'id', 'title').exclude(category__title='office')
     json_data = json.dumps(list(res))
     pricelist_not_json = Pricelists.objects.all().values('product', 'hour', 'price')
     pricelist = json.dumps(list(pricelist_not_json))
@@ -938,13 +937,13 @@ def event_list(request):
 
 def offices_view(request):
     rents = OfficeRent.objects.filter(is_active=True)
-    offices = Rooms.objects.filter(category__title='Office')
+    offices = Rooms.objects.filter(is_working=True,category__title='Office')
     context = {'title': 'Офисы', 'offices': offices, 'rents': rents}
     return render(request, 'crm/offices.html', context=context)
 
 
 def office_detail(request, pk):
-    office = Rooms.objects.filter(pk=pk)
+    office = Rooms.objects.filter(is_working=True,pk=pk)
     rents = OfficeRent.objects.filter(office=pk)
     persons = OfficePersons.objects.filter(pk=1)
     try:

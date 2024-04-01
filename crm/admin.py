@@ -30,8 +30,8 @@ class ProductAdmin(admin.ModelAdmin):
 
 @admin.register(Rooms)
 class Rooms_in_branchesAdmin(admin.ModelAdmin):
-    list_display = ['pk', 'title', 'filial', 'persons']
-    list_display_links = ['pk', 'filial', 'persons']
+    list_display = ['pk', 'title', 'filial', 'persons','is_working']
+    list_display_links = ['pk','title', 'filial', 'persons']
     inlines = [PriceAdmin]
 
 

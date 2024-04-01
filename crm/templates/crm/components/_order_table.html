@@ -32,12 +32,21 @@
                 {%endif%}
             </td>
             <td style="padding:0px 5px">{{o.created_at}}</td>
-            <td style="padding:0px 5px"><a href="{{ o.client.get_absolute_url }}" style="color:black;">{{o.client}}</a></td>
-            <td style="padding:0px 5px"><a href="" class="text-dark" data-bs-toggle="modal" data-bs-target="#order{{o.pk}}"><i
+            <td style="padding:0px 5px"><a href="{{ o.client.get_absolute_url }}" style="color:black;">{{o.client}}</a>
+            </td>
+            <td style="padding:0px 5px"><a href="" class="text-dark" data-bs-toggle="modal"
+                                           data-bs-target="#order{{o.pk}}"><i
                     class="bi bi-three-dots"></i>{{o.product}}</a>
             <td style="padding:0px 5px">{{ o.filial }}</td>
             <td style="padding:0px 5px">{{ o.hour }}</td>
-            <td style="padding:0px 5px">{{ o.summa }}</td>
+            <td style="padding:0px 5px">
+                {% if o.discount %}
+                <span style="  text-decoration: line-through;">{{ o.summa }}</span>
+                {{ o.after_discount }}
+                {% else %}
+                {{ o.summa }}
+                {% endif %}
+            </td>
             <td style="padding:0px 5px">-{{ o.discount }}%</td>
             <td style="padding:0px 5px" class="text-center">
                 {% if o.payment == True %}
@@ -72,7 +81,8 @@
                     class="bi bi-trash-fill m-1" style="font-size:20px;color: red;"></i></a></td>
             {% else %}
             <td style="padding:0px 5px" class="align-middle m-0 p-0 text-center"><a><i class="bi bi-trash-fill m-1"
-                                                               style="font-size:20px;color: grey;"></i></a></td>
+                                                                                       style="font-size:20px;color: grey;"></i></a>
+            </td>
             {% endif %}
         </tr>
         {% endfor %}

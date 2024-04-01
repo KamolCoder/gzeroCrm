@@ -1,5 +1,5 @@
 from django.urls import path
-from .serializers import *
+from .serializers import Clientapiview, CompanyView, Roomsapiview, RoomDetailapiview
 from .views import *
 
 urlpatterns = [
