@@ -3,6 +3,7 @@ from django.core.validators import MinValueValidator, MaxValueValidator
 from django.db import models
 from django.urls import reverse
 import django.utils.timezone
+from django.utils.html import mark_safe
 
 
 class Company(models.Model):
@@ -58,8 +59,7 @@ class Rooms(models.Model):
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
     title = models.CharField(max_length=255)
     persons = models.PositiveIntegerField()
-    is_working = models.BooleanField(default=True, blank=True, null=True)
-    image = models.ImageField(upload_to='images/rooms/', null=True, blank=True, verbose_name='Фото Комнат')
+    is_working = models.BooleanField(default=False, blank=True, null=True)
 
     def __str__(self):
         return f"{self.title}"
@@ -77,6 +77,9 @@ class Pricelists(models.Model):
     hour = models.PositiveSmallIntegerField(verbose_name='Час')
     price = models.PositiveIntegerField(verbose_name='Цена')
 
+    def __str__(self):
+        return f"For {self.hour} hours"
+
     class Meta:
         verbose_name = 'Прайслист'
         verbose_name_plural = 'Прайслисты'
@@ -85,7 +88,12 @@ class Pricelists(models.Model):
 class Abonement(models.Model):
     title = models.CharField(max_length=50, verbose_name='Абонемент')
     price = models.DecimalField(max_digits=10, decimal_places=2, verbose_name='Цена')
-    days = models.PositiveSmallIntegerField(verbose_name='days')
+    days = models.PositiveSmallIntegerField(verbose_name='Срок абонемента/дней')
+    work_hour_from = models.TimeField(blank=True, null=True, verbose_name='Рабочая времья от')
+    work_hour_to = models.TimeField(blank=True, null=True, verbose_name='Рабочая времья до')
+    free_time = models.SmallIntegerField(default=12, validators=[MinValueValidator(0), MaxValueValidator(12)],verbose_name='-50% на Митинг рум')
+    other_loc_work_time = models.PositiveSmallIntegerField(blank=True, null=True, default=3,
+                                                           verbose_name="Возможность работать в других локацих")
 
     def __str__(self):
         return f"{self.title} {self.price}"
@@ -150,8 +158,7 @@ class AbonementBuyList(models.Model):
     client = models.ForeignKey(Client, to_field='telegram_id', on_delete=models.CASCADE, verbose_name='ID клиента')
     subscription_start = models.DateField(verbose_name='Начало подписки', blank=True)
     subscription_end = models.DateField(verbose_name='Конец подписки', blank=True)
-    # subscription_end = models.DateField(default=subscription_start + datetime.timedelta(days=29),verbose_name='Конец подписки')
-    free_time = models.SmallIntegerField(default=15, validators=[MinValueValidator(0), MaxValueValidator(15)])
+    free_time = models.SmallIntegerField(default=12, validators=[MinValueValidator(0), MaxValueValidator(15)])
     is_active = models.BooleanField(default=True)
     created_at = models.DateTimeField(auto_now_add=True, blank=True, null=True)
     added_user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, null=True, blank=True)
@@ -164,14 +171,30 @@ class AbonementBuyList(models.Model):
         verbose_name_plural = 'Журнал покупок абонементов'
 
 
+class GalleryRooms(models.Model):
+    room = models.ForeignKey(Rooms, on_delete=models.CASCADE, blank=True, null=True, verbose_name='Room',
+                             related_name='room_image')
+    image = models.ImageField(upload_to='images/rooms', blank=True, null=True, verbose_name='Image')
+
+    def __str__(self):
+        return f"{self.pk}"
+
+    class Meta:
+        verbose_name = 'Rooms image'
+        verbose_name_plural = 'Rooms images'
+
+
 class Gallery(models.Model):
     filial = models.ForeignKey(Filial, on_delete=models.CASCADE, blank=True, null=True, verbose_name='Filial',
                                related_name='documents')
     image = models.ImageField(upload_to='images/branch', blank=True, null=True, verbose_name='Image')
 
+    def __str__(self):
+        return 'Photo'
+
     class Meta:
-        verbose_name = 'fotki'
-        verbose_name_plural = 'Библиотека fotok'
+        verbose_name = 'Filials image'
+        verbose_name_plural = 'Filials images'
 
 
 class Order(models.Model):
@@ -190,7 +213,7 @@ class Order(models.Model):
     payment = models.BooleanField(choices=IS_PAID_CHOICES, default=False, verbose_name='Тип оплаты')
     payment_status = models.BooleanField(verbose_name="Оплачен", default=False)
     summa = models.DecimalField(decimal_places=2, max_digits=12, verbose_name='Сумма', blank=True, null=True)
-    after_discount = models.DecimalField(decimal_places=2, max_digits=12, verbose_name='Сумма после скидки', blank=True, null=True)
+    summa_with_discount = models.DecimalField(decimal_places=2, max_digits=12, verbose_name='Сумма со скидкой', blank=True, null=True)
     order_start = models.DateTimeField(verbose_name='Бронировать от :')
     order_end = models.DateTimeField(verbose_name='Бронировать до :')
     added_user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, null=True, blank=True)

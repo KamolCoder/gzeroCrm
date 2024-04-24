@@ -85,7 +85,7 @@
 
 <div class="row mt-3">
     <!--User левая колонка подписки -->
-    <div class="col-sm-12 col-md-4">
+    <div class="col-sm-12 col-md-3">
         <div class="mt-1 mb-3 p-3 button-container bg-white border shadow-sm">
             <h3 class="text-center">Подписка</h3>
             {% if abonement.0.is_active == True %}
@@ -125,10 +125,14 @@
                                 <div class="modal-body">
                                     <form method="POST" action="{% url 'sale_abon' %}" enctype="multipart/form-data">
                                         {% csrf_token %}
-                                        <label for="{{ form2.abonement.id_for_label }}" class="form-label">Абонемент</label>{{form2.abonement}}
-                                        <label for="{{ form2.client.id_for_label }}" class="form-label">Ид клиента</label>{{form2.client}}
-                                        <label for="{{ form2.subscription_start.id_for_label }}" class="form-label">День активации</label>{{form2.subscription_start}}
-                                        <label for="{{ form2.subscription_end.id_for_label }}" class="form-label">День деактивации</label>{{form2.subscription_end}}
+                                        <label for="{{ form2.abonement.id_for_label }}"
+                                               class="form-label">Абонемент</label>{{form2.abonement}}
+                                        <label for="{{ form2.client.id_for_label }}" class="form-label">Ид
+                                            клиента</label>{{form2.client}}
+                                        <label for="{{ form2.subscription_start.id_for_label }}" class="form-label">День
+                                            активации</label>{{form2.subscription_start}}
+                                        <label for="{{ form2.subscription_end.id_for_label }}" class="form-label">День
+                                            деактивации</label>{{form2.subscription_end}}
                                         <button type="button" class="btn btn-secondary mt-2" data-bs-dismiss="modal">
                                             Отменить
                                         </button>
@@ -146,7 +150,7 @@
     <!--/User левая колонка подписки -->
 
     <!--User данные правая колонка -->
-    <div class="col-sm-12 col-md-8">
+    <div class="col-sm-12 col-md-9">
         <div class="mt-1 mb-3 p-3 button-container bg-white border shadow-sm custom-tabs">
             <ul class="nav nav-tabs" id="myTab" role="tablist">
                 <li class="nav-item" role="presentation">
@@ -172,7 +176,6 @@
                            width="80%">
                         <thead>
                         <tr>
-                            <th class="th-sm">ID</th>
                             <th class="th-sm">Дата</th>
                             <th class="th-sm">Филиал</th>
                             <th class="th-sm">Комната</th>
@@ -191,14 +194,14 @@
                         <tbody>
                         <tr>
                             {% for o in orders %}
-                            <td>{{ o.pk }}</td>
                             <td style="width:10rem">{{ o.order_start.date }}<br>{{ o.order_start.time }}-
                                 {{ o.order_end.time }}
                             </td>
                             <td>{{ o.filial }}</td>
                             <td>{{ o.product }}</td>
                             <td class="text-center">{{ o.hour }} час(а)</td>
-                            <td>{{ o.summa }}</td>
+                            <td><span style="text-decoration:line-through">{{ o.summa }}</span><br>{{o.summa_with_discount}}
+                            </td>
                             {% if o.is_deleted %}
                             <td class="text-danger text-center">Удален за неуплату</td>
                             <td></td>

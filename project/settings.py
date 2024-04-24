@@ -15,7 +15,7 @@ SECRET_KEY = 'django-insecure-7_+slxw@6rntmkjz_v_yygaqk6ldphlfnlv!yy4l68q7bigagp
 # SECRET_KEY = os.getenv("SECRET_KEY")
 DEBUG = True
 # SECURITY WARNING: don't run with debug turned on in production!
-MAIN_HOST = '0.0.0.0'
+MAIN_HOST = '0.0.0.0:8000'
 ALLOWED_HOSTS = ['*']
 # Application definition
 
@@ -28,6 +28,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'crm',
     'rest_framework',
+
 ]
 
 MIDDLEWARE = [

@@ -1,11 +1,13 @@
 import datetime
-
 from .models import AbonementBuyList, Client, NotifyDate, Order
 
 
 def add_my_forms(request):
-    noti = AbonementBuyList.objects.filter(is_active=True,
-                                           subscription_end__lt=datetime.date.today() + datetime.timedelta(days=5))
+    try:
+        noti = AbonementBuyList.objects.filter(is_active=True,
+                                               subscription_end__lt=datetime.date.today() + datetime.timedelta(days=5))
+    except AbonementBuyList.DoesNotExist:
+        noti = []
     counts = AbonementBuyList.objects.filter(is_active=True,
                                              subscription_end__lt=datetime.date.today() + datetime.timedelta(
                                                  days=5)).count()
@@ -19,7 +21,6 @@ def add_my_forms(request):
     except:
         last_notify = 1
         is_send = False
-
     return {
         'notifies': noti,
         'current_date': current_date,

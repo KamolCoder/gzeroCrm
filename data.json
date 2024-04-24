@@ -598,6 +598,2567 @@
     }
   },
   {
+    "model": "admin.logentry",
+    "pk": 47,
+    "fields": {
+      "action_time": "2024-01-20T13:56:54.644",
+      "user": 1,
+      "content_type": 14,
+      "object_id": "3",
+      "object_repr": "Office N1",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Title\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 48,
+    "fields": {
+      "action_time": "2024-01-23T01:17:03.138",
+      "user": 1,
+      "content_type": 16,
+      "object_id": "28",
+      "object_repr": "28 Miting-room 6",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"\\u0411\\u0440\\u043e\\u043d\\u0438\\u0440\\u043e\\u0432\\u0430\\u0442\\u044c \\u043e\\u0442 :\", \"\\u0411\\u0440\\u043e\\u043d\\u0438\\u0440\\u043e\\u0432\\u0430\\u0442\\u044c \\u0434\\u043e :\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 49,
+    "fields": {
+      "action_time": "2024-01-23T01:17:23.531",
+      "user": 1,
+      "content_type": 16,
+      "object_id": "28",
+      "object_repr": "28 Miting-room 6",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Filial\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 50,
+    "fields": {
+      "action_time": "2024-01-23T01:29:57.175",
+      "user": 1,
+      "content_type": 14,
+      "object_id": "2",
+      "object_repr": "Miting room 12",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Title\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 51,
+    "fields": {
+      "action_time": "2024-01-23T01:30:03.183",
+      "user": 1,
+      "content_type": 14,
+      "object_id": "1",
+      "object_repr": "Miting room 6",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Title\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 52,
+    "fields": {
+      "action_time": "2024-01-23T01:35:29.613",
+      "user": 1,
+      "content_type": 16,
+      "object_id": "27",
+      "object_repr": "27 Miting room 12",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Filial\", \"\\u0411\\u0440\\u043e\\u043d\\u0438\\u0440\\u043e\\u0432\\u0430\\u0442\\u044c \\u043e\\u0442 :\", \"\\u0411\\u0440\\u043e\\u043d\\u0438\\u0440\\u043e\\u0432\\u0430\\u0442\\u044c \\u0434\\u043e :\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 53,
+    "fields": {
+      "action_time": "2024-01-23T01:35:57.861",
+      "user": 1,
+      "content_type": 16,
+      "object_id": "24",
+      "object_repr": "24 Miting room 12",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"\\u0411\\u0440\\u043e\\u043d\\u0438\\u0440\\u043e\\u0432\\u0430\\u0442\\u044c \\u043e\\u0442 :\", \"\\u0411\\u0440\\u043e\\u043d\\u0438\\u0440\\u043e\\u0432\\u0430\\u0442\\u044c \\u0434\\u043e :\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 54,
+    "fields": {
+      "action_time": "2024-01-23T01:37:51.187",
+      "user": 1,
+      "content_type": 16,
+      "object_id": "25",
+      "object_repr": "25 Miting room 6",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Status\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 55,
+    "fields": {
+      "action_time": "2024-01-23T01:38:05.194",
+      "user": 1,
+      "content_type": 16,
+      "object_id": "28",
+      "object_repr": "28 Miting room 6",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Status\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 56,
+    "fields": {
+      "action_time": "2024-01-23T01:38:54.930",
+      "user": 1,
+      "content_type": 16,
+      "object_id": "28",
+      "object_repr": "28 Miting room 6",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"\\u041e\\u043f\\u043b\\u0430\\u0447\\u0435\\u043d\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 57,
+    "fields": {
+      "action_time": "2024-01-23T12:34:30.465",
+      "user": 1,
+      "content_type": 23,
+      "object_id": "1",
+      "object_repr": "GroundZero",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 58,
+    "fields": {
+      "action_time": "2024-01-23T12:34:41.725",
+      "user": 1,
+      "content_type": 11,
+      "object_id": "3",
+      "object_repr": "Sharq",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"\\u041a\\u043e\\u043c\\u043f\\u0430\\u043d\\u0438\\u044f\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 59,
+    "fields": {
+      "action_time": "2024-01-23T12:34:47.209",
+      "user": 1,
+      "content_type": 11,
+      "object_id": "2",
+      "object_repr": "Minor",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"\\u041a\\u043e\\u043c\\u043f\\u0430\\u043d\\u0438\\u044f\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 60,
+    "fields": {
+      "action_time": "2024-01-23T12:34:52.291",
+      "user": 1,
+      "content_type": 11,
+      "object_id": "1",
+      "object_repr": "Kitoblar Olami",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"\\u041a\\u043e\\u043c\\u043f\\u0430\\u043d\\u0438\\u044f\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 61,
+    "fields": {
+      "action_time": "2024-01-23T12:35:18.693",
+      "user": 1,
+      "content_type": 3,
+      "object_id": "1",
+      "object_repr": "GroundZero",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Name\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 62,
+    "fields": {
+      "action_time": "2024-01-26T11:37:23.743",
+      "user": 1,
+      "content_type": 16,
+      "object_id": "28",
+      "object_repr": "28 Miting room 6",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"\\u0411\\u0440\\u043e\\u043d\\u0438\\u0440\\u043e\\u0432\\u0430\\u0442\\u044c \\u043e\\u0442 :\", \"\\u0411\\u0440\\u043e\\u043d\\u0438\\u0440\\u043e\\u0432\\u0430\\u0442\\u044c \\u0434\\u043e :\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 63,
+    "fields": {
+      "action_time": "2024-01-26T11:37:32.342",
+      "user": 1,
+      "content_type": 16,
+      "object_id": "27",
+      "object_repr": "27 Miting room 12",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"\\u0411\\u0440\\u043e\\u043d\\u0438\\u0440\\u043e\\u0432\\u0430\\u0442\\u044c \\u043e\\u0442 :\", \"\\u0411\\u0440\\u043e\\u043d\\u0438\\u0440\\u043e\\u0432\\u0430\\u0442\\u044c \\u0434\\u043e :\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 64,
+    "fields": {
+      "action_time": "2024-01-30T13:06:19.225",
+      "user": 1,
+      "content_type": 11,
+      "object_id": "3",
+      "object_repr": "Sharq",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"\\u0424\\u043e\\u0442\\u043e \\u0444\\u0438\\u043b\\u0438\\u0430\\u043b\\u0430\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 65,
+    "fields": {
+      "action_time": "2024-01-30T14:07:50.227",
+      "user": 1,
+      "content_type": 11,
+      "object_id": "3",
+      "object_repr": "Sharq",
+      "action_flag": 2,
+      "change_message": "[{\"added\": {\"name\": \"fotki\", \"object\": \"Gallery object (1)\"}}, {\"added\": {\"name\": \"fotki\", \"object\": \"Gallery object (2)\"}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 66,
+    "fields": {
+      "action_time": "2024-01-30T14:38:55.012",
+      "user": 1,
+      "content_type": 11,
+      "object_id": "3",
+      "object_repr": "Sharq",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"\\u0410\\u0434\\u0440\\u0435\\u0441 \\u0446\\u0435\\u043d\\u0442\\u0440\\u0430\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 67,
+    "fields": {
+      "action_time": "2024-01-30T14:39:08.773",
+      "user": 1,
+      "content_type": 11,
+      "object_id": "2",
+      "object_repr": "Minor",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"\\u0410\\u0434\\u0440\\u0435\\u0441 \\u0446\\u0435\\u043d\\u0442\\u0440\\u0430\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 68,
+    "fields": {
+      "action_time": "2024-01-30T14:39:18.210",
+      "user": 1,
+      "content_type": 11,
+      "object_id": "1",
+      "object_repr": "Kitoblar Olami",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"\\u0410\\u0434\\u0440\\u0435\\u0441 \\u0446\\u0435\\u043d\\u0442\\u0440\\u0430\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 69,
+    "fields": {
+      "action_time": "2024-01-30T17:09:27.484",
+      "user": 1,
+      "content_type": 16,
+      "object_id": "28",
+      "object_repr": "28 Miting room 6",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"\\u0411\\u0440\\u043e\\u043d\\u0438\\u0440\\u043e\\u0432\\u0430\\u0442\\u044c \\u043e\\u0442 :\", \"\\u0411\\u0440\\u043e\\u043d\\u0438\\u0440\\u043e\\u0432\\u0430\\u0442\\u044c \\u0434\\u043e :\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 70,
+    "fields": {
+      "action_time": "2024-01-30T17:09:50.643",
+      "user": 1,
+      "content_type": 16,
+      "object_id": "27",
+      "object_repr": "27 Miting room 12",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"\\u0411\\u0440\\u043e\\u043d\\u0438\\u0440\\u043e\\u0432\\u0430\\u0442\\u044c \\u043e\\u0442 :\", \"\\u0411\\u0440\\u043e\\u043d\\u0438\\u0440\\u043e\\u0432\\u0430\\u0442\\u044c \\u0434\\u043e :\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 71,
+    "fields": {
+      "action_time": "2024-01-30T17:10:16.896",
+      "user": 1,
+      "content_type": 16,
+      "object_id": "26",
+      "object_repr": "26 Zoom room 3",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"\\u0411\\u0440\\u043e\\u043d\\u0438\\u0440\\u043e\\u0432\\u0430\\u0442\\u044c \\u043e\\u0442 :\", \"\\u0411\\u0440\\u043e\\u043d\\u0438\\u0440\\u043e\\u0432\\u0430\\u0442\\u044c \\u0434\\u043e :\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 72,
+    "fields": {
+      "action_time": "2024-01-31T16:38:39.568",
+      "user": 1,
+      "content_type": 16,
+      "object_id": "28",
+      "object_repr": "28 Miting room 6",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"\\u0411\\u0440\\u043e\\u043d\\u0438\\u0440\\u043e\\u0432\\u0430\\u0442\\u044c \\u043e\\u0442 :\", \"\\u0411\\u0440\\u043e\\u043d\\u0438\\u0440\\u043e\\u0432\\u0430\\u0442\\u044c \\u0434\\u043e :\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 73,
+    "fields": {
+      "action_time": "2024-01-31T16:58:18.610",
+      "user": 1,
+      "content_type": 16,
+      "object_id": "27",
+      "object_repr": "27 Miting room 12",
+      "action_flag": 2,
+      "change_message": "[]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 74,
+    "fields": {
+      "action_time": "2024-01-31T16:58:42.804",
+      "user": 1,
+      "content_type": 16,
+      "object_id": "25",
+      "object_repr": "25 Miting room 6",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"\\u0411\\u0440\\u043e\\u043d\\u0438\\u0440\\u043e\\u0432\\u0430\\u0442\\u044c \\u043e\\u0442 :\", \"\\u0411\\u0440\\u043e\\u043d\\u0438\\u0440\\u043e\\u0432\\u0430\\u0442\\u044c \\u0434\\u043e :\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 75,
+    "fields": {
+      "action_time": "2024-01-31T16:59:05.738",
+      "user": 1,
+      "content_type": 16,
+      "object_id": "24",
+      "object_repr": "24 Miting room 12",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"\\u0411\\u0440\\u043e\\u043d\\u0438\\u0440\\u043e\\u0432\\u0430\\u0442\\u044c \\u043e\\u0442 :\", \"\\u0411\\u0440\\u043e\\u043d\\u0438\\u0440\\u043e\\u0432\\u0430\\u0442\\u044c \\u0434\\u043e :\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 76,
+    "fields": {
+      "action_time": "2024-01-31T17:08:26.031",
+      "user": 1,
+      "content_type": 16,
+      "object_id": "28",
+      "object_repr": "28 Miting room 6",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Filial\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 77,
+    "fields": {
+      "action_time": "2024-02-01T18:11:56.218",
+      "user": 1,
+      "content_type": 16,
+      "object_id": "27",
+      "object_repr": "27 Miting room 12",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Filial\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 78,
+    "fields": {
+      "action_time": "2024-02-02T10:00:51.787",
+      "user": 1,
+      "content_type": 16,
+      "object_id": "30",
+      "object_repr": "30 Miting room 12",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"\\u0411\\u0440\\u043e\\u043d\\u0438\\u0440\\u043e\\u0432\\u0430\\u0442\\u044c \\u043e\\u0442 :\", \"\\u0411\\u0440\\u043e\\u043d\\u0438\\u0440\\u043e\\u0432\\u0430\\u0442\\u044c \\u0434\\u043e :\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 79,
+    "fields": {
+      "action_time": "2024-02-02T10:01:00.685",
+      "user": 1,
+      "content_type": 16,
+      "object_id": "29",
+      "object_repr": "29 Miting room 8",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"\\u0411\\u0440\\u043e\\u043d\\u0438\\u0440\\u043e\\u0432\\u0430\\u0442\\u044c \\u043e\\u0442 :\", \"\\u0411\\u0440\\u043e\\u043d\\u0438\\u0440\\u043e\\u0432\\u0430\\u0442\\u044c \\u0434\\u043e :\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 80,
+    "fields": {
+      "action_time": "2024-02-02T10:01:18.388",
+      "user": 1,
+      "content_type": 16,
+      "object_id": "30",
+      "object_repr": "30 Miting room 12",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 81,
+    "fields": {
+      "action_time": "2024-02-02T10:01:18.392",
+      "user": 1,
+      "content_type": 16,
+      "object_id": "29",
+      "object_repr": "29 Miting room 8",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 82,
+    "fields": {
+      "action_time": "2024-02-02T10:01:18.398",
+      "user": 1,
+      "content_type": 16,
+      "object_id": "28",
+      "object_repr": "28 Miting room 6",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 83,
+    "fields": {
+      "action_time": "2024-02-02T10:01:18.403",
+      "user": 1,
+      "content_type": 16,
+      "object_id": "27",
+      "object_repr": "27 Miting room 12",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 84,
+    "fields": {
+      "action_time": "2024-02-02T10:01:18.408",
+      "user": 1,
+      "content_type": 16,
+      "object_id": "26",
+      "object_repr": "26 Zoom room 3",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 85,
+    "fields": {
+      "action_time": "2024-02-02T10:01:18.413",
+      "user": 1,
+      "content_type": 16,
+      "object_id": "25",
+      "object_repr": "25 Miting room 6",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 86,
+    "fields": {
+      "action_time": "2024-02-02T10:01:18.418",
+      "user": 1,
+      "content_type": 16,
+      "object_id": "24",
+      "object_repr": "24 Miting room 12",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 87,
+    "fields": {
+      "action_time": "2024-02-06T14:43:21.085",
+      "user": 1,
+      "content_type": 16,
+      "object_id": "34",
+      "object_repr": "34 Miting room 10",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"\\u041e\\u043f\\u043b\\u0430\\u0447\\u0435\\u043d\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 88,
+    "fields": {
+      "action_time": "2024-02-07T16:32:53.526",
+      "user": 1,
+      "content_type": 14,
+      "object_id": "5",
+      "object_repr": "Miting room 10",
+      "action_flag": 2,
+      "change_message": "[{\"added\": {\"name\": \"pricelists\", \"object\": \"Pricelists object (17)\"}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 89,
+    "fields": {
+      "action_time": "2024-02-08T10:08:16.805",
+      "user": 1,
+      "content_type": 16,
+      "object_id": "37",
+      "object_repr": "37 Miting room 10",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"\\u0411\\u0440\\u043e\\u043d\\u0438\\u0440\\u043e\\u0432\\u0430\\u0442\\u044c \\u043e\\u0442 :\", \"\\u0411\\u0440\\u043e\\u043d\\u0438\\u0440\\u043e\\u0432\\u0430\\u0442\\u044c \\u0434\\u043e :\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 90,
+    "fields": {
+      "action_time": "2024-02-08T10:08:44.060",
+      "user": 1,
+      "content_type": 16,
+      "object_id": "36",
+      "object_repr": "36 Miting room 10",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 91,
+    "fields": {
+      "action_time": "2024-02-08T10:09:18.026",
+      "user": 1,
+      "content_type": 16,
+      "object_id": "35",
+      "object_repr": "35 Miting room 10",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"\\u0411\\u0440\\u043e\\u043d\\u0438\\u0440\\u043e\\u0432\\u0430\\u0442\\u044c \\u043e\\u0442 :\", \"\\u0411\\u0440\\u043e\\u043d\\u0438\\u0440\\u043e\\u0432\\u0430\\u0442\\u044c \\u0434\\u043e :\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 92,
+    "fields": {
+      "action_time": "2024-02-09T15:56:22.010",
+      "user": 1,
+      "content_type": 16,
+      "object_id": "38",
+      "object_repr": "38 Miting room 10",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"\\u0411\\u0440\\u043e\\u043d\\u0438\\u0440\\u043e\\u0432\\u0430\\u0442\\u044c \\u043e\\u0442 :\", \"\\u0411\\u0440\\u043e\\u043d\\u0438\\u0440\\u043e\\u0432\\u0430\\u0442\\u044c \\u0434\\u043e :\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 93,
+    "fields": {
+      "action_time": "2024-02-09T16:16:26.214",
+      "user": 1,
+      "content_type": 11,
+      "object_id": "1",
+      "object_repr": "Kitoblar",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Title\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 94,
+    "fields": {
+      "action_time": "2024-02-09T17:01:46.522",
+      "user": 1,
+      "content_type": 9,
+      "object_id": "3",
+      "object_repr": "admin Ktoto",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 95,
+    "fields": {
+      "action_time": "2024-02-09T17:01:46.526",
+      "user": 1,
+      "content_type": 9,
+      "object_id": "2",
+      "object_repr": "Zooplanet AVAZJON",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 96,
+    "fields": {
+      "action_time": "2024-02-09T17:19:21.361",
+      "user": 1,
+      "content_type": 9,
+      "object_id": "4",
+      "object_repr": "asd dsa",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 97,
+    "fields": {
+      "action_time": "2024-02-13T14:40:31.971",
+      "user": 1,
+      "content_type": 9,
+      "object_id": "31",
+      "object_repr": "Brian\tFerguson ",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 98,
+    "fields": {
+      "action_time": "2024-02-13T14:40:31.978",
+      "user": 1,
+      "content_type": 9,
+      "object_id": "21",
+      "object_repr": "Dominic\tRoss ",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 99,
+    "fields": {
+      "action_time": "2024-02-13T14:40:31.982",
+      "user": 1,
+      "content_type": 9,
+      "object_id": "26",
+      "object_repr": "Emma\tForsyth ",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 100,
+    "fields": {
+      "action_time": "2024-02-13T14:40:31.985",
+      "user": 1,
+      "content_type": 9,
+      "object_id": "25",
+      "object_repr": "Jessica\tRandall ",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 101,
+    "fields": {
+      "action_time": "2024-02-13T14:40:31.988",
+      "user": 1,
+      "content_type": 9,
+      "object_id": "22",
+      "object_repr": "Julian\tRussell ",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 102,
+    "fields": {
+      "action_time": "2024-02-13T14:40:31.991",
+      "user": 1,
+      "content_type": 9,
+      "object_id": "29",
+      "object_repr": "Keith\tGibson ",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 103,
+    "fields": {
+      "action_time": "2024-02-13T14:40:31.995",
+      "user": 1,
+      "content_type": 9,
+      "object_id": "30",
+      "object_repr": "Kevin\tBlake ",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 104,
+    "fields": {
+      "action_time": "2024-02-13T14:40:32.000",
+      "user": 1,
+      "content_type": 9,
+      "object_id": "23",
+      "object_repr": "Leah\tSkinner ",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 105,
+    "fields": {
+      "action_time": "2024-02-13T14:40:32.005",
+      "user": 1,
+      "content_type": 9,
+      "object_id": "28",
+      "object_repr": "Lisa\tTerry ",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 106,
+    "fields": {
+      "action_time": "2024-02-13T14:40:32.010",
+      "user": 1,
+      "content_type": 9,
+      "object_id": "27",
+      "object_repr": "Natalie\tBaker ",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 107,
+    "fields": {
+      "action_time": "2024-02-13T14:40:32.015",
+      "user": 1,
+      "content_type": 9,
+      "object_id": "13",
+      "object_repr": "Vanessa\tBower ",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 108,
+    "fields": {
+      "action_time": "2024-02-14T11:49:23.098",
+      "user": 1,
+      "content_type": 16,
+      "object_id": "43",
+      "object_repr": "43 Miting room 6",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"\\u0411\\u0440\\u043e\\u043d\\u0438\\u0440\\u043e\\u0432\\u0430\\u0442\\u044c \\u043e\\u0442 :\", \"\\u0411\\u0440\\u043e\\u043d\\u0438\\u0440\\u043e\\u0432\\u0430\\u0442\\u044c \\u0434\\u043e :\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 109,
+    "fields": {
+      "action_time": "2024-02-14T11:49:31.776",
+      "user": 1,
+      "content_type": 16,
+      "object_id": "42",
+      "object_repr": "42 Miting room 8",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"\\u0411\\u0440\\u043e\\u043d\\u0438\\u0440\\u043e\\u0432\\u0430\\u0442\\u044c \\u043e\\u0442 :\", \"\\u0411\\u0440\\u043e\\u043d\\u0438\\u0440\\u043e\\u0432\\u0430\\u0442\\u044c \\u0434\\u043e :\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 110,
+    "fields": {
+      "action_time": "2024-02-14T14:38:38.455",
+      "user": 1,
+      "content_type": 16,
+      "object_id": "41",
+      "object_repr": "41 Miting room 12",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Status\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 111,
+    "fields": {
+      "action_time": "2024-02-14T14:39:06.237",
+      "user": 1,
+      "content_type": 16,
+      "object_id": "41",
+      "object_repr": "41 Miting room 12",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Status\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 112,
+    "fields": {
+      "action_time": "2024-02-14T14:39:24.542",
+      "user": 1,
+      "content_type": 16,
+      "object_id": "44",
+      "object_repr": "44 Miting room 8",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Status\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 113,
+    "fields": {
+      "action_time": "2024-02-14T14:39:53.461",
+      "user": 1,
+      "content_type": 16,
+      "object_id": "43",
+      "object_repr": "43 Miting room 6",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Status\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 114,
+    "fields": {
+      "action_time": "2024-02-14T14:39:53.463",
+      "user": 1,
+      "content_type": 16,
+      "object_id": "42",
+      "object_repr": "42 Miting room 8",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Status\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 115,
+    "fields": {
+      "action_time": "2024-02-14T15:23:18.372",
+      "user": 1,
+      "content_type": 9,
+      "object_id": "3",
+      "object_repr": "Assan Diop",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"\\u0421\\u0442\\u0430\\u0436 \\u043a\\u043b\\u0438\\u0435\\u043d\\u0442\\u0430/\\u0434\\u0435\\u043d\\u044c\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 116,
+    "fields": {
+      "action_time": "2024-02-14T15:52:35.857",
+      "user": 1,
+      "content_type": 14,
+      "object_id": "9",
+      "object_repr": "Zoom room 3",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Persons\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 117,
+    "fields": {
+      "action_time": "2024-02-14T15:52:46.736",
+      "user": 1,
+      "content_type": 14,
+      "object_id": "8",
+      "object_repr": "Zoom room 2",
+      "action_flag": 2,
+      "change_message": "[]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 118,
+    "fields": {
+      "action_time": "2024-02-14T15:52:57.575",
+      "user": 1,
+      "content_type": 14,
+      "object_id": "7",
+      "object_repr": "Zoom room 1",
+      "action_flag": 2,
+      "change_message": "[]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 119,
+    "fields": {
+      "action_time": "2024-02-14T15:53:35.692",
+      "user": 1,
+      "content_type": 14,
+      "object_id": "6",
+      "object_repr": "Miting room 8",
+      "action_flag": 2,
+      "change_message": "[{\"added\": {\"name\": \"pricelists\", \"object\": \"Pricelists object (18)\"}}, {\"added\": {\"name\": \"pricelists\", \"object\": \"Pricelists object (19)\"}}, {\"added\": {\"name\": \"pricelists\", \"object\": \"Pricelists object (20)\"}}, {\"changed\": {\"name\": \"pricelists\", \"object\": \"Pricelists object (7)\", \"fields\": [\"\\u0426\\u0435\\u043d\\u0430\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 120,
+    "fields": {
+      "action_time": "2024-02-14T15:55:21.039",
+      "user": 1,
+      "content_type": 16,
+      "object_id": "45",
+      "object_repr": "45 Miting room 8",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Status\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 121,
+    "fields": {
+      "action_time": "2024-02-15T15:52:58.134",
+      "user": 1,
+      "content_type": 17,
+      "object_id": "1",
+      "object_repr": "Office N1",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 122,
+    "fields": {
+      "action_time": "2024-02-19T11:12:07.234",
+      "user": 1,
+      "content_type": 16,
+      "object_id": "45",
+      "object_repr": "45 Miting room 8",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Is deleted\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 123,
+    "fields": {
+      "action_time": "2024-02-19T13:15:59.527",
+      "user": 1,
+      "content_type": 14,
+      "object_id": "3",
+      "object_repr": "Office N1",
+      "action_flag": 2,
+      "change_message": "[]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 124,
+    "fields": {
+      "action_time": "2024-02-19T13:16:24.003",
+      "user": 1,
+      "content_type": 14,
+      "object_id": "10",
+      "object_repr": "Office N2",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 125,
+    "fields": {
+      "action_time": "2024-02-19T13:16:40.797",
+      "user": 1,
+      "content_type": 14,
+      "object_id": "11",
+      "object_repr": "Office N3",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 126,
+    "fields": {
+      "action_time": "2024-02-19T13:16:56.055",
+      "user": 1,
+      "content_type": 14,
+      "object_id": "11",
+      "object_repr": "Office N3",
+      "action_flag": 2,
+      "change_message": "[]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 127,
+    "fields": {
+      "action_time": "2024-02-19T13:17:12.742",
+      "user": 1,
+      "content_type": 14,
+      "object_id": "12",
+      "object_repr": "Office N4",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 128,
+    "fields": {
+      "action_time": "2024-02-19T13:17:23.455",
+      "user": 1,
+      "content_type": 14,
+      "object_id": "13",
+      "object_repr": "Office N5",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 129,
+    "fields": {
+      "action_time": "2024-02-19T13:17:38.458",
+      "user": 1,
+      "content_type": 14,
+      "object_id": "14",
+      "object_repr": "Office N6",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 130,
+    "fields": {
+      "action_time": "2024-02-19T13:17:44.899",
+      "user": 1,
+      "content_type": 14,
+      "object_id": "15",
+      "object_repr": "Office N7",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 131,
+    "fields": {
+      "action_time": "2024-02-19T13:17:57.223",
+      "user": 1,
+      "content_type": 14,
+      "object_id": "16",
+      "object_repr": "Office N8",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 132,
+    "fields": {
+      "action_time": "2024-02-19T13:18:04.069",
+      "user": 1,
+      "content_type": 14,
+      "object_id": "17",
+      "object_repr": "Office N9",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 133,
+    "fields": {
+      "action_time": "2024-02-19T13:18:11.135",
+      "user": 1,
+      "content_type": 14,
+      "object_id": "18",
+      "object_repr": "Office N10",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 134,
+    "fields": {
+      "action_time": "2024-02-19T13:18:23.229",
+      "user": 1,
+      "content_type": 14,
+      "object_id": "19",
+      "object_repr": "Office N11",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 135,
+    "fields": {
+      "action_time": "2024-02-19T13:18:32.503",
+      "user": 1,
+      "content_type": 14,
+      "object_id": "20",
+      "object_repr": "Office N12",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 136,
+    "fields": {
+      "action_time": "2024-02-19T14:37:15.080",
+      "user": 1,
+      "content_type": 4,
+      "object_id": "2",
+      "object_repr": "Madina",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 137,
+    "fields": {
+      "action_time": "2024-02-19T14:37:37.943",
+      "user": 1,
+      "content_type": 4,
+      "object_id": "2",
+      "object_repr": "Madina",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Groups\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 138,
+    "fields": {
+      "action_time": "2024-02-19T14:42:02.445",
+      "user": 1,
+      "content_type": 4,
+      "object_id": "2",
+      "object_repr": "Madina",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"First name\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 139,
+    "fields": {
+      "action_time": "2024-02-19T15:04:51.664",
+      "user": 1,
+      "content_type": 16,
+      "object_id": "49",
+      "object_repr": "49 Miting room 10",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"\\u041e\\u043f\\u043b\\u0430\\u0447\\u0435\\u043d\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 140,
+    "fields": {
+      "action_time": "2024-02-19T15:08:13.236",
+      "user": 1,
+      "content_type": 16,
+      "object_id": "49",
+      "object_repr": "49 Miting room 10",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"\\u041e\\u043f\\u043b\\u0430\\u0447\\u0435\\u043d\", \"Pay accept user\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 141,
+    "fields": {
+      "action_time": "2024-02-19T15:08:40.471",
+      "user": 1,
+      "content_type": 16,
+      "object_id": "49",
+      "object_repr": "49 Miting room 10",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"\\u041e\\u043f\\u043b\\u0430\\u0447\\u0435\\u043d\", \"Pay accept user\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 142,
+    "fields": {
+      "action_time": "2024-03-20T16:20:01.494",
+      "user": 1,
+      "content_type": 24,
+      "object_id": "1",
+      "object_repr": "Events object (1)",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 143,
+    "fields": {
+      "action_time": "2024-03-20T16:24:14.932",
+      "user": 1,
+      "content_type": 24,
+      "object_id": "1",
+      "object_repr": "Events object (1)",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"\\u041f\\u043e\\u0441\\u0442\\u0435\\u0440\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 144,
+    "fields": {
+      "action_time": "2024-03-21T00:14:13.454",
+      "user": 1,
+      "content_type": 24,
+      "object_id": "1",
+      "object_repr": "Events object (1)",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"\\u0417\\u0430\\u0433\\u043e\\u043b\\u043e\\u0432\\u043a\\u0430\", \"\\u041e\\u043f\\u0438\\u0441\\u0430\\u043d\\u0438\\u044f\", \"\\u041f\\u043e\\u0441\\u0442\\u0435\\u0440\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 145,
+    "fields": {
+      "action_time": "2024-03-21T00:14:19.812",
+      "user": 1,
+      "content_type": 24,
+      "object_id": "1",
+      "object_repr": "Events object (1)",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"\\u041f\\u043e\\u0441\\u0442\\u0435\\u0440\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 146,
+    "fields": {
+      "action_time": "2024-03-21T00:15:59.972",
+      "user": 1,
+      "content_type": 24,
+      "object_id": "1",
+      "object_repr": "Events object (1)",
+      "action_flag": 2,
+      "change_message": "[]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 147,
+    "fields": {
+      "action_time": "2024-03-21T00:16:10.602",
+      "user": 1,
+      "content_type": 24,
+      "object_id": "2",
+      "object_repr": "Events object (2)",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 148,
+    "fields": {
+      "action_time": "2024-03-21T00:19:53.502",
+      "user": 1,
+      "content_type": 24,
+      "object_id": "3",
+      "object_repr": "Events object (3)",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 149,
+    "fields": {
+      "action_time": "2024-03-21T00:37:04.979",
+      "user": 1,
+      "content_type": 24,
+      "object_id": "4",
+      "object_repr": "Events object (4)",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 150,
+    "fields": {
+      "action_time": "2024-03-21T00:37:16.057",
+      "user": 1,
+      "content_type": 24,
+      "object_id": "5",
+      "object_repr": "Events object (5)",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 151,
+    "fields": {
+      "action_time": "2024-03-26T14:07:38.842",
+      "user": 1,
+      "content_type": 7,
+      "object_id": "1",
+      "object_repr": "HOT DESK UNLIMITED 1500000",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 152,
+    "fields": {
+      "action_time": "2024-04-18T14:06:45.464",
+      "user": 1,
+      "content_type": 14,
+      "object_id": "20",
+      "object_repr": "Office N12",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Is working\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 153,
+    "fields": {
+      "action_time": "2024-04-18T14:06:45.466",
+      "user": 1,
+      "content_type": 14,
+      "object_id": "19",
+      "object_repr": "Office N11",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Is working\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 154,
+    "fields": {
+      "action_time": "2024-04-18T14:06:45.467",
+      "user": 1,
+      "content_type": 14,
+      "object_id": "18",
+      "object_repr": "Office N10",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Is working\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 155,
+    "fields": {
+      "action_time": "2024-04-18T14:06:45.467",
+      "user": 1,
+      "content_type": 14,
+      "object_id": "17",
+      "object_repr": "Office N9",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Is working\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 156,
+    "fields": {
+      "action_time": "2024-04-18T14:06:45.468",
+      "user": 1,
+      "content_type": 14,
+      "object_id": "16",
+      "object_repr": "Office N8",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Is working\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 157,
+    "fields": {
+      "action_time": "2024-04-18T14:06:45.468",
+      "user": 1,
+      "content_type": 14,
+      "object_id": "15",
+      "object_repr": "Office N7",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Is working\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 158,
+    "fields": {
+      "action_time": "2024-04-18T14:06:45.469",
+      "user": 1,
+      "content_type": 14,
+      "object_id": "14",
+      "object_repr": "Office N6",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Is working\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 159,
+    "fields": {
+      "action_time": "2024-04-18T14:06:45.470",
+      "user": 1,
+      "content_type": 14,
+      "object_id": "13",
+      "object_repr": "Office N5",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Is working\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 160,
+    "fields": {
+      "action_time": "2024-04-18T14:06:45.470",
+      "user": 1,
+      "content_type": 14,
+      "object_id": "12",
+      "object_repr": "Office N4",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Is working\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 161,
+    "fields": {
+      "action_time": "2024-04-18T14:06:45.471",
+      "user": 1,
+      "content_type": 14,
+      "object_id": "11",
+      "object_repr": "Office N3",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Is working\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 162,
+    "fields": {
+      "action_time": "2024-04-18T14:06:45.472",
+      "user": 1,
+      "content_type": 14,
+      "object_id": "10",
+      "object_repr": "Office N2",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Is working\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 163,
+    "fields": {
+      "action_time": "2024-04-18T14:06:45.473",
+      "user": 1,
+      "content_type": 14,
+      "object_id": "9",
+      "object_repr": "Zoom room 3",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Is working\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 164,
+    "fields": {
+      "action_time": "2024-04-18T14:06:45.474",
+      "user": 1,
+      "content_type": 14,
+      "object_id": "8",
+      "object_repr": "Zoom room 2",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Is working\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 165,
+    "fields": {
+      "action_time": "2024-04-18T14:06:45.474",
+      "user": 1,
+      "content_type": 14,
+      "object_id": "7",
+      "object_repr": "Zoom room 1",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Is working\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 166,
+    "fields": {
+      "action_time": "2024-04-18T14:06:45.475",
+      "user": 1,
+      "content_type": 14,
+      "object_id": "6",
+      "object_repr": "Miting room 8",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Is working\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 167,
+    "fields": {
+      "action_time": "2024-04-18T14:06:45.475",
+      "user": 1,
+      "content_type": 14,
+      "object_id": "5",
+      "object_repr": "Miting room 10",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Is working\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 168,
+    "fields": {
+      "action_time": "2024-04-18T14:06:45.476",
+      "user": 1,
+      "content_type": 14,
+      "object_id": "4",
+      "object_repr": "Miting room 6",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Is working\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 169,
+    "fields": {
+      "action_time": "2024-04-18T14:06:45.478",
+      "user": 1,
+      "content_type": 14,
+      "object_id": "3",
+      "object_repr": "Office N1",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Is working\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 170,
+    "fields": {
+      "action_time": "2024-04-18T14:06:45.479",
+      "user": 1,
+      "content_type": 14,
+      "object_id": "2",
+      "object_repr": "Miting room 12",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Is working\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 171,
+    "fields": {
+      "action_time": "2024-04-18T14:06:45.480",
+      "user": 1,
+      "content_type": 14,
+      "object_id": "1",
+      "object_repr": "Miting room 6",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Is working\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 172,
+    "fields": {
+      "action_time": "2024-04-19T11:43:44.185",
+      "user": 1,
+      "content_type": 14,
+      "object_id": "6",
+      "object_repr": "Miting room 8",
+      "action_flag": 2,
+      "change_message": "[{\"added\": {\"name\": \"Rooms image\", \"object\": \"1\"}}, {\"added\": {\"name\": \"Rooms image\", \"object\": \"2\"}}, {\"added\": {\"name\": \"Rooms image\", \"object\": \"3\"}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 173,
+    "fields": {
+      "action_time": "2024-04-19T11:45:27.980",
+      "user": 1,
+      "content_type": 14,
+      "object_id": "5",
+      "object_repr": "Miting room 10",
+      "action_flag": 2,
+      "change_message": "[{\"added\": {\"name\": \"Rooms image\", \"object\": \"4\"}}, {\"added\": {\"name\": \"Rooms image\", \"object\": \"5\"}}, {\"added\": {\"name\": \"Rooms image\", \"object\": \"6\"}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 174,
+    "fields": {
+      "action_time": "2024-04-19T11:46:45.003",
+      "user": 1,
+      "content_type": 11,
+      "object_id": "3",
+      "object_repr": "Sharq",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"name\": \"Filials image\", \"object\": \"Gallery object (1)\", \"fields\": [\"Image\"]}}, {\"changed\": {\"name\": \"Filials image\", \"object\": \"Gallery object (2)\", \"fields\": [\"Image\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 175,
+    "fields": {
+      "action_time": "2024-04-19T11:55:40.203",
+      "user": 1,
+      "content_type": 11,
+      "object_id": "3",
+      "object_repr": "Sharq",
+      "action_flag": 2,
+      "change_message": "[{\"deleted\": {\"name\": \"Filials image\", \"object\": \"Gallery object (None)\"}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 176,
+    "fields": {
+      "action_time": "2024-04-19T11:55:58.454",
+      "user": 1,
+      "content_type": 11,
+      "object_id": "3",
+      "object_repr": "Sharq",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"name\": \"Filials image\", \"object\": \"Gallery object (1)\", \"fields\": [\"Image\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 177,
+    "fields": {
+      "action_time": "2024-04-19T11:56:11.694",
+      "user": 1,
+      "content_type": 11,
+      "object_id": "2",
+      "object_repr": "Minor",
+      "action_flag": 2,
+      "change_message": "[{\"added\": {\"name\": \"Filials image\", \"object\": \"Gallery object (3)\"}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 178,
+    "fields": {
+      "action_time": "2024-04-19T11:56:27.250",
+      "user": 1,
+      "content_type": 11,
+      "object_id": "1",
+      "object_repr": "Kitoblar",
+      "action_flag": 2,
+      "change_message": "[{\"added\": {\"name\": \"Filials image\", \"object\": \"Gallery object (4)\"}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 179,
+    "fields": {
+      "action_time": "2024-04-19T12:05:12.134",
+      "user": 1,
+      "content_type": 17,
+      "object_id": "1",
+      "object_repr": "Office N1",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 180,
+    "fields": {
+      "action_time": "2024-04-19T12:05:19.900",
+      "user": 1,
+      "content_type": 20,
+      "object_id": "3",
+      "object_repr": "ManagersBonus object (3)",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 181,
+    "fields": {
+      "action_time": "2024-04-19T12:05:19.907",
+      "user": 1,
+      "content_type": 20,
+      "object_id": "2",
+      "object_repr": "ManagersBonus object (2)",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 182,
+    "fields": {
+      "action_time": "2024-04-19T12:05:19.910",
+      "user": 1,
+      "content_type": 20,
+      "object_id": "1",
+      "object_repr": "ManagersBonus object (1)",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 183,
+    "fields": {
+      "action_time": "2024-04-19T12:05:31.416",
+      "user": 1,
+      "content_type": 16,
+      "object_id": "56",
+      "object_repr": "56 Miting room 10",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 184,
+    "fields": {
+      "action_time": "2024-04-19T12:05:31.423",
+      "user": 1,
+      "content_type": 16,
+      "object_id": "55",
+      "object_repr": "55 Miting room 12",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 185,
+    "fields": {
+      "action_time": "2024-04-19T12:05:31.426",
+      "user": 1,
+      "content_type": 16,
+      "object_id": "54",
+      "object_repr": "54 Miting room 6",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 186,
+    "fields": {
+      "action_time": "2024-04-19T12:05:31.429",
+      "user": 1,
+      "content_type": 16,
+      "object_id": "53",
+      "object_repr": "53 Miting room 12",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 187,
+    "fields": {
+      "action_time": "2024-04-19T12:05:31.433",
+      "user": 1,
+      "content_type": 16,
+      "object_id": "52",
+      "object_repr": "52 Miting room 12",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 188,
+    "fields": {
+      "action_time": "2024-04-19T12:05:31.438",
+      "user": 1,
+      "content_type": 16,
+      "object_id": "51",
+      "object_repr": "51 Miting room 6",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 189,
+    "fields": {
+      "action_time": "2024-04-19T12:05:31.443",
+      "user": 1,
+      "content_type": 16,
+      "object_id": "50",
+      "object_repr": "50 Miting room 12",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 190,
+    "fields": {
+      "action_time": "2024-04-19T12:05:31.449",
+      "user": 1,
+      "content_type": 16,
+      "object_id": "49",
+      "object_repr": "49 Miting room 10",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 191,
+    "fields": {
+      "action_time": "2024-04-19T12:05:31.453",
+      "user": 1,
+      "content_type": 16,
+      "object_id": "48",
+      "object_repr": "48 Miting room 8",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 192,
+    "fields": {
+      "action_time": "2024-04-19T12:05:31.458",
+      "user": 1,
+      "content_type": 16,
+      "object_id": "47",
+      "object_repr": "47 Miting room 6",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 193,
+    "fields": {
+      "action_time": "2024-04-19T12:05:31.464",
+      "user": 1,
+      "content_type": 16,
+      "object_id": "46",
+      "object_repr": "46 Miting room 12",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 194,
+    "fields": {
+      "action_time": "2024-04-19T12:05:31.469",
+      "user": 1,
+      "content_type": 16,
+      "object_id": "45",
+      "object_repr": "45 Miting room 8",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 195,
+    "fields": {
+      "action_time": "2024-04-19T12:05:31.474",
+      "user": 1,
+      "content_type": 16,
+      "object_id": "44",
+      "object_repr": "44 Miting room 8",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 196,
+    "fields": {
+      "action_time": "2024-04-19T12:05:31.479",
+      "user": 1,
+      "content_type": 16,
+      "object_id": "43",
+      "object_repr": "43 Miting room 6",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 197,
+    "fields": {
+      "action_time": "2024-04-19T12:05:31.484",
+      "user": 1,
+      "content_type": 16,
+      "object_id": "42",
+      "object_repr": "42 Miting room 8",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 198,
+    "fields": {
+      "action_time": "2024-04-19T12:05:31.490",
+      "user": 1,
+      "content_type": 16,
+      "object_id": "41",
+      "object_repr": "41 Miting room 12",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 199,
+    "fields": {
+      "action_time": "2024-04-19T12:05:44.513",
+      "user": 1,
+      "content_type": 9,
+      "object_id": "32",
+      "object_repr": "Dominic\tRoss ",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 200,
+    "fields": {
+      "action_time": "2024-04-19T12:05:44.520",
+      "user": 1,
+      "content_type": 9,
+      "object_id": "24",
+      "object_repr": "Vanessa\tBower ",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 201,
+    "fields": {
+      "action_time": "2024-04-19T12:05:44.524",
+      "user": 1,
+      "content_type": 9,
+      "object_id": "20",
+      "object_repr": "Brian\tFerguson ",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 202,
+    "fields": {
+      "action_time": "2024-04-19T12:05:44.527",
+      "user": 1,
+      "content_type": 9,
+      "object_id": "19",
+      "object_repr": "Kevin\tBlake ",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 203,
+    "fields": {
+      "action_time": "2024-04-19T12:05:44.530",
+      "user": 1,
+      "content_type": 9,
+      "object_id": "18",
+      "object_repr": "Keith\tGibson ",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 204,
+    "fields": {
+      "action_time": "2024-04-19T12:05:44.533",
+      "user": 1,
+      "content_type": 9,
+      "object_id": "17",
+      "object_repr": "Lisa\tTerry ",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 205,
+    "fields": {
+      "action_time": "2024-04-19T12:05:44.536",
+      "user": 1,
+      "content_type": 9,
+      "object_id": "16",
+      "object_repr": "Natalie\tBaker ",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 206,
+    "fields": {
+      "action_time": "2024-04-19T12:05:44.539",
+      "user": 1,
+      "content_type": 9,
+      "object_id": "15",
+      "object_repr": "Emma\tForsyth ",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 207,
+    "fields": {
+      "action_time": "2024-04-19T12:05:44.542",
+      "user": 1,
+      "content_type": 9,
+      "object_id": "14",
+      "object_repr": "Jessica\tRandall ",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 208,
+    "fields": {
+      "action_time": "2024-04-19T12:05:44.545",
+      "user": 1,
+      "content_type": 9,
+      "object_id": "12",
+      "object_repr": "Leah\tSkinner ",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 209,
+    "fields": {
+      "action_time": "2024-04-19T12:05:44.549",
+      "user": 1,
+      "content_type": 9,
+      "object_id": "11",
+      "object_repr": "Julian\tRussell ",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 210,
+    "fields": {
+      "action_time": "2024-04-19T12:05:44.553",
+      "user": 1,
+      "content_type": 9,
+      "object_id": "10",
+      "object_repr": "Keith\tClark ",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 211,
+    "fields": {
+      "action_time": "2024-04-19T12:05:44.558",
+      "user": 1,
+      "content_type": 9,
+      "object_id": "9",
+      "object_repr": "Alexander\tLangdon ",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 212,
+    "fields": {
+      "action_time": "2024-04-19T12:05:44.563",
+      "user": 1,
+      "content_type": 9,
+      "object_id": "8",
+      "object_repr": "Victoria\tLawrence ",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 213,
+    "fields": {
+      "action_time": "2024-04-19T12:05:44.569",
+      "user": 1,
+      "content_type": 9,
+      "object_id": "7",
+      "object_repr": "Paul\tRandall ",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 214,
+    "fields": {
+      "action_time": "2024-04-19T12:05:44.574",
+      "user": 1,
+      "content_type": 9,
+      "object_id": "6",
+      "object_repr": "Luke\tWhite ",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 215,
+    "fields": {
+      "action_time": "2024-04-19T12:05:44.580",
+      "user": 1,
+      "content_type": 9,
+      "object_id": "5",
+      "object_repr": "Ikoo kakoa",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 216,
+    "fields": {
+      "action_time": "2024-04-19T12:05:44.587",
+      "user": 1,
+      "content_type": 9,
+      "object_id": "4",
+      "object_repr": "knkn kjnkjnk",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 217,
+    "fields": {
+      "action_time": "2024-04-19T12:05:44.592",
+      "user": 1,
+      "content_type": 9,
+      "object_id": "3",
+      "object_repr": "Assan Diop",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 218,
+    "fields": {
+      "action_time": "2024-04-19T12:05:44.597",
+      "user": 1,
+      "content_type": 9,
+      "object_id": "2",
+      "object_repr": "Tomas Potter",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 219,
+    "fields": {
+      "action_time": "2024-04-19T12:05:44.602",
+      "user": 1,
+      "content_type": 9,
+      "object_id": "1",
+      "object_repr": "miarkas asdamsd",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 220,
+    "fields": {
+      "action_time": "2024-04-19T12:05:53.880",
+      "user": 1,
+      "content_type": 24,
+      "object_id": "5",
+      "object_repr": "Events object (5)",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 221,
+    "fields": {
+      "action_time": "2024-04-19T12:05:53.886",
+      "user": 1,
+      "content_type": 24,
+      "object_id": "4",
+      "object_repr": "Events object (4)",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 222,
+    "fields": {
+      "action_time": "2024-04-19T12:05:53.892",
+      "user": 1,
+      "content_type": 24,
+      "object_id": "3",
+      "object_repr": "Events object (3)",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 223,
+    "fields": {
+      "action_time": "2024-04-19T12:05:53.897",
+      "user": 1,
+      "content_type": 24,
+      "object_id": "2",
+      "object_repr": "Events object (2)",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 224,
+    "fields": {
+      "action_time": "2024-04-19T12:05:53.902",
+      "user": 1,
+      "content_type": 24,
+      "object_id": "1",
+      "object_repr": "Events object (1)",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 225,
+    "fields": {
+      "action_time": "2024-04-19T12:08:51.148",
+      "user": 1,
+      "content_type": 14,
+      "object_id": "21",
+      "object_repr": "Event Zone",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}, {\"added\": {\"name\": \"\\u041f\\u0440\\u0430\\u0439\\u0441\\u043b\\u0438\\u0441\\u0442\", \"object\": \"For 2 hours\"}}, {\"added\": {\"name\": \"\\u041f\\u0440\\u0430\\u0439\\u0441\\u043b\\u0438\\u0441\\u0442\", \"object\": \"For 4 hours\"}}, {\"added\": {\"name\": \"\\u041f\\u0440\\u0430\\u0439\\u0441\\u043b\\u0438\\u0441\\u0442\", \"object\": \"For 5 hours\"}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 226,
+    "fields": {
+      "action_time": "2024-04-19T12:09:39.549",
+      "user": 1,
+      "content_type": 14,
+      "object_id": "2",
+      "object_repr": "Miting room 12",
+      "action_flag": 2,
+      "change_message": "[{\"added\": {\"name\": \"\\u041f\\u0440\\u0430\\u0439\\u0441\\u043b\\u0438\\u0441\\u0442\", \"object\": \"For 3 hours\"}}, {\"changed\": {\"name\": \"\\u041f\\u0440\\u0430\\u0439\\u0441\\u043b\\u0438\\u0441\\u0442\", \"object\": \"For 1 hours\", \"fields\": [\"\\u0426\\u0435\\u043d\\u0430\"]}}, {\"changed\": {\"name\": \"\\u041f\\u0440\\u0430\\u0439\\u0441\\u043b\\u0438\\u0441\\u0442\", \"object\": \"For 2 hours\", \"fields\": [\"\\u0426\\u0435\\u043d\\u0430\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 227,
+    "fields": {
+      "action_time": "2024-04-19T12:10:07.333",
+      "user": 1,
+      "content_type": 14,
+      "object_id": "5",
+      "object_repr": "Miting room 10",
+      "action_flag": 2,
+      "change_message": "[{\"added\": {\"name\": \"\\u041f\\u0440\\u0430\\u0439\\u0441\\u043b\\u0438\\u0441\\u0442\", \"object\": \"For 3 hours\"}}, {\"changed\": {\"name\": \"\\u041f\\u0440\\u0430\\u0439\\u0441\\u043b\\u0438\\u0441\\u0442\", \"object\": \"For 1 hours\", \"fields\": [\"\\u0426\\u0435\\u043d\\u0430\"]}}, {\"changed\": {\"name\": \"\\u041f\\u0440\\u0430\\u0439\\u0441\\u043b\\u0438\\u0441\\u0442\", \"object\": \"For 2 hours\", \"fields\": [\"\\u0426\\u0435\\u043d\\u0430\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 228,
+    "fields": {
+      "action_time": "2024-04-19T12:10:39.662",
+      "user": 1,
+      "content_type": 14,
+      "object_id": "2",
+      "object_repr": "Miting room 12",
+      "action_flag": 2,
+      "change_message": "[{\"added\": {\"name\": \"Rooms image\", \"object\": \"7\"}}, {\"added\": {\"name\": \"Rooms image\", \"object\": \"8\"}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 229,
+    "fields": {
+      "action_time": "2024-04-19T12:12:00.541",
+      "user": 1,
+      "content_type": 14,
+      "object_id": "4",
+      "object_repr": "Miting room 6",
+      "action_flag": 2,
+      "change_message": "[{\"added\": {\"name\": \"\\u041f\\u0440\\u0430\\u0439\\u0441\\u043b\\u0438\\u0441\\u0442\", \"object\": \"For 2 hours\"}}, {\"added\": {\"name\": \"\\u041f\\u0440\\u0430\\u0439\\u0441\\u043b\\u0438\\u0441\\u0442\", \"object\": \"For 3 hours\"}}, {\"added\": {\"name\": \"\\u041f\\u0440\\u0430\\u0439\\u0441\\u043b\\u0438\\u0441\\u0442\", \"object\": \"For 4 hours\"}}, {\"changed\": {\"name\": \"\\u041f\\u0440\\u0430\\u0439\\u0441\\u043b\\u0438\\u0441\\u0442\", \"object\": \"For 1 hours\", \"fields\": [\"\\u0426\\u0435\\u043d\\u0430\"]}}, {\"added\": {\"name\": \"Rooms image\", \"object\": \"9\"}}, {\"added\": {\"name\": \"Rooms image\", \"object\": \"10\"}}, {\"added\": {\"name\": \"Rooms image\", \"object\": \"11\"}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 230,
+    "fields": {
+      "action_time": "2024-04-19T12:13:10.128",
+      "user": 1,
+      "content_type": 14,
+      "object_id": "22",
+      "object_repr": "WorkSpace",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}, {\"added\": {\"name\": \"\\u041f\\u0440\\u0430\\u0439\\u0441\\u043b\\u0438\\u0441\\u0442\", \"object\": \"For 1 hours\"}}, {\"added\": {\"name\": \"\\u041f\\u0440\\u0430\\u0439\\u0441\\u043b\\u0438\\u0441\\u0442\", \"object\": \"For 2 hours\"}}, {\"added\": {\"name\": \"\\u041f\\u0440\\u0430\\u0439\\u0441\\u043b\\u0438\\u0441\\u0442\", \"object\": \"For 3 hours\"}}, {\"added\": {\"name\": \"\\u041f\\u0440\\u0430\\u0439\\u0441\\u043b\\u0438\\u0441\\u0442\", \"object\": \"For 24 hours\"}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 231,
+    "fields": {
+      "action_time": "2024-04-19T12:13:18.612",
+      "user": 1,
+      "content_type": 14,
+      "object_id": "22",
+      "object_repr": "WorkSpace",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Is working\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 232,
+    "fields": {
+      "action_time": "2024-04-19T12:13:58.353",
+      "user": 1,
+      "content_type": 14,
+      "object_id": "22",
+      "object_repr": "WorkSpace",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"name\": \"\\u041f\\u0440\\u0430\\u0439\\u0441\\u043b\\u0438\\u0441\\u0442\", \"object\": \"For 24 hours\", \"fields\": [\"\\u0426\\u0435\\u043d\\u0430\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 233,
+    "fields": {
+      "action_time": "2024-04-19T12:14:31.068",
+      "user": 1,
+      "content_type": 7,
+      "object_id": "2",
+      "object_repr": "7 DAYS 700000",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 234,
+    "fields": {
+      "action_time": "2024-04-19T12:15:51.025",
+      "user": 1,
+      "content_type": 7,
+      "object_id": "3",
+      "object_repr": "VIRTUAL DESK 700000",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 235,
+    "fields": {
+      "action_time": "2024-04-19T12:16:06.057",
+      "user": 1,
+      "content_type": 7,
+      "object_id": "1",
+      "object_repr": "HOT DESK UNLIMITED 1800000",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"\\u0426\\u0435\\u043d\\u0430\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 236,
+    "fields": {
+      "action_time": "2024-04-19T12:16:13.534",
+      "user": 1,
+      "content_type": 7,
+      "object_id": "3",
+      "object_repr": "VIRTUAL DESK 700000.00",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Days\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 237,
+    "fields": {
+      "action_time": "2024-04-19T12:16:28.015",
+      "user": 1,
+      "content_type": 7,
+      "object_id": "4",
+      "object_repr": "PESONAL HOT DESK 2500000",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 238,
+    "fields": {
+      "action_time": "2024-04-19T12:16:57.101",
+      "user": 1,
+      "content_type": 7,
+      "object_id": "4",
+      "object_repr": "PERSONAL HOT DESK 2500000.00",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"\\u0410\\u0431\\u043e\\u043d\\u0435\\u043c\\u0435\\u043d\\u0442\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 239,
+    "fields": {
+      "action_time": "2024-04-19T12:24:30.896",
+      "user": 1,
+      "content_type": 7,
+      "object_id": "4",
+      "object_repr": "PERSONAL HOT DESK 2500000.00",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"\\u0420\\u0430\\u0431\\u043e\\u0447\\u0430\\u044f \\u0432\\u0440\\u0435\\u043c\\u044c\\u044f \\u043e\\u0442\", \"\\u0420\\u0430\\u0431\\u043e\\u0447\\u0430\\u044f \\u0432\\u0440\\u0435\\u043c\\u044c\\u044f \\u0434\\u043e\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 240,
+    "fields": {
+      "action_time": "2024-04-19T12:25:44.607",
+      "user": 1,
+      "content_type": 7,
+      "object_id": "2",
+      "object_repr": "7 DAYS 700000.00",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"\\u0420\\u0430\\u0431\\u043e\\u0447\\u0430\\u044f \\u0432\\u0440\\u0435\\u043c\\u044c\\u044f \\u043e\\u0442\", \"\\u0420\\u0430\\u0431\\u043e\\u0447\\u0430\\u044f \\u0432\\u0440\\u0435\\u043c\\u044c\\u044f \\u0434\\u043e\", \"\\u0412\\u043e\\u0437\\u043c\\u043e\\u0436\\u043d\\u043e\\u0441\\u0442\\u044c \\u0440\\u0430\\u0431\\u043e\\u0442\\u0430\\u0442\\u044c \\u0432 \\u0434\\u0440\\u0443\\u0433\\u0438\\u0445 \\u043b\\u043e\\u043a\\u0430\\u0446\\u0438\\u0445\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 241,
+    "fields": {
+      "action_time": "2024-04-19T12:27:15.670",
+      "user": 1,
+      "content_type": 7,
+      "object_id": "5",
+      "object_repr": "NIGHT HOT DESK 850000",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 242,
+    "fields": {
+      "action_time": "2024-04-19T12:27:29.087",
+      "user": 1,
+      "content_type": 7,
+      "object_id": "1",
+      "object_repr": "HOT DESK UNLIMITED 1800000.00",
+      "action_flag": 2,
+      "change_message": "[]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 243,
+    "fields": {
+      "action_time": "2024-04-19T12:28:03.313",
+      "user": 1,
+      "content_type": 7,
+      "object_id": "1",
+      "object_repr": "HOT DESK UNLIMITED 1800000.00",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"\\u0420\\u0430\\u0431\\u043e\\u0447\\u0430\\u044f \\u0432\\u0440\\u0435\\u043c\\u044c\\u044f \\u043e\\u0442\", \"\\u0420\\u0430\\u0431\\u043e\\u0447\\u0430\\u044f \\u0432\\u0440\\u0435\\u043c\\u044c\\u044f \\u0434\\u043e\"]}}]"
+    }
+  },
+  {
     "model": "auth.permission",
     "pk": 1,
     "fields": {
@@ -1390,10 +3951,118 @@
     }
   },
   {
+    "model": "auth.permission",
+    "pk": 89,
+    "fields": {
+      "name": "Can add Компания",
+      "content_type": 23,
+      "codename": "add_company"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 90,
+    "fields": {
+      "name": "Can change Компания",
+      "content_type": 23,
+      "codename": "change_company"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 91,
+    "fields": {
+      "name": "Can delete Компания",
+      "content_type": 23,
+      "codename": "delete_company"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 92,
+    "fields": {
+      "name": "Can view Компания",
+      "content_type": 23,
+      "codename": "view_company"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 93,
+    "fields": {
+      "name": "Can add events",
+      "content_type": 24,
+      "codename": "add_events"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 94,
+    "fields": {
+      "name": "Can change events",
+      "content_type": 24,
+      "codename": "change_events"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 95,
+    "fields": {
+      "name": "Can delete events",
+      "content_type": 24,
+      "codename": "delete_events"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 96,
+    "fields": {
+      "name": "Can view events",
+      "content_type": 24,
+      "codename": "view_events"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 97,
+    "fields": {
+      "name": "Can add Rooms image",
+      "content_type": 25,
+      "codename": "add_galleryrooms"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 98,
+    "fields": {
+      "name": "Can change Rooms image",
+      "content_type": 25,
+      "codename": "change_galleryrooms"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 99,
+    "fields": {
+      "name": "Can delete Rooms image",
+      "content_type": 25,
+      "codename": "delete_galleryrooms"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 100,
+    "fields": {
+      "name": "Can view Rooms image",
+      "content_type": 25,
+      "codename": "view_galleryrooms"
+    }
+  },
+  {
     "model": "auth.group",
     "pk": 1,
     "fields": {
-      "name": "Kitoblar Olami",
+      "name": "GroundZero",
       "permissions": []
     }
   },
@@ -1402,7 +4071,7 @@
     "pk": 1,
     "fields": {
       "password": "pbkdf2_sha256$600000$4gWriBjbaimrQ45kEyFbw6$sZIuoM62JPVUuVMjPjK8cxpp1bWEtnvp0GBnwyBCNRk=",
-      "last_login": "2024-01-19T16:10:06.223",
+      "last_login": "2024-04-19T11:02:56.665",
       "is_superuser": true,
       "username": "admin",
       "first_name": "",
@@ -1411,6 +4080,26 @@
       "is_staff": true,
       "is_active": true,
       "date_joined": "2023-12-16T11:47:36",
+      "groups": [
+        1
+      ],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 2,
+    "fields": {
+      "password": "pbkdf2_sha256$600000$qzAMKdrhrqoH3z8RIRAqjf$0wN/h5xQFiCdeYhD5lzdulhW3UafHWfLSxQaeG1luxo=",
+      "last_login": "2024-02-20T13:31:33.651",
+      "is_superuser": false,
+      "username": "Madina",
+      "first_name": "Madina",
+      "last_name": "",
+      "email": "",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2024-02-19T14:37:14",
       "groups": [
         1
       ],
@@ -1594,11 +4283,139 @@
     }
   },
   {
+    "model": "contenttypes.contenttype",
+    "pk": 23,
+    "fields": {
+      "app_label": "crm",
+      "model": "company"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 24,
+    "fields": {
+      "app_label": "crm",
+      "model": "events"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 25,
+    "fields": {
+      "app_label": "crm",
+      "model": "galleryrooms"
+    }
+  },
+  {
+    "model": "sessions.session",
+    "pk": "1huso77f5fbjoam1ol11tye1snyc9cc0",
+    "fields": {
+      "session_data": ".eJxVjEEOwiAQRe_C2hCgEMCle89AhplBqgaS0q6Md9cmXej2v_f-SyTY1pq2wUuaSZyFFqffLQM-uO2A7tBuXWJv6zJnuSvyoENeO_Hzcrh_BxVG_dYAmtk7YzJH8qxsoIIWrIkINhSvbUDnorZRTR6K0zGXiEZlMxEXIvH-APRtOGk:1rbwlk:XHtnqwENefRo3noijHrZGxhhqGgE4Bk0dxlE0TOgsRQ",
+      "expire_date": "2024-03-04T11:04:48.401"
+    }
+  },
+  {
+    "model": "sessions.session",
+    "pk": "30gssbqijprdls4cj96w1041ex8o24li",
+    "fields": {
+      "session_data": ".eJxVjEEOwiAQRe_C2hCgEMCle89AhplBqgaS0q6Md9cmXej2v_f-SyTY1pq2wUuaSZyFFqffLQM-uO2A7tBuXWJv6zJnuSvyoENeO_Hzcrh_BxVG_dYAmtk7YzJH8qxsoIIWrIkINhSvbUDnorZRTR6K0zGXiEZlMxEXIvH-APRtOGk:1rdSYP:JJ34ZhXCmYtn-HqEuae2NlcEoDcCoAIfuOdMnXGDEgM",
+      "expire_date": "2024-03-08T15:13:17.520"
+    }
+  },
+  {
+    "model": "sessions.session",
+    "pk": "39oo7ir0bsccutpe3ngpcw8kwkek8dc6",
+    "fields": {
+      "session_data": ".eJxVjEEOwiAQRe_C2hCgEMCle89AhplBqgaS0q6Md9cmXej2v_f-SyTY1pq2wUuaSZyFFqffLQM-uO2A7tBuXWJv6zJnuSvyoENeO_Hzcrh_BxVG_dYAmtk7YzJH8qxsoIIWrIkINhSvbUDnorZRTR6K0zGXiEZlMxEXIvH-APRtOGk:1rbyPv:__a-qvd2vTCVlxidpDg3kXhL5EH5SreO7fBuUYJhZww",
+      "expire_date": "2024-03-04T12:50:23.723"
+    }
+  },
+  {
     "model": "sessions.session",
     "pk": "55kd2rjccndp051vb1rn8wse21utotc4",
     "fields": {
       "session_data": ".eJxVjEEOwiAQRe_C2hCgEMCle89AhplBqgaS0q6Md9cmXej2v_f-SyTY1pq2wUuaSZyFFqffLQM-uO2A7tBuXWJv6zJnuSvyoENeO_Hzcrh_BxVG_dYAmtk7YzJH8qxsoIIWrIkINhSvbUDnorZRTR6K0zGXiEZlMxEXIvH-APRtOGk:1rF61P:EBL8mprVWUdfGFrATBdco14EMtOmKLLq0Ubm5NteJIk",
       "expire_date": "2024-01-01T10:18:31.967"
+    }
+  },
+  {
+    "model": "sessions.session",
+    "pk": "6vn9vhnaqyjtnh2mdam7ipf6bkvvghm7",
+    "fields": {
+      "session_data": ".eJxVjEEOwiAQRe_C2hCgEMCle89AhplBqgaS0q6Md9cmXej2v_f-SyTY1pq2wUuaSZyFFqffLQM-uO2A7tBuXWJv6zJnuSvyoENeO_Hzcrh_BxVG_dYAmtk7YzJH8qxsoIIWrIkINhSvbUDnorZRTR6K0zGXiEZlMxEXIvH-APRtOGk:1rxhKq:UsN4oAhlret_BV3zx87oSu8puHTPIRIO6COce_jEpNI",
+      "expire_date": "2024-05-03T11:02:56.680"
+    }
+  },
+  {
+    "model": "sessions.session",
+    "pk": "a3l54e3xma9kpu6f9eu0okxslh2m9rom",
+    "fields": {
+      "session_data": ".eJxVjEEOwiAQRe_C2hCgEMCle89AhplBqgaS0q6Md9cmXej2v_f-SyTY1pq2wUuaSZyFFqffLQM-uO2A7tBuXWJv6zJnuSvyoENeO_Hzcrh_BxVG_dYAmtk7YzJH8qxsoIIWrIkINhSvbUDnorZRTR6K0zGXiEZlMxEXIvH-APRtOGk:1raDKD:8hqmNKGPrRztX64xD81_vUuJfMvo1hQDtXUW78HEZYI",
+      "expire_date": "2024-02-28T16:21:13.237"
+    }
+  },
+  {
+    "model": "sessions.session",
+    "pk": "bdh82woasqrjn6ge8rckqikkawu4edgd",
+    "fields": {
+      "session_data": ".eJxVjEEOwiAQRe_C2hCgEMCle89AhplBqgaS0q6Md9cmXej2v_f-SyTY1pq2wUuaSZyFFqffLQM-uO2A7tBuXWJv6zJnuSvyoENeO_Hzcrh_BxVG_dYAmtk7YzJH8qxsoIIWrIkINhSvbUDnorZRTR6K0zGXiEZlMxEXIvH-APRtOGk:1rYPqC:634dlC8GYVCIpWZp9rLc5uKgGnGUOof3__PYLehRKK8",
+      "expire_date": "2024-02-23T17:18:48.435"
+    }
+  },
+  {
+    "model": "sessions.session",
+    "pk": "e6gjh10xzg8t2w4ek54qdjitx30i3hk6",
+    "fields": {
+      "session_data": ".eJxVjEEOwiAQRe_C2hCgEMCle89AhplBqgaS0q6Md9cmXej2v_f-SyTY1pq2wUuaSZyFFqffLQM-uO2A7tBuXWJv6zJnuSvyoENeO_Hzcrh_BxVG_dYAmtk7YzJH8qxsoIIWrIkINhSvbUDnorZRTR6K0zGXiEZlMxEXIvH-APRtOGk:1rmvCO:ZyKz0qpkKhCEOJT1Nirh-kqJkOe-EfYW6fdGnM8CW5E",
+      "expire_date": "2024-04-03T17:37:40.863"
+    }
+  },
+  {
+    "model": "sessions.session",
+    "pk": "evm7u7aqrerhfjvmgoup27jq55leokdt",
+    "fields": {
+      "session_data": ".eJxVjEEOwiAQRe_C2hCgEMCle89AhplBqgaS0q6Md9cmXej2v_f-SyTY1pq2wUuaSZyFFqffLQM-uO2A7tBuXWJv6zJnuSvyoENeO_Hzcrh_BxVG_dYAmtk7YzJH8qxsoIIWrIkINhSvbUDnorZRTR6K0zGXiEZlMxEXIvH-APRtOGk:1rmsjy:_x5fOApzAUDDzposrZfHlXKTad963tEpmVSge4WA97c",
+      "expire_date": "2024-04-03T15:00:10.816"
+    }
+  },
+  {
+    "model": "sessions.session",
+    "pk": "g6fh9rv7wb217hkw5riq217r39psldu3",
+    "fields": {
+      "session_data": ".eJxVjEEOwiAQRe_C2hCgEMCle89AhplBqgaS0q6Md9cmXej2v_f-SyTY1pq2wUuaSZyFFqffLQM-uO2A7tBuXWJv6zJnuSvyoENeO_Hzcrh_BxVG_dYAmtk7YzJH8qxsoIIWrIkINhSvbUDnorZRTR6K0zGXiEZlMxEXIvH-APRtOGk:1rbyOc:K8PadYdxZ4n3GAnTMpDYp2Nan3OqnSBAqhIccnIZPpw",
+      "expire_date": "2024-03-04T12:49:02.522"
+    }
+  },
+  {
+    "model": "sessions.session",
+    "pk": "g7mpbua66j2kzu8vrf79hyr4cijztzas",
+    "fields": {
+      "session_data": ".eJxVjEEOwiAQRe_C2hCgEMCle89AhplBqgaS0q6Md9cmXej2v_f-SyTY1pq2wUuaSZyFFqffLQM-uO2A7tBuXWJv6zJnuSvyoENeO_Hzcrh_BxVG_dYAmtk7YzJH8qxsoIIWrIkINhSvbUDnorZRTR6K0zGXiEZlMxEXIvH-APRtOGk:1rp4Hv:WCiPQVrz0x2p3a3JCJVuvbCmbOz5f-9YORjgwavPgo8",
+      "expire_date": "2024-04-09T15:44:15.648"
+    }
+  },
+  {
+    "model": "sessions.session",
+    "pk": "j8ouhbhidosk43b2kr5132um30d84p1g",
+    "fields": {
+      "session_data": ".eJxVjEEOwiAQRe_C2hCgEMCle89AhplBqgaS0q6Md9cmXej2v_f-SyTY1pq2wUuaSZyFFqffLQM-uO2A7tBuXWJv6zJnuSvyoENeO_Hzcrh_BxVG_dYAmtk7YzJH8qxsoIIWrIkINhSvbUDnorZRTR6K0zGXiEZlMxEXIvH-APRtOGk:1rZ4Fs:aautV7-ovMJymYFDaYIX4rlvRpIPHIwgI8GcecDFl2A",
+      "expire_date": "2024-02-25T12:28:00.507"
+    }
+  },
+  {
+    "model": "sessions.session",
+    "pk": "jjgnbat8xu3myndygx24hprb8amk3iuz",
+    "fields": {
+      "session_data": ".eJxVjEEOwiAQRe_C2hCgEMCle89AhplBqgaS0q6Md9cmXej2v_f-SyTY1pq2wUuaSZyFFqffLQM-uO2A7tBuXWJv6zJnuSvyoENeO_Hzcrh_BxVG_dYAmtk7YzJH8qxsoIIWrIkINhSvbUDnorZRTR6K0zGXiEZlMxEXIvH-APRtOGk:1raC3F:3H1azsOiccU6PFjcx_PEJNirod1k877M_lK96W5A9cs",
+      "expire_date": "2024-02-28T14:59:37.044"
+    }
+  },
+  {
+    "model": "sessions.session",
+    "pk": "k7do6u1ph6muwijfn8iwrw1vsoa3stxq",
+    "fields": {
+      "session_data": ".eJxVjEEOwiAQRe_C2hCgEMCle89AhplBqgaS0q6Md9cmXej2v_f-SyTY1pq2wUuaSZyFFqffLQM-uO2A7tBuXWJv6zJnuSvyoENeO_Hzcrh_BxVG_dYAmtk7YzJH8qxsoIIWrIkINhSvbUDnorZRTR6K0zGXiEZlMxEXIvH-APRtOGk:1rUikU:8wCV-oq9fqcY75S-CeHRPG79NCtvAKju_CtsMYPIOAY",
+      "expire_date": "2024-02-13T12:41:38.162"
     }
   },
   {
@@ -1610,13 +4427,51 @@
     }
   },
   {
+    "model": "sessions.session",
+    "pk": "rg9f3x1g524i8bd1l2l6m6mex428afko",
+    "fields": {
+      "session_data": ".eJxVjEEOwiAQRe_C2hCgEMCle89AhplBqgaS0q6Md9cmXej2v_f-SyTY1pq2wUuaSZyFFqffLQM-uO2A7tBuXWJv6zJnuSvyoENeO_Hzcrh_BxVG_dYAmtk7YzJH8qxsoIIWrIkINhSvbUDnorZRTR6K0zGXiEZlMxEXIvH-APRtOGk:1rp2hb:FfJx80tkuyJO03gZv_2Mn4-CKRDj_AOQvdXyZd_WrdY",
+      "expire_date": "2024-04-09T14:02:39.966"
+    }
+  },
+  {
+    "model": "sessions.session",
+    "pk": "u4xeyr549hazdznshd2z2nxw722tvmg0",
+    "fields": {
+      "session_data": ".eJxVjEEOwiAURO_C2hAoiMWle89A5vM_UjVtUtqV8e7apAvdzntvXiphXWpam8xpYHVWnTr8boT8kHEDfMd4m3SexmUeSG-K3mnT14nledndv4OKVr-1GLCPxRtIJNMRLDOik4gSvM9ER3be4RTEotgQggDiCvk-ZuqF1PsDFoY5dg:1rcLXJ:lPMNhHZbL-Mvb5oSmATmmArFHlETLPcqiC4CrHtdd9g",
+      "expire_date": "2024-03-05T13:31:33.656"
+    }
+  },
+  {
+    "model": "sessions.session",
+    "pk": "uv94zslqvkvo8lsz3kflvv8opnc76zxp",
+    "fields": {
+      "session_data": ".eJxVjEEOwiAQRe_C2hCgEMCle89AhplBqgaS0q6Md9cmXej2v_f-SyTY1pq2wUuaSZyFFqffLQM-uO2A7tBuXWJv6zJnuSvyoENeO_Hzcrh_BxVG_dYAmtk7YzJH8qxsoIIWrIkINhSvbUDnorZRTR6K0zGXiEZlMxEXIvH-APRtOGk:1rm5n2:cO8BPV7ZkgFkQd4Km4fVc8dqygtIEblsMUn70Pe_uAs",
+      "expire_date": "2024-04-01T10:44:04.861"
+    }
+  },
+  {
+    "model": "crm.company",
+    "pk": 1,
+    "fields": {
+      "title": "GroundZero",
+      "is_active": true,
+      "created_at": "2024-01-23T12:34:30.463",
+      "token": "s6ef5ds6fv",
+      "image": ""
+    }
+  },
+  {
     "model": "crm.filial",
     "pk": 1,
     "fields": {
-      "title": "Kitoblar Olami",
+      "title": "Kitoblar",
       "is_active": true,
       "created_at": "2023-12-16T11:48:09.312",
-      "token": "6a5sd46a54sd"
+      "token": "6a5sd46a54sd",
+      "company": 1,
+      "images": "",
+      "address": "Shaxhontoxur S1"
     }
   },
   {
@@ -1626,7 +4481,10 @@
       "title": "Minor",
       "is_active": true,
       "created_at": "2023-12-16T11:48:16.448",
-      "token": "q9w8e79q8w7e"
+      "token": "q9w8e79q8w7e",
+      "company": 1,
+      "images": "",
+      "address": "adres 2 Mustaqillik"
     }
   },
   {
@@ -1636,7 +4494,10 @@
       "title": "Sharq",
       "is_active": true,
       "created_at": "2023-12-16T16:16:18.841",
-      "token": "A32S1DW"
+      "token": "A32S1DW",
+      "company": 1,
+      "images": "images/branches/photo_2023-08-24_12-42-13.jpg",
+      "address": "Adres gteto v Tashkente"
     }
   },
   {
@@ -1690,8 +4551,9 @@
     "fields": {
       "filial": 2,
       "category": 1,
-      "title": "Miting-room 6",
-      "persons": 6
+      "title": "Miting room 6",
+      "persons": 6,
+      "is_working": true
     }
   },
   {
@@ -1700,8 +4562,9 @@
     "fields": {
       "filial": 1,
       "category": 1,
-      "title": "Miting-room 12",
-      "persons": 12
+      "title": "Miting room 12",
+      "persons": 12,
+      "is_working": true
     }
   },
   {
@@ -1710,8 +4573,9 @@
     "fields": {
       "filial": 1,
       "category": 5,
-      "title": "Office �1",
-      "persons": 6
+      "title": "Office N1",
+      "persons": 6,
+      "is_working": true
     }
   },
   {
@@ -1721,7 +4585,8 @@
       "filial": 1,
       "category": 1,
       "title": "Miting room 6",
-      "persons": 6
+      "persons": 6,
+      "is_working": true
     }
   },
   {
@@ -1731,7 +4596,8 @@
       "filial": 1,
       "category": 1,
       "title": "Miting room 10",
-      "persons": 10
+      "persons": 10,
+      "is_working": true
     }
   },
   {
@@ -1741,7 +4607,8 @@
       "filial": 1,
       "category": 1,
       "title": "Miting room 8",
-      "persons": 8
+      "persons": 8,
+      "is_working": true
     }
   },
   {
@@ -1751,7 +4618,8 @@
       "filial": 1,
       "category": 2,
       "title": "Zoom room 1",
-      "persons": 1
+      "persons": 1,
+      "is_working": true
     }
   },
   {
@@ -1761,7 +4629,8 @@
       "filial": 1,
       "category": 2,
       "title": "Zoom room 2",
-      "persons": 1
+      "persons": 1,
+      "is_working": true
     }
   },
   {
@@ -1771,7 +4640,151 @@
       "filial": 1,
       "category": 2,
       "title": "Zoom room 3",
-      "persons": 3
+      "persons": 1,
+      "is_working": true
+    }
+  },
+  {
+    "model": "crm.rooms",
+    "pk": 10,
+    "fields": {
+      "filial": 1,
+      "category": 5,
+      "title": "Office N2",
+      "persons": 6,
+      "is_working": true
+    }
+  },
+  {
+    "model": "crm.rooms",
+    "pk": 11,
+    "fields": {
+      "filial": 1,
+      "category": 5,
+      "title": "Office N3",
+      "persons": 2,
+      "is_working": true
+    }
+  },
+  {
+    "model": "crm.rooms",
+    "pk": 12,
+    "fields": {
+      "filial": 1,
+      "category": 5,
+      "title": "Office N4",
+      "persons": 2,
+      "is_working": true
+    }
+  },
+  {
+    "model": "crm.rooms",
+    "pk": 13,
+    "fields": {
+      "filial": 1,
+      "category": 5,
+      "title": "Office N5",
+      "persons": 6,
+      "is_working": true
+    }
+  },
+  {
+    "model": "crm.rooms",
+    "pk": 14,
+    "fields": {
+      "filial": 1,
+      "category": 5,
+      "title": "Office N6",
+      "persons": 6,
+      "is_working": true
+    }
+  },
+  {
+    "model": "crm.rooms",
+    "pk": 15,
+    "fields": {
+      "filial": 1,
+      "category": 5,
+      "title": "Office N7",
+      "persons": 6,
+      "is_working": true
+    }
+  },
+  {
+    "model": "crm.rooms",
+    "pk": 16,
+    "fields": {
+      "filial": 1,
+      "category": 5,
+      "title": "Office N8",
+      "persons": 2,
+      "is_working": true
+    }
+  },
+  {
+    "model": "crm.rooms",
+    "pk": 17,
+    "fields": {
+      "filial": 1,
+      "category": 5,
+      "title": "Office N9",
+      "persons": 2,
+      "is_working": true
+    }
+  },
+  {
+    "model": "crm.rooms",
+    "pk": 18,
+    "fields": {
+      "filial": 1,
+      "category": 5,
+      "title": "Office N10",
+      "persons": 2,
+      "is_working": true
+    }
+  },
+  {
+    "model": "crm.rooms",
+    "pk": 19,
+    "fields": {
+      "filial": 1,
+      "category": 5,
+      "title": "Office N11",
+      "persons": 7,
+      "is_working": true
+    }
+  },
+  {
+    "model": "crm.rooms",
+    "pk": 20,
+    "fields": {
+      "filial": 1,
+      "category": 5,
+      "title": "Office N12",
+      "persons": 3,
+      "is_working": true
+    }
+  },
+  {
+    "model": "crm.rooms",
+    "pk": 21,
+    "fields": {
+      "filial": 1,
+      "category": 3,
+      "title": "Event Zone",
+      "persons": 60,
+      "is_working": true
+    }
+  },
+  {
+    "model": "crm.rooms",
+    "pk": 22,
+    "fields": {
+      "filial": 1,
+      "category": 4,
+      "title": "WorkSpace",
+      "persons": 65,
+      "is_working": true
     }
   },
   {
@@ -1798,7 +4811,7 @@
     "fields": {
       "product": 2,
       "hour": 1,
-      "price": 120000
+      "price": 200000
     }
   },
   {
@@ -1807,7 +4820,7 @@
     "fields": {
       "product": 2,
       "hour": 2,
-      "price": 240000
+      "price": 400000
     }
   },
   {
@@ -1816,7 +4829,7 @@
     "fields": {
       "product": 4,
       "hour": 1,
-      "price": 100000
+      "price": 110000
     }
   },
   {
@@ -1825,7 +4838,7 @@
     "fields": {
       "product": 5,
       "hour": 1,
-      "price": 140000
+      "price": 160000
     }
   },
   {
@@ -1834,7 +4847,7 @@
     "fields": {
       "product": 6,
       "hour": 1,
-      "price": 120000
+      "price": 130000
     }
   },
   {
@@ -1919,85 +4932,418 @@
     }
   },
   {
-    "model": "crm.client",
+    "model": "crm.pricelists",
+    "pk": 17,
+    "fields": {
+      "product": 5,
+      "hour": 2,
+      "price": 320000
+    }
+  },
+  {
+    "model": "crm.pricelists",
+    "pk": 18,
+    "fields": {
+      "product": 6,
+      "hour": 2,
+      "price": 260000
+    }
+  },
+  {
+    "model": "crm.pricelists",
+    "pk": 19,
+    "fields": {
+      "product": 6,
+      "hour": 3,
+      "price": 390000
+    }
+  },
+  {
+    "model": "crm.pricelists",
+    "pk": 20,
+    "fields": {
+      "product": 6,
+      "hour": 4,
+      "price": 520000
+    }
+  },
+  {
+    "model": "crm.pricelists",
+    "pk": 21,
+    "fields": {
+      "product": 21,
+      "hour": 2,
+      "price": 1400000
+    }
+  },
+  {
+    "model": "crm.pricelists",
+    "pk": 22,
+    "fields": {
+      "product": 21,
+      "hour": 4,
+      "price": 2000000
+    }
+  },
+  {
+    "model": "crm.pricelists",
+    "pk": 23,
+    "fields": {
+      "product": 21,
+      "hour": 5,
+      "price": 2300000
+    }
+  },
+  {
+    "model": "crm.pricelists",
+    "pk": 24,
+    "fields": {
+      "product": 2,
+      "hour": 3,
+      "price": 600000
+    }
+  },
+  {
+    "model": "crm.pricelists",
+    "pk": 25,
+    "fields": {
+      "product": 5,
+      "hour": 3,
+      "price": 480000
+    }
+  },
+  {
+    "model": "crm.pricelists",
+    "pk": 26,
+    "fields": {
+      "product": 4,
+      "hour": 2,
+      "price": 220000
+    }
+  },
+  {
+    "model": "crm.pricelists",
+    "pk": 27,
+    "fields": {
+      "product": 4,
+      "hour": 3,
+      "price": 330000
+    }
+  },
+  {
+    "model": "crm.pricelists",
+    "pk": 28,
+    "fields": {
+      "product": 4,
+      "hour": 4,
+      "price": 440000
+    }
+  },
+  {
+    "model": "crm.pricelists",
+    "pk": 29,
+    "fields": {
+      "product": 22,
+      "hour": 1,
+      "price": 50000
+    }
+  },
+  {
+    "model": "crm.pricelists",
+    "pk": 30,
+    "fields": {
+      "product": 22,
+      "hour": 2,
+      "price": 60000
+    }
+  },
+  {
+    "model": "crm.pricelists",
+    "pk": 31,
+    "fields": {
+      "product": 22,
+      "hour": 3,
+      "price": 70000
+    }
+  },
+  {
+    "model": "crm.pricelists",
+    "pk": 32,
+    "fields": {
+      "product": 22,
+      "hour": 24,
+      "price": 120000
+    }
+  },
+  {
+    "model": "crm.abonement",
+    "pk": 1,
+    "fields": {
+      "title": "HOT DESK UNLIMITED",
+      "price": "1800000.00",
+      "days": 30,
+      "work_hour_from": "00:00:00",
+      "work_hour_to": "23:59:59",
+      "other_loc_work_time": 3
+    }
+  },
+  {
+    "model": "crm.abonement",
     "pk": 2,
     "fields": {
+      "title": "7 DAYS",
+      "price": "700000.00",
+      "days": 7,
+      "work_hour_from": "09:00:00",
+      "work_hour_to": "22:00:00",
+      "other_loc_work_time": 0
+    }
+  },
+  {
+    "model": "crm.abonement",
+    "pk": 3,
+    "fields": {
+      "title": "VIRTUAL DESK",
+      "price": "700000.00",
+      "days": 30,
+      "work_hour_from": null,
+      "work_hour_to": null,
+      "other_loc_work_time": 3
+    }
+  },
+  {
+    "model": "crm.abonement",
+    "pk": 4,
+    "fields": {
+      "title": "PERSONAL HOT DESK",
+      "price": "2500000.00",
+      "days": 30,
+      "work_hour_from": "00:00:00",
+      "work_hour_to": "23:59:59",
+      "other_loc_work_time": 3
+    }
+  },
+  {
+    "model": "crm.abonement",
+    "pk": 5,
+    "fields": {
+      "title": "NIGHT HOT DESK",
+      "price": "850000.00",
+      "days": 30,
+      "work_hour_from": "22:00:00",
+      "work_hour_to": "09:00:00",
+      "other_loc_work_time": 0
+    }
+  },
+  {
+    "model": "crm.client",
+    "pk": 33,
+    "fields": {
       "tg_lang": "ru",
-      "name": "Zooplanet",
-      "surname": "AVAZJON",
-      "telegram_id": "K59135733",
+      "name": "Sarvar",
+      "surname": "Rahimov",
+      "telegram_id": "5dYkNSBVzrjLfii",
       "image": "",
       "username": null,
-      "phone": "+9879816541",
+      "phone": "+998907102030",
       "comment": "",
       "docs": "",
       "added_user": 1,
-      "created_at": "2023-12-16T16:49:19.733",
+      "created_at": "2024-04-19T13:37:32.085",
       "discount": 0,
-      "email": "x8383322@gmail.com",
-      "loyalty": 33,
+      "email": null,
+      "loyalty": 1,
       "activity": 4
     }
   },
   {
-    "model": "crm.order",
-    "pk": 24,
+    "model": "crm.abonementbuylist",
+    "pk": 1,
     "fields": {
-      "client": "K59135733",
+      "abonement": 2,
+      "client": "5dYkNSBVzrjLfii",
+      "subscription_start": "2024-04-01",
+      "subscription_end": "2024-05-01",
+      "free_time": 9,
+      "is_active": true,
+      "created_at": "2024-04-19T13:38:59.721",
+      "added_user": null
+    }
+  },
+  {
+    "model": "crm.galleryrooms",
+    "pk": 1,
+    "fields": {
+      "room": 6,
+      "image": "images/rooms/photo_1_2024-04-19_11-38-21.jpg"
+    }
+  },
+  {
+    "model": "crm.galleryrooms",
+    "pk": 2,
+    "fields": {
+      "room": 6,
+      "image": "images/rooms/photo_2_2024-04-19_11-38-21.jpg"
+    }
+  },
+  {
+    "model": "crm.galleryrooms",
+    "pk": 3,
+    "fields": {
+      "room": 6,
+      "image": "images/rooms/photo_3_2024-04-19_11-38-21.jpg"
+    }
+  },
+  {
+    "model": "crm.galleryrooms",
+    "pk": 4,
+    "fields": {
+      "room": 5,
+      "image": "images/rooms/photo_1_2024-04-19_11-38-07.jpg"
+    }
+  },
+  {
+    "model": "crm.galleryrooms",
+    "pk": 5,
+    "fields": {
+      "room": 5,
+      "image": "images/rooms/photo_2_2024-04-19_11-38-07.jpg"
+    }
+  },
+  {
+    "model": "crm.galleryrooms",
+    "pk": 6,
+    "fields": {
+      "room": 5,
+      "image": "images/rooms/photo_3_2024-04-19_11-38-07.jpg"
+    }
+  },
+  {
+    "model": "crm.galleryrooms",
+    "pk": 7,
+    "fields": {
+      "room": 2,
+      "image": "images/rooms/photo_1_2024-04-19_11-36-51.jpg"
+    }
+  },
+  {
+    "model": "crm.galleryrooms",
+    "pk": 8,
+    "fields": {
+      "room": 2,
+      "image": "images/rooms/photo_2_2024-04-19_11-36-51.jpg"
+    }
+  },
+  {
+    "model": "crm.galleryrooms",
+    "pk": 9,
+    "fields": {
+      "room": 4,
+      "image": "images/rooms/photo_1_2024-04-19_11-37-50.jpg"
+    }
+  },
+  {
+    "model": "crm.galleryrooms",
+    "pk": 10,
+    "fields": {
+      "room": 4,
+      "image": "images/rooms/photo_2_2024-04-19_11-37-50.jpg"
+    }
+  },
+  {
+    "model": "crm.galleryrooms",
+    "pk": 11,
+    "fields": {
+      "room": 4,
+      "image": "images/rooms/photo_3_2024-04-19_11-37-50.jpg"
+    }
+  },
+  {
+    "model": "crm.gallery",
+    "pk": 1,
+    "fields": {
+      "filial": 3,
+      "image": "images/branch/Screenshot_from_2024-04-19_11-53-11.png"
+    }
+  },
+  {
+    "model": "crm.gallery",
+    "pk": 3,
+    "fields": {
+      "filial": 2,
+      "image": "images/branch/DSC01733.jpg"
+    }
+  },
+  {
+    "model": "crm.gallery",
+    "pk": 4,
+    "fields": {
+      "filial": 1,
+      "image": "images/branch/AYB03612.jpg"
+    }
+  },
+  {
+    "model": "crm.order",
+    "pk": 57,
+    "fields": {
+      "client": "5dYkNSBVzrjLfii",
+      "filial": 1,
+      "product": 21,
+      "hour": 4,
+      "payment": false,
+      "payment_status": true,
+      "summa": "2000000.00",
+      "order_start": "2024-04-19T13:00:00",
+      "order_end": "2024-04-19T17:00:00",
+      "added_user": 1,
+      "pay_accept_user": "admin\n2024-04-19 13:38:14.800281",
+      "comment": "",
+      "is_deleted": false,
+      "created_at": "2024-04-19T13:38:14.792",
+      "status": "Waiting",
+      "discount": 0
+    }
+  },
+  {
+    "model": "crm.order",
+    "pk": 58,
+    "fields": {
+      "client": "5dYkNSBVzrjLfii",
       "filial": 1,
       "product": 2,
-      "hour": 2,
-      "payment": false,
-      "payment_status": true,
-      "summa": "240000.00",
-      "order_start": "2023-12-18T10:00:00",
-      "order_end": "2023-12-18T12:00:00",
-      "added_user": 1,
-      "comment": "",
-      "is_deleted": false,
-      "created_at": "2023-12-18T13:56:47.675",
-      "status": "Active",
-      "discount": 0
-    }
-  },
-  {
-    "model": "crm.order",
-    "pk": 25,
-    "fields": {
-      "client": "K59135733",
-      "filial": 1,
-      "product": 4,
-      "hour": 1,
-      "payment": false,
-      "payment_status": true,
-      "summa": "100000.00",
-      "order_start": "2023-12-18T15:00:00",
-      "order_end": "2023-12-18T16:00:00",
-      "added_user": 1,
-      "comment": "",
-      "is_deleted": false,
-      "created_at": "2023-12-18T13:57:07.762",
-      "status": "Cancelled",
-      "discount": 0
-    }
-  },
-  {
-    "model": "crm.order",
-    "pk": 26,
-    "fields": {
-      "client": "K59135733",
-      "filial": 1,
-      "product": 9,
       "hour": 3,
       "payment": false,
       "payment_status": true,
-      "summa": "60000.00",
-      "order_start": "2023-12-18T14:00:00",
-      "order_end": "2023-12-18T17:00:00",
+      "summa": "300000.00",
+      "order_start": "2024-04-19T13:00:00",
+      "order_end": "2024-04-19T16:00:00",
       "added_user": 1,
+      "pay_accept_user": "admin\n2024-04-19 13:41:07.353171",
       "comment": "",
       "is_deleted": false,
-      "created_at": "2023-12-18T14:40:01.829",
+      "created_at": "2024-04-19T13:41:07.349",
+      "status": "Waiting",
+      "discount": 0
+    }
+  },
+  {
+    "model": "crm.order",
+    "pk": 59,
+    "fields": {
+      "client": "5dYkNSBVzrjLfii",
+      "filial": 1,
+      "product": 5,
+      "hour": 1,
+      "payment": false,
+      "payment_status": true,
+      "summa": "80000.00",
+      "order_start": "2024-04-19T14:00:00",
+      "order_end": "2024-04-19T15:00:00",
+      "added_user": 1,
+      "pay_accept_user": "admin\n2024-04-19 13:47:53.798566",
+      "comment": "",
+      "is_deleted": false,
+      "created_at": "2024-04-19T13:47:53.794",
       "status": "Waiting",
       "discount": 0
     }

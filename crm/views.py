@@ -1,4 +1,5 @@
 import json
+import random
 from math import ceil
 import requests
 from django.contrib import messages
@@ -9,11 +10,14 @@ from django.db.models.functions import TruncDate, TruncMonth, TruncDay, TruncYea
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from django.urls import reverse_lazy
+from django.utils import timezone
 from django.utils.decorators import method_decorator
 from django.views import View
 from django.views.decorators.cache import never_cache
 from django.views.generic import ListView, CreateView, TemplateView, UpdateView, DeleteView
 import xlwt
+from rest_framework.response import Response
+
 from .forms import ClientForm, LoginForm, OrderForm, AbonementForm
 from .models import *
 import datetime
@@ -153,7 +157,8 @@ def order_delete(request, pk):
 
 
 def profile_view(request, telegram_id):
-    res = Rooms.objects.filter(is_working=True).values('filial_id', 'filial__title', 'id', 'title').exclude(category__title='office')
+    res = Rooms.objects.filter(is_working=True).values('filial_id', 'filial__title', 'id', 'title').exclude(
+        category__title='office')
     json_data = json.dumps(list(res))
     pricelist_not_json = Pricelists.objects.all().values('product', 'hour', 'price')
     pricelist = json.dumps(list(pricelist_not_json))
@@ -166,6 +171,9 @@ def profile_view(request, telegram_id):
     else:
         orders = Order.objects.filter(client_id=telegram_id).order_by('-created_at')
         client = Client.objects.get(telegram_id=telegram_id)
+        for i in orders:
+            print(i.order_start)
+
         try:
             abonement = AbonementBuyList.objects.filter(client_id=telegram_id).order_by('-subscription_start')
         except AbonementBuyList.DoesNotExist:
@@ -215,24 +223,34 @@ def order_from_profile(request):
         product_id = int(request.POST.get('product'))
         price = Pricelists.objects.get(product=product_id, hour=hour).price
         try:
+            room = Rooms.objects.get(pk=product_id)
+            category = room.category  # Assuming a ForeignKey relationship
+            discount = category.discount if category else False  # Check if category exists
+        except Rooms.DoesNotExist:
+            discount = False  # Handle case where room doesn't exist
+        try:
             subs = AbonementBuyList.objects.get(is_active=True, client_id=request.POST.get('client'))
-            if subs.free_time >= hour:
+            if subs.free_time >= hour and discount:
                 subs.free_time -= hour
                 subs.save()
-                comment = "-50%"
+                comment = "-50% от абонемента"
                 form.instance.comment = comment
-                price = price / 2
+                form.instance.summa = price
+                form.instance.summa_with_discount = price / 2
+            else:
+                form.instance.summa = price
+                form.instance.summa_with_discount = price
+                form.instance.comment = ''
+
         except:
             price = int(price - (price / 100 * int(request.POST.get('discount'))))
-        form.instance.comment = ''
-        form.instance.summa = price
+            form.instance.summa = price
         if form.is_valid():
             form.save()
             messages.success(request, 'Бронирования прошла успешно')
             return redirect('client', request.POST.get('client'))
-        else:
-            messages.error(request, f'Произошла ошибка попробуйте ещё раз ,Это времья уже занято')
-            return redirect('orders')
+        messages.error(request, f'Произошла ошибка попробуйте ещё раз ,Это времья уже занято')
+        return redirect('client', request.POST.get('client'))
 
 
 def sale_abon(request):
@@ -937,13 +955,13 @@ def event_list(request):
 
 def offices_view(request):
     rents = OfficeRent.objects.filter(is_active=True)
-    offices = Rooms.objects.filter(is_working=True,category__title='Office')
+    offices = Rooms.objects.filter(is_working=True, category__title='Office')
     context = {'title': 'Офисы', 'offices': offices, 'rents': rents}
     return render(request, 'crm/offices.html', context=context)
 
 
 def office_detail(request, pk):
-    office = Rooms.objects.filter(is_working=True,pk=pk)
+    office = Rooms.objects.filter(is_working=True, pk=pk)
     rents = OfficeRent.objects.filter(office=pk)
     persons = OfficePersons.objects.filter(pk=1)
     try:

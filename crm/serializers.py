@@ -1,11 +1,12 @@
-import datetime
+from datetime import datetime, timedelta
 from django.db.models import Q
 from django.db.models.functions import TruncDate
 from django.forms import model_to_dict
 from django.utils import timezone
 from rest_framework.response import Response
 from rest_framework.views import APIView
-from .models import Client, Category, Order, AbonementBuyList, Filial, Gallery, Company, Rooms
+from .models import Client, Category, Order, AbonementBuyList, Filial, Gallery, Company, Rooms, GalleryRooms
+from django.conf import settings
 
 
 class Clientapiview(APIView):
@@ -31,16 +32,18 @@ class CompanyView(APIView):
 
 class Roomsapiview(APIView):
     def get(self, request, company_id):
-        lst = Filial.objects.filter(company=company_id).values("company__title", "title", "images", 'address',
+        lst = Filial.objects.filter(company=company_id).values("id", "company__title", "title", "images", 'address',
                                                                'is_active')
-
+        fotki = Gallery.objects.all().values('filial', 'image')
         data = [
             {
                 'title': item['title'],
                 'company': item['company__title'],
                 'address': item['address'],
                 'is_active': item['is_active'],
-                'images': f'http://localhost:8000/media/{item["images"]}' if item['images'] else None}
+                'images': [f"http://{settings.MAIN_HOST}/media/{image['image']}" for image in
+                           fotki if image['filial'] == item['id']]
+            }
             for item in lst
         ]
         return Response(data)
@@ -48,6 +51,8 @@ class Roomsapiview(APIView):
 
 class RoomDetailapiview(APIView):
     def get(self, request, room_id):
+        fotki = GalleryRooms.objects.all().values('room', 'image')
+
         today = timezone.now().date()
         next_week = today + timezone.timedelta(days=6)
         orders = Order.objects.filter(product=room_id).filter(
@@ -72,8 +77,8 @@ class RoomDetailapiview(APIView):
 
         def order_exist(order_start: str, order_end: str) -> bool:
             format_string = "%Y-%m-%d %H:%M:%S"
-            zakaz_start = datetime.datetime.strptime(order_start, format_string)
-            zakaz_end = datetime.datetime.strptime(order_end, format_string)
+            zakaz_start = datetime.strptime(order_start, format_string)
+            zakaz_end = datetime.strptime(order_end, format_string)
 
             for i in orders:
                 orders_start, orders_end = i['order_start'], i['order_end']
@@ -87,13 +92,13 @@ class RoomDetailapiview(APIView):
 
         # Create the main dictionary with a key for each day of the week
         for i in range(7):
-            day_date = (datetime.datetime.today().date() + datetime.timedelta(days=i))
-            day_hour = datetime.datetime.today() + datetime.timedelta(days=i)
+            day_date = (datetime.today().date() + timedelta(days=i))
+            day_hour = datetime.today() + timedelta(days=i)
             hourly_data = {}
             for hour in range(24):
                 # Calculate start and end times for the current hour range
                 start_time = day_hour.replace(hour=hour, minute=0, second=0)
-                end_time = start_time + datetime.timedelta(hours=1)
+                end_time = start_time + timedelta(hours=1)
                 # Format times to your preferrestart_timert_time.strd format (e.g., "01:00 - 02:00")
                 time_range = f"{start_time.strftime('%H:%M')} - {end_time.strftime('%H:%M')}"
 
@@ -106,6 +111,8 @@ class RoomDetailapiview(APIView):
             {'room_pk': item['pk'],
              'filial': item['filial__title'],
              'title': item['title'],
+             'images': [f"http://{settings.MAIN_HOST}/media/{image['image']}" for image in
+                        fotki if image['room'] == item['pk']],
              'orders': result}
             for item in room
         ]

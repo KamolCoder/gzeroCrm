@@ -24,7 +24,7 @@ class ClientForm(forms.ModelForm):
                        "rows": "1",
                        'placeholder': 'Нажмите для получение ИД',
                        "readonly": "readonly",
-                       'hidden':'hidden'
+                       'hidden': 'hidden'
                    }),
                    'phone': forms.TextInput(attrs={
                        'placeholder': '+998',
@@ -77,7 +77,7 @@ class OrderForm(forms.ModelForm):
             'product': forms.Select(
                 attrs={'class': 'form-control', 'id': "titleSelect", 'onchange': "updateHourOptions()"}),
             'hour': forms.Select(attrs={'class': 'form-control', 'id': "hourSelect"}),
-            # 'comment':forms.Textarea(attrs={'rows':"2", 'class': 'form-control'}),
+            'comment': forms.Textarea(attrs={'rows': "2", 'class': 'form-control'}),
             'order_start': forms.DateTimeInput(attrs={'type': 'datetime-local', "class": 'form-control'}),
             'order_end': forms.DateTimeInput(
                 attrs={'type': 'datetime-local', "class": 'form-control', "readonly": "readonly"}),
