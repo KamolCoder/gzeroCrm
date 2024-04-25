@@ -88,7 +88,7 @@
     <div class="col-sm-12 col-md-3">
         <div class="mt-1 mb-3 p-3 button-container bg-white border shadow-sm">
             <h3 class="text-center">Подписка</h3>
-            {% if abonement.0.is_active == True %}
+            {% if abonement.0 %}
             <div class="card text-bg-dark">
                 <div class="card-img" style="background-color:#201863;height:200px">
                     <div class="card-img-overlay">
@@ -123,12 +123,25 @@
                                             aria-label="Закрыть"></button>
                                 </div>
                                 <div class="modal-body">
+                                    <div class="d-flex" style=" justify-content:space-around">
+                                        <div class="d-flex">
+                                            <p>Active days : </p>
+                                            <p id="activeDays"> </p>
+                                        </div>
+                                        <div class="d-flex">
+                                            <p>Price : </p>
+                                            <p id="abonementPrice"> </p>
+                                        </div>
+                                    </div>
+
+
                                     <form method="POST" action="{% url 'sale_abon' %}" enctype="multipart/form-data">
                                         {% csrf_token %}
                                         <label for="{{ form2.abonement.id_for_label }}"
                                                class="form-label">Абонемент</label>{{form2.abonement}}
                                         <label for="{{ form2.client.id_for_label }}" class="form-label">Ид
                                             клиента</label>{{form2.client}}
+
                                         <label for="{{ form2.subscription_start.id_for_label }}" class="form-label">День
                                             активации</label>{{form2.subscription_start}}
                                         <label for="{{ form2.subscription_end.id_for_label }}" class="form-label">День
@@ -242,7 +255,6 @@
                         </thead>
                         <tbody>
                         {%for a in abonement%}
-
                         <tr>
                             <td>{{ a.abonement.title }}</td>
                             <td>{{ a.subscription_start }}</td>
@@ -290,41 +302,45 @@
 </div>
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
-<!--<label for="hour">Hour:</label>-->
-<!--<input type="number" id="hour" name="hour" min="0"><br><br>-->
-
-<!--<label for="datetime-start">Datetime Start:</label>-->
-<!--<input type="datetime-local" id="datetime-start" name="datetime-start"><br><br>-->
-
-<!--<label for="datetime-end">Datetime End:</label>-->
-<!--<input type="datetime-local" id="datetime-end" name="datetime-end">-->
-
 <script>
     // Function to update the datetime-end value
     function updateDateTimeEnd() {
         // Get the values of hour and datetime-start
         const hour = parseInt($('#hourSelect').val());
         const dateTimeStart = new Date($('#id_order_start').val());
-
         // Calculate the datetime-end value
         const dateTimeEnd = new Date(dateTimeStart.getTime() + 18000000 + hour * 60 * 60 * 1000);
         // Update the datetime-end input value
         $('#id_order_end').val(dateTimeEnd.toISOString().slice(0, 16));
     }
-
     // Add event listeners to update the datetime-end value when hour or datetime-start change
     $('#hour, #id_order_start').on('input', updateDateTimeEnd);
 
+
+    const abonements = JSON.parse('{{json_abonements|safe}}');
+    const selectElement = document.getElementById('id_abonement');
+    selectElement.addEventListener('change',(event) => {
+    const selectedValue = event.target.value;
+    const abonementTitle = selectElement.options[selectElement.selectedIndex].text;
+
+    for (let i = 0; i < abonements.length; i++) {
+        if (abonements[i].title == abonementTitle){
+        const titleSelect = document.getElementById('abonementPrice');
+        const activeDays = document.getElementById('activeDays');
+        titleSelect.innerText = abonements[i].price;
+        activeDays.innerText = abonements[i].days;
+    }}});
+    // Update abonement buy dates
     $("#id_subscription_start").change(function () {
         var start_date = new Date($("#id_subscription_start").val());
-        var end_date = new Date(start_date.getTime() + (30 * 24 * 60 * 60 * 1000));
+        const paragraphElement = document.getElementById('activeDays');
+        const daysInt = parseInt(paragraphElement.textContent);
+        var end_date = new Date(start_date.getTime() + (daysInt * 24 * 60 * 60 * 1000));
         var end_year = end_date.getFullYear();
         var end_month = ("0" + (end_date.getMonth() + 1)).slice(-2);
         var end_day = ("0" + end_date.getDate()).slice(-2);
         $("#id_subscription_end").val(end_year + "-" + end_month + "-" + end_day);
     });
-
 
 </script>
 

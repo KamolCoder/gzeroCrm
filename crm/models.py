@@ -96,7 +96,7 @@ class Abonement(models.Model):
                                                            verbose_name="Возможность работать в других локацих")
 
     def __str__(self):
-        return f"{self.title} {self.price}"
+        return self.title
 
     class Meta:
         verbose_name = 'Абонемент'

@@ -159,6 +159,8 @@ def order_delete(request, pk):
 def profile_view(request, telegram_id):
     res = Rooms.objects.filter(is_working=True).values('filial_id', 'filial__title', 'id', 'title').exclude(
         category__title='office')
+    abonements = Abonement.objects.all().values("title", 'days', 'price')
+    json_abonements = json.dumps(list(abonements), ensure_ascii=False, default=str)
     json_data = json.dumps(list(res))
     pricelist_not_json = Pricelists.objects.all().values('product', 'hour', 'price')
     pricelist = json.dumps(list(pricelist_not_json))
@@ -171,18 +173,15 @@ def profile_view(request, telegram_id):
     else:
         orders = Order.objects.filter(client_id=telegram_id).order_by('-created_at')
         client = Client.objects.get(telegram_id=telegram_id)
-        for i in orders:
-            print(i.order_start)
-
         try:
-            abonement = AbonementBuyList.objects.filter(client_id=telegram_id).order_by('-subscription_start')
+            abonement = AbonementBuyList.objects.filter(client_id=telegram_id,is_active=True).order_by('-subscription_start')
         except AbonementBuyList.DoesNotExist:
             abonement = None
         context = {
             'client': client,
             'title': 'Страница пользователя',
             'orders': orders,
-            'abonement': abonement
+            'abonement': abonement,
         }
         initial_data = {
             'client': client,
@@ -196,6 +195,7 @@ def profile_view(request, telegram_id):
         context['form2'] = form2
         context['pricelist'] = pricelist
         context['json_data'] = json_data
+        context['json_abonements'] = json_abonements
         context['form3'] = form3
         context['products'] = Category.objects.all()
         return render(request, 'crm/client_detail.html', context)
