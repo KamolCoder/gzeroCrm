@@ -1,0 +1,166 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title%}
+
+{{title}}
+{% endblock title%}
+{% block main %}
+
+
+<div class="container card" style="margin-top:15px">
+    <div class="card-body">
+        <div class="container mb-5 mt-3">
+            <form action="" method="post">
+                {% csrf_token%}
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-8">
+                            <ul class="list-unstyled">
+                                <p style="color: #7e8d9f;font-size: 20px;">Invoice > {{title}} >
+                                    <strong>ID:{{rent.pk}}</strong></p>
+                                <li class="text-muted">To: <span style="color:#5d9fc5 ;">{{rent.booked_user}}</span>
+                                </li>
+                                <li class="text-muted"></li>
+                                <li class="text-muted"></li>
+                                <li class="text-muted"><i class="fas fa-phone"></i> {{rent.booked_user.phone}}</li>
+                            </ul>
+                        </div>
+                        <div class="col-xl-4">
+                            <p class="text-muted">Invoice</p>
+                            <ul class="list-unstyled">
+                                <li class="text-muted"><i class="fas fa-circle" style="color:#84B0CA ;"></i> <span
+                                        class="fw-bold">ID:</span>#{{form.officeRent}}
+                                </li>
+                                <li class="text-muted"><i class="fas fa-circle" style="color:#84B0CA ;"></i> <span
+                                        class="fw-bold">Creation Date: </span>{{rent.created_at}}
+                                </li>
+                                <li class="text-muted"><i class="fas fa-circle" style="color:#84B0CA ;"></i>
+                                    <span class="me-1 fw-bold">Payment Method:</span>
+                                    {{form.payment}}{{office.payment}}
+
+                                </li>
+                                <li class="text-muted"><i class="fas fa-circle" style="color:#84B0CA ;"></i>
+                                    <span class="me-1 fw-bold">Status:</span>
+                                    {{form.payment_status}}
+
+                                    {% if rent.is_paid %}
+                                    <span class="badge bg-success text-white fw-bold">Paid</span>
+                                    {% else %}
+                                    <span class="badge bg-warning text-black fw-bold">Not paid</span>
+                                    {% endif%}
+                                </li>
+
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="row my-2 mx-1 justify-content-center">
+                        <table class="table table-striped table-borderless">
+                            <thead style="background-color:#84B0CA ;" class="text-white">
+                            <tr>
+                                <th scope="col">Клиент</th>
+                                <th scope="col">Продукт</th>
+                                <th scope="col">От</th>
+                                <th scope="col">До</th>
+                                <th scope="col">Сумма со скидкой</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>{{rent.booked_user}}</td>
+                                <td>{{rent.office}}</td>
+                                <td>{{rent.rent_start}}</td>
+                                <td>{{rent.rent_end}}</td>
+                                <td>{{rent.summa_with_discount}}</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="row">
+                        <div class="col-xl-12">
+                            <p class="text-black float-end"><span class="text-black me-3"> Total Amount</span><span
+                                    style="font-size: 25px;">
+<!--                                {{order.summa_with_discount}}-->
+                                {{form.summa}}
+                            </span></p>
+                        </div>
+                    </div>
+                    <hr>
+                    {% if rent.is_paid %}
+                    <div class="col-xl-12" style="display: flex;justify-content: center;margin-top:40px">
+                        <button type="button"
+                                class="btn btn-success"
+                                style="height: 60px;"><a href="{{rent.office.get_absolute_url}}">Вернутся к списку
+                            заказов</a></button>
+                    </div>
+                    {% else %}
+                    <style>
+                        .btn-check:checked+.btn{
+                        border-color: #ff0000;
+                        border-width: 3px;
+                        border-radius: 0;
+                        }
+                    </style>
+                    <div class="row">
+                        <h4 class="text-center">ВЫБЕРИТЕ СПОСОБ ОПЛАТЫ</h4>
+
+                        <div class="col-xl-12" style="display: flex;justify-content: center;">
+                            <input type="radio" class="btn-check" name="options-outlined" id="CLICK" autocomplete="off">
+                            <label style="font-weight: 700;" class="m-2 btn btn-outline-primary"
+                                   for="CLICK">CLICK</label>
+                            <input type="radio" class="btn-check" name="options-outlined" id="PAYME" autocomplete="off">
+                            <label style="font-weight: 700;" class="m-2 btn btn-outline-info" for="PAYME">PAYME</label>
+                            <input type="radio" class="btn-check" name="options-outlined" id="UZUM" autocomplete="off">
+                            <label style="font-weight: 700;background-color: #7a00ff;color:white" class="m-2 btn"
+                                   for="UZUM">UZUM</label>
+                            <input type="radio" class="btn-check" name="options-outlined" id="CASH" autocomplete="off">
+                            <label style="font-weight: 700;" class="m-2 btn btn-outline-success" for="CASH">CASH</label>
+                        </div>
+                        <div class="col-xl-12" style="display: flex;justify-content: center;margin-top:40px">
+                            <input type="hidden" name="payment_method" id="selected-payment-method">
+                            <button type="submit" id="pay-now-btn"
+                                    class="btn btn-primary text-capitalize"
+                                    style="background-color:#60bdf3;height: 60px;width: 160px;">
+                                Оплатить
+                            </button>
+                        </div>
+                    </div>
+                    {%endif%}
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+<script>
+    const payNowButton = document.getElementById('pay-now-btn');
+  const selectedPaymentMethodInput = document.getElementById('selected-payment-method');
+
+    payNowButton.addEventListener('click', function() {
+      const checkedRadio = document.querySelector('input[name="options-outlined"]:checked');
+      if (!checkedRadio) {
+        alert('Выберите способ оплаты');
+      return;
+      }
+      selectedPaymentMethodInput.value = checkedRadio.id;
+    });
+</script>
+<script>
+    const paymentSelect = document.getElementById('id_payment');
+const radioInputs = document.querySelectorAll('.col-xl-12 input[type="radio"]');
+
+// Initial synchronization (optional)
+paymentSelect.value = radioInputs[0].id || ''; // Set initial value based on first radio or empty string
+
+radioInputs.forEach(radioInput => {
+  radioInput.addEventListener('change', function() {
+    if (this.checked) {
+      paymentSelect.value = this.id;
+    }
+  });
+});
+
+</script>
+{% endblock main %}
+

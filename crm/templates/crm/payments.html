@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title%}
+{{title}}
+{% endblock title%}
+{% block main %}
+
+<table class="table table-hover table-bordered table-sm">
+    <thead>
+    <tr>
+        <th>Дата</th>
+        <th>Форма оплаты</th>
+        <th>Сумма оплаты</th>
+        <th>Статус оплаты</th>
+        <th>За абонемент</th>
+        <th>За бронирование</th>
+        <th>За аренду офиса</th>
+    </tr>
+    </thead>
+    <tbody>
+    {%for pay in payments%}
+    <tr>
+        <td>{{pay.created_at}}</td>
+        <td>{{pay.payment}}</td>
+        <td>{{pay.summa}}</td>
+        <td>{{pay.payment_status}}</td>
+        <td>
+            {% if pay.abonement%}
+            {{pay.abonement}}
+            {% endif %}
+        </td>
+        <td>
+            {% if pay.order%}
+            {{pay.order}}
+            {% endif %}
+        </td>
+        <td>
+            {% if pay.officeRent%}
+            {{pay.officeRent}}
+            {% endif %}
+        </td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+
+
+{% endblock main %}

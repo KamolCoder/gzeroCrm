@@ -6,7 +6,7 @@ from bs4 import BeautifulSoup
 from django.contrib import messages
 from django.contrib.auth import login, logout
 from django.contrib.auth.decorators import login_required
-from django.db.models import Case, When, Sum, Max, F, Count
+from django.db.models import Case, When, Sum, Max, F, Count, Prefetch
 from django.db.models.functions import TruncMonth, TruncDay, TruncYear, TruncQuarter, Coalesce, Cast
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
@@ -998,9 +998,25 @@ def abonements_list(request):
 
 
 def event_list(request):
-    events = Events.objects.all().order_by('-event_start_date')
+    event_members_queryset = EventMembers.objects.prefetch_related('members')
+    events = Events.objects.prefetch_related(
+        Prefetch('eventmembers', queryset=event_members_queryset)
+    ).order_by('-event_start_date')
     context = {'events': events, 'title': 'Ивенты', 'selectMenu': 'event_list'}
     return render(request, 'crm/events.html', context=context)
+
+
+def eventDetail(request, pk):
+    event = Events.objects.get(pk=pk)
+    if request.method == 'POST':
+        form = EventForm(request.POST, request.FILES,instance=event)
+        if form.is_valid():
+            form.save()
+            return redirect('event_list')
+    else:
+        form = EventForm(instance=event)
+        context = {'form': form}
+        return render(request, 'crm/eventsDetail.html', context=context)
 
 
 def offices_view(request):

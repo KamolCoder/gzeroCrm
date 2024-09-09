@@ -172,7 +172,6 @@ class Client(models.Model):
     def get_absolute_url(self):
         return reverse('client', kwargs={'tg_id': self.telegram_id})
 
-
     def get_contact(self):
         if self.phone:
             return self.phone
@@ -203,7 +202,8 @@ class Client(models.Model):
     def save(self, *args, **kwargs):
         if not self.telegram_id:
             base_telegram_id = slugify(self.name + " " + self.surname)
-            self.telegram_id = base_telegram_id + ''.join(random.choice(string.ascii_letters + string.digits) for _ in range(20))
+            self.telegram_id = base_telegram_id + ''.join(
+                random.choice(string.ascii_letters + string.digits) for _ in range(20))
         return super().save(*args, **kwargs)
 
 
@@ -258,9 +258,11 @@ class Order(models.Model):
     filial = models.ForeignKey(Filial, on_delete=models.CASCADE)
     product = models.ForeignKey(Rooms, on_delete=models.CASCADE)
     hour = models.PositiveSmallIntegerField(verbose_name='Длительность')
-    payment_status = models.CharField(choices=PAYMENT_STATUS, max_length=30, verbose_name="Статус оплаты",default="UNPAID")
+    payment_status = models.CharField(choices=PAYMENT_STATUS, max_length=30, verbose_name="Статус оплаты",
+                                      default="UNPAID")
     summa = models.DecimalField(decimal_places=2, max_digits=12, verbose_name='Сумма', blank=True, null=True)
-    summa_with_discount = models.DecimalField(decimal_places=2, max_digits=12, verbose_name='Сумма со скидкой',blank=True, null=True)
+    summa_with_discount = models.DecimalField(decimal_places=2, max_digits=12, verbose_name='Сумма со скидкой',
+                                              blank=True, null=True)
     order_start = models.DateTimeField(verbose_name='Бронировать от :')
     order_end = models.DateTimeField(verbose_name='Бронировать до :')
     added_user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, null=True, blank=True)
@@ -363,6 +365,12 @@ class Events(models.Model):
     event_description = models.TextField(verbose_name='Описания')
     image = models.ImageField(upload_to='images/', verbose_name='Постер', blank=True, null=True)
 
+    def get_absolute_url(self):
+        return reverse('event_detail', kwargs={'pk': self.pk})
+
+    def __str__(self):
+        return self.title
+
     class Meta:
         verbose_name = 'Мероприятия'
         verbose_name_plural = 'Мероприятии'
@@ -373,8 +381,18 @@ class Events(models.Model):
         else:
             return '/static/user.png'
 
-    def get_absolute_url(self):
-        return reverse('event_list')
+
+
+class EventMembers(models.Model):
+    event = models.ForeignKey(Events, verbose_name='Event', on_delete=models.PROTECT, related_name='eventmembers')
+    members = models.ManyToManyField(Client, verbose_name='Members')
+
+    def __str__(self):
+        return f"Event: {self.event.title} - Members Count: {self.members.count()}"
+
+    class Meta:
+        verbose_name = 'Участник мероприятия'
+        verbose_name_plural = 'Участники мероприятия'
 
 
 class Payments(models.Model):
@@ -388,7 +406,8 @@ class Payments(models.Model):
     payment_status = models.CharField(choices=PAYMENT_STATUS, max_length=30, verbose_name="Статус оплаты",
                                       default="PAID")
     summa = models.DecimalField(decimal_places=2, max_digits=12, verbose_name='Сумма', blank=True, null=True)
-    order = models.ForeignKey(Order, on_delete=models.CASCADE, blank=True, null=True, verbose_name='Комната',related_name="payments")
+    order = models.ForeignKey(Order, on_delete=models.CASCADE, blank=True, null=True, verbose_name='Комната',
+                              related_name="payments")
     abonement = models.ForeignKey(AbonementBuyList, on_delete=models.CASCADE, blank=True, null=True,
                                   verbose_name='абонемент')
     officeRent = models.ForeignKey(OfficeRent, on_delete=models.CASCADE, blank=True, null=True, verbose_name='аренда')

@@ -13,6 +13,7 @@ urlpatterns = [
     path('clients/excel', export_clients_xls, name='export_client'),
     path('documentation/', documentation, name='documentation'),
     path('event_list/', event_list, name='event_list'),
+    path('event/<int:pk>/', eventDetail, name='event_detail'),
     path('index/', IndexView.as_view(), name='index'),
     path('logout/', user_logout, name="logout"),
     path('offices/', offices_view, name='offices'),

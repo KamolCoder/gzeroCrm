@@ -37,8 +37,8 @@ class PriceAdmin(admin.TabularInline):
 
 @admin.register(Client)
 class ClientAdmin(admin.ModelAdmin):
-    list_display = ['name', 'surname', 'telegram_id', 'added_user', 'loyalty','phone']
-    list_display_links = ['name', 'surname','phone']
+    list_display = ['name', 'surname', 'telegram_id', 'added_user', 'loyalty', 'phone']
+    list_display_links = ['name', 'surname', 'phone']
 
     def image_preview(self, obj):
         if obj.image:
@@ -46,11 +46,6 @@ class ClientAdmin(admin.ModelAdmin):
         return "No image uploaded"
 
     image_preview.short_description = 'Image'  # Add a descriptive column header
-
-
-@admin.register(Events)
-class EventAdmin(admin.ModelAdmin):
-    list_display = ['created_at', 'title', 'event_start_date']
 
 
 @admin.register(Category)
@@ -122,10 +117,23 @@ class OfficePersonsAdmin(admin.ModelAdmin):
 
 @admin.register(Payments)
 class PaymentPersonsAdmin(admin.ModelAdmin):
-    list_display = ['created_at','payment',
+    list_display = ['created_at', 'payment',
                     'payment_status',
                     'summa',
                     'order',
                     'abonement',
                     'officeRent',
                     ]
+
+
+class EventMembersInline(admin.TabularInline):
+    model = EventMembers
+    extra = 1
+    max_num = 1
+    filter_horizontal = ('members',)
+
+
+@admin.register(Events)
+class EventAdmin(admin.ModelAdmin):
+    list_display = ['created_at', 'title', 'event_start_date']
+    inlines = [EventMembersInline]
