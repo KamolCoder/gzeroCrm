@@ -5,54 +5,122 @@
 {{title}}
 {% endblock title%}
 {% block main %}
-<h5>{{title}} для {{office.0.persons}} персон</h5>
+<h5>{{title}} для {{office.persons}} персон</h5>
 
-<table class="table">
+<div class="ml-0 mb-3">
+    <button class="btn btn-success">
+        <a data-bs-toggle="modal"
+           data-bs-target="#officeAdd"><i class="bi bi-file-earmark-plus"></i>Добавить</a>
+    </button>
+</div>
+<div style="    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: center;">
+    {{ calendar|safe }}
+</div>
+
+
+<table class="table" style="box-shadow: #2f41c5 0px 0px 21px -11px;'">
     <thead>
     <tr>
+        <th scope="col"></th>
+        <th scope="col">id</th>
+        <th scope="col">Дата</th>
         <th scope="col">Бронирован от</th>
         <th scope="col">Бронирован до</th>
         <th scope="col">Клиент</th>
-        <th scope="col">Оплатил</th>
+        <th scope="col">Сумма</th>
+        <th scope="col">Статус аренды</th>
         <th scope="col">Картой/Наличные</th>
-        <th scope="col"></th>
+        <th scope="col">Статус оплаты</th>
     </tr>
     </thead>
     <tbody>
     {%for rent in rents%}
-
     <tr>
+        <td style="background-color:{{rent.color}};width:3px"></td>
+        <td> {{rent.pk}}</td>
+        <td> {{rent.created_at}}</td>
         <td> {{rent.rent_start}}</td>
         <td> {{rent.rent_end}}</td>
-        <td> {{rent.booked_user}}</td>
-        <td>@mdo</td>
-        <td>@mdo</td>
-        {% if rent.is_active %}
+        <td><a href="{{ rent.booked_user.get_absolute_url }}" style="color:black;">{{rent.booked_user}}</a></td>
+        <td></td>
+        {% if rent.is_active and rent.is_paid %}
+        <td style="color:green;font-weight:500">Активно</td>
+        {% elif rent.is_paid %}
+        <td style="color:grey;font-weight:500">Срок истек</td>
+        {% elif not rent.is_paid %}
+        <td style="color:grey;font-weight:500">Не оплачен</td>
+        {% endif %}
+        <td></td>
         <td>
-            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="40" height="40" viewBox="0 0 48 48">
-                <path fill="#c8e6c9" d="M44,24c0,11-9,20-20,20S4,35,4,24S13,4,24,4S44,13,44,24z"></path>
-                <polyline fill="none" stroke="#4caf50" stroke-miterlimit="10" stroke-width="4"
-                          points="14,24 21,31 36,16"></polyline>
-            </svg>
-        </td>
-        {% else %}
-        <td>
-            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="40" height="40" viewBox="0 0 48 48">
-                <path fill="grey" d="M44,24c0,11-9,20-20,20S4,35,4,24S13,4,24,4S44,13,44,24z"></path>
-                <polyline fill="none" stroke="white" stroke-miterlimit="10" stroke-width="4"
-                          points="14,24 21,31 36,16"></polyline>
-            </svg>
+            {% if rent.is_paid %}
+            <button style="width: 100%;height: 24px;text-align: center;line-height: 0;--bs-btn-active-color: #000000"
+                    type="button" class="btn btn-success"><a
+                    href="{{ rent.get_absolute_url }}">Оплачен</a>
+            </button>
+
+            {% else %}
+            <button style="width: 100%;height: 24px;text-align: center;line-height: 0;--bs-btn-active-color: #000000"
+                    type="button" class="btn btn-outline-info"><a style="color:black" href="{{rent.get_absolute_url }}">Оплатить</a>
+            </button>
+            {% endif %}
         </td>
 
-        {% endif %}
     </tr>
     {% endfor %}
-
     </tbody>
 </table>
-{% for p in persons %}
-{{ p }}
-{% endfor %}
 
+
+<div class="modal fade" id="officeAdd" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Заказ № {{order.pk}}</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+            </div>
+            <div class="modal-body">
+                <form method="post">
+                    {% csrf_token%}
+                    {{form.as_p}}
+                    <button class="btn btn-success" name="form1" type="submit">Подтвердить</button>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>
+<script>
+    const payNowButton = document.getElementById('pay-now-btn');
+  const selectedPaymentMethodInput = document.getElementById('selected-payment-method');
+
+    payNowButton.addEventListener('click', function() {
+      const checkedRadio = document.querySelector('input[name="options-outlined"]:checked');
+      if (!checkedRadio) {
+        alert('Выберите способ оплаты');
+      return;
+      }
+      selectedPaymentMethodInput.value = checkedRadio.id;
+    });
+</script>
+<script>
+    const paymentSelect = document.getElementById('id_payment');
+const radioInputs = document.querySelectorAll('.col-xl-12 input[type="radio"]');
+
+// Initial synchronization (optional)
+paymentSelect.value = radioInputs[0].id || ''; // Set initial value based on first radio or empty string
+
+radioInputs.forEach(radioInput => {
+  radioInput.addEventListener('change', function() {
+    if (this.checked) {
+      paymentSelect.value = this.id;
+    }
+  });
+});
+
+</script>
 {% endblock main %}
 

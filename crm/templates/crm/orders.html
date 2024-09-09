@@ -7,9 +7,9 @@
 <h3 class="m-2 mb-5">{{title}}</h3>
 <!-- Таблица заказов -->
     <div class="ml-0 mb-3">
-        <button class="btn btn-success">
-            <a href="{% url 'add_order' %}"><i class="bi bi-file-earmark-plus"></i>Добавить</a>
-        </button>
+<!--        <button class="btn btn-success">-->
+<!--            <a ><i class="bi bi-file-earmark-plus"></i>Добавить</a>-->
+<!--        </button>-->
         {% if user.is_superuser%}
         <button class="btn btn-success">
             <a href="{% url 'export_excel' %}"><i class="bi bi-download m-0"> </i>Excel</a>
@@ -77,6 +77,7 @@
 </div>
 {% endfor %}
 <!-- /Модальное окно -->
+
 
 
 

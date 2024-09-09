@@ -53,12 +53,14 @@
                     <thead>
                     <tr style="text-align:center">
                         <th class="th-sm" style="width:20%">Период</th>
-                        <th class="th-sm" style="width:14%">Kitoblar</th>
-                        <th class="th-sm" style="width:14%">Minor</th>
-                        <th class="th-sm" style="width:14%">Sharq</th>
-                        <th class="th-sm" style="width:12%">Терминал</th>
-                        <th class="th-sm" style="width:12%">Наличные</th>
-                        <th class="th-sm" style="width:12%">Общая сумма</th>
+                        <th class="th-sm" style="width:10%">Kitoblar</th>
+                        <th class="th-sm" style="width:10%">Minor</th>
+                        <th class="th-sm" style="width:10%">Sharq</th>
+                        <th class="th-sm" style="width:10%">CASH</th>
+                        <th class="th-sm" style="width:10%">CLICK</th>
+                        <th class="th-sm" style="width:10%">UZUM</th>
+                        <th class="th-sm" style="width:10%">PAYME</th>
+                        <th class="th-sm" style="width:10%">Общая сумма</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -68,8 +70,10 @@
                         <td>{{ d.f1 }}</td>
                         <td>{{ d.f2 }}</td>
                         <td>{{ d.f3 }}</td>
-                        <td>{{ d.terminal }}</td>
-                        <td>{{ d.nalichka }}</td>
+                        <td>{{ d.CASH }}</td>
+                        <td>{{ d.CLICK }}</td>
+                        <td>{{ d.UZUM }}</td>
+                        <td>{{ d.PAYME }}</td>
                         <td><strong>{{ d.itogo }}</strong></td>
                     </tr>
                     {% endfor %}

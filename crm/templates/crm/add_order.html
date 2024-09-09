@@ -12,57 +12,58 @@
 <div class="col-sm-12 col-xs-12 content pt-3 pl-0 d-flex justify-content-center">
     <div class="card p-4 shadow h4" style="width:60rem">
         <h3 style="text-align:center;margin-bottom:40px;text-decoration:underline">Новый заказ</h3>
-        <form action="" method="post" class="row g-3" enctype="multipart/form-data">
-            {% csrf_token %}
-            <div class="col-md-6">
-                <label for="{{ form.client.id_for_label }}" class="form-label">Клиент</label>
-                {{form.client}}
-            </div>
-            <div class="col-md-6">
-                <label for="{{ form.filial.id_for_label }}" class="form-label">Филиал</label>
-                {{form.filial}}
-            </div>
-            <div class="col-md-6">
-                <label for="{{ form.hour.id_for_label }}" class="form-label">Длительность (час)</label><br>
-                {{form.hour}}
-                <p class="text-danger">{{ form.errors }}</p>
-            </div>
-            <div class="col-md-6">
-                <label for="{{ form.product.id_for_label }}" class="form-label">Комната</label>
-                {{form.product}}
-            </div>
-            <div class="col-md-4">
-                <label for="{{ form.order_start.id_for_label }}" class="form-label">От :</label>{{form.order_start}}
-            </div>
-            <div class="col-md-4">
-                <label for="{{ form.order_end.id_for_label }}" class="form-label">До :</label>{{form.order_end}}
-            </div>
-            <div class="col-md-4">
-                <label for="{{ form.status.id_for_label }}" class="form-label">Статус заказа</label>{{form.status}}
-            </div>
-            <div class="col-md-12">
-                <label for="{{ form.comment.id_for_label }}" class="form-label">Комментарии</label>{{form.comment}}
-            </div>
-            <div class="col-md-12">
-                <div class="d-flex justify-content-end">
-                    <div class="px-5">
-                        <h6>Тип оплаты</h6>
-                        {{ form.payment }}
-                    </div>
-                    <div class="px-5">
-                        <h6>Оплачен</h6>
-                        {{ form.payment_status }}
-                    </div>
-                    <div style="width:7rem">
-                        <h6>Скидка</h6>
-                        {{ form.discount }}
-                    </div>
-                </div>
-                <div class="col-12 mt-2">
-                    <button type="submit" class="btn btn-primary">Создать заказ</button>
-                </div>
-            </div>
-        </form>
+<form action="" method="post" class="row g-3" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="col-md-6">
+        <label for="{{ form.client.id_for_label }}" class="form-label">Клиент</label>
+        {{form.client}}
+    </div>
+    <div class="col-md-6">
+        <label for="{{ form.filial.id_for_label }}" class="form-label">Филиал</label>
+        {{form.filial}}
+    </div>
+    <div class="col-md-6">
+        <label for="{{ form.hour.id_for_label }}" class="form-label">Длительность (час)</label><br>
+        {{form.hour}}
+    </div>
+    <div class="col-md-6">
+        <label for="{{ form.product.id_for_label }}" class="form-label">Комната</label>
+        {{form.product}}
+    </div>
+    <div class="col-md-4">
+        <label for="{{ form.order_start.id_for_label }}" class="form-label">От :</label>{{form.order_start}}
+    </div>
+    <div class="col-md-4">
+        <label for="{{ form.order_end.id_for_label }}" class="form-label">До :</label>{{form.order_end}}
+    </div>
+    <div class="col-md-4">
+        <label for="{{ form.status.id_for_label }}" class="form-label">Статус заказа</label>{{form.status}}
+    </div>
+    <div class="col-md-8">
+        <h6>Тип оплаты</h6>
+<!--                {{ form3.payment }}-->
+<!--        <input type="radio" class="btn-check"  name="options-outlined" id="CLICK" autocomplete="off" checked>-->
+<!--        <label style="font-weight: 700;" class="btn btn-outline-primary" for="CLICK">CLICK</label>-->
+
+<!--        <input type="radio" class="btn-check"  name="options-outlined" id="PAYME" autocomplete="off">-->
+<!--        <label style="font-weight: 700;" class="btn btn-outline-info" for="PAYME">PAYME</label>-->
+<!--        <input type="radio" class="btn-check"  name="options-outlined" id="CASH" autocomplete="off">-->
+<!--        <label style="font-weight: 700;" class="btn btn-outline-success" for="CASH">CASH</label>-->
+    </div>
+    <div class="col-md-4">
+        <h6>Скидка</h6>
+        {{ form.discount }}
+    </div>
+    <div class="col-md-4">
+        <!--        <h6>Оплачен</h6>-->
+        <!--        {{ form3.payment_status }}-->
+        <h6>Комментарии</h6>
+        {{form.comment}}
+    </div>
+    <div class="col-12">
+        <button type="submit" class="btn btn-success">Создать заказ</button>
+    </div>
+</form>
     </div>
 
 </div>
@@ -84,14 +85,48 @@
 <script src="/static/smart-selects/admin/js/bindfields.js"></script>
 
 <script>
+    const titles = JSON.parse('{{ json_data|safe }}');
+    const pricelist = JSON.parse('{{ pricelist|safe }}');
+    function updateTitleOptions() {
+      const filialSelect = document.getElementById('filialSelect');
+      const titleSelect = document.getElementById('titleSelect');
+
+      titleSelect.innerHTML = '<option value="">------</option>';
+
+      const selectedFilial = filialSelect.value;
+
+      const filteredTitles = titles.filter(title => title.filial_id === parseInt(selectedFilial));
+
+      for (let i = 0; i < filteredTitles.length; i++) {
+      const option = document.createElement('option');
+      option.value = filteredTitles[i].id;
+      option.innerText = filteredTitles[i].title;
+      titleSelect.appendChild(option);
+    }
+}
+    function updateHourOptions() {
+      const titleSelect = document.getElementById('titleSelect');
+      const hourSelect = document.getElementById('hourSelect');
+      hourSelect.innerHTML = '<option value="">------</option>';
+
+      const selectedtitle = titleSelect.value;
+      const filteredHours = pricelist.filter(hour => hour.product === parseInt(selectedtitle));
+
+      for (let i = 0; i < filteredHours.length; i++) {
+      const option = document.createElement('option');
+      option.value = filteredHours[i].hour;
+      option.innerText = filteredHours[i].hour;
+      hourSelect.appendChild(option);
+    }
+
+}
+
+</script>
+<script>
     // Function to update the datetime-end value
     function updateDateTimeEnd() {
         // Get the values of hour and datetime-start
-
-        var element = document.getElementById('id_hour');
-        var hour = element.options[element.selectedIndex].text;
-
-
+        const hour = parseInt($('#hourSelect').val());
         const dateTimeStart = new Date($('#id_order_start').val());
         // Calculate the datetime-end value
         const dateTimeEnd = new Date(dateTimeStart.getTime() + 18000000 + hour * 60 * 60 * 1000);
@@ -102,7 +137,31 @@
     $('#hour, #id_order_start').on('input', updateDateTimeEnd);
 
 
-</script>
+    const abonements = JSON.parse('{{json_abonements|safe}}');
+    const selectElement = document.getElementById('id_abonement');
+    selectElement.addEventListener('change',(event) => {
+    const selectedValue = event.target.value;
+    const abonementTitle = selectElement.options[selectElement.selectedIndex].text;
 
+    for (let i = 0; i < abonements.length; i++) {
+        if (abonements[i].title == abonementTitle){
+        const titleSelect = document.getElementById('abonementPrice');
+        const activeDays = document.getElementById('activeDays');
+        titleSelect.innerText = abonements[i].price;
+        activeDays.innerText = abonements[i].days;
+    }}});
+    // Update abonement buy dates
+    $("#id_subscription_start").change(function () {
+        var start_date = new Date($("#id_subscription_start").val());
+        const paragraphElement = document.getElementById('activeDays');
+        const daysInt = parseInt(paragraphElement.textContent);
+        var end_date = new Date(start_date.getTime() + (daysInt * 24 * 60 * 60 * 1000));
+        var end_year = end_date.getFullYear();
+        var end_month = ("0" + (end_date.getMonth() + 1)).slice(-2);
+        var end_day = ("0" + end_date.getDate()).slice(-2);
+        $("#id_subscription_end").val(end_year + "-" + end_month + "-" + end_day);
+    });
+
+</script>
 
 {% endblock main %}

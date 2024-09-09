@@ -5,20 +5,31 @@
 {% endblock title%}
 
 {% block main %}
-<div class="row mt-3">
-    <div class="col-sm-12">
+<div class="row ">
+    <div class="col-sm-9" style="padding:0px 5px 0px 0px">
         <!--User profile header-->
         <div class="mt-1 mb-3 button-container bg-white border shadow-sm">
             <div class="profile-bg p-5"
                  style="background-image:url({% static 'profilbg.png' %});background-size: cover;background-position-y: 40%;background-repeat: no-repeat;height: 150px;">
-                <img src="{{client.get_image}}" height="125px" width="125px"
+                <img src="{{client.get_image}}" style="object-fit: cover;" height="125px" width="125px"
                      class="rounded-circle shadow profile-img">
             </div>
 
-            <div class="profile-bio-main container-fluid">
+            <div class="profile-bio-main container-fluid" style="    height: 95px;    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;">
                 <div class="row">
                     <div class="col-md-5 offset-md-3 col-sm-12 offset-sm-0 col-12 bio-header">
-                        <h3 class="mt-4">{{client.name}} {{client.surname}}</h3>
+
+                        <h3 class="mb-0">{{client.name}} {{client.surname}} </h3>
+                                                <span class="badge rounded-pill text-bg-info">{{client.get_profession_display}}</span>
+
+                        {% if office %}
+                        <span class="badge rounded-pill text-bg-warning" style="font-size: 12px;"><a class="text-dark" href="{{office.get_absolute_url}}">Aрендатор офиса</a></span>
+                        {% else %}
+                        <span class="badge rounded-pill text-bg-warning" style="font-size: 12px;"></span>
+
+                        {% endif %}
                         <div class="d-flex justify-content-between">
                             <span class="text-muted mt-0 bio-request"><i class="bi bi-star"></i>Лояльность {{client.loyalty}}дня</span>
                             <span class="text-muted mt-0 bio-request">
@@ -80,17 +91,12 @@
         </div>
         <!--/User profile header-->
     </div>
-</div>
-
-
-<div class="row mt-3">
-    <!--User левая колонка подписки -->
-    <div class="col-sm-12 col-md-3">
-        <div class="mt-1 mb-3 p-3 button-container bg-white border shadow-sm">
+    <div class="col-sm-3 p-0">
+        <div class="mt-1 mb-3 p-3 button-container border shadow-sm">
             <h3 class="text-center">Подписка</h3>
             {% if abonement.0 %}
             <div class="card text-bg-dark">
-                <div class="card-img" style="background-color:#201863;height:200px">
+                <div class="card-img" style="background-color:#201863;height:170px">
                     <div class="card-img-overlay">
                         <h5 class="card-title text-center" style="color:yellow">{{ abonement.0 }}</h5>
                         <div class="d-flex justify-content-between">
@@ -105,7 +111,7 @@
             </div>
             {% else %}
             <div class="card text-bg-dark border border-white">
-                <div class="card-img" style="background-color:#EFEFEF;height:200px;border:none">
+                <div class="card-img" style="background-color:#EFEFEF;height:170px;border:none">
                     <div class="card-img-overlay">
                         <h5 class="card-title text-center mb-5" style="color:grey">Нет абонемента</h5>
                         <a href="" data-bs-toggle="modal"
@@ -126,22 +132,17 @@
                                     <div class="d-flex" style=" justify-content:space-around">
                                         <div class="d-flex">
                                             <p>Active days : </p>
-                                            <p id="activeDays"> </p>
+                                            <p id="activeDays"></p>
                                         </div>
                                         <div class="d-flex">
                                             <p>Price : </p>
-                                            <p id="abonementPrice"> </p>
+                                            <p id="abonementPrice"></p>
                                         </div>
                                     </div>
-
-
-                                    <form method="POST" action="{% url 'sale_abon' %}" enctype="multipart/form-data">
+                                    <form method="POST" action="{% url 'sale_subscribtion' %}" enctype="multipart/form-data">
                                         {% csrf_token %}
                                         <label for="{{ form2.abonement.id_for_label }}"
                                                class="form-label">Абонемент</label>{{form2.abonement}}
-                                        <label for="{{ form2.client.id_for_label }}" class="form-label">Ид
-                                            клиента</label>{{form2.client}}
-
                                         <label for="{{ form2.subscription_start.id_for_label }}" class="form-label">День
                                             активации</label>{{form2.subscription_start}}
                                         <label for="{{ form2.subscription_end.id_for_label }}" class="form-label">День
@@ -160,24 +161,33 @@
             {% endif %}
         </div>
     </div>
-    <!--/User левая колонка подписки -->
+</div>
 
+<style>
+    td {
+        font-size: 14px;
+        }
+</style>
+<div class="row">
     <!--User данные правая колонка -->
-    <div class="col-sm-12 col-md-9">
-        <div class="mt-1 mb-3 p-3 button-container bg-white border shadow-sm custom-tabs">
+    <div class="col-sm-12 col-md-12 p-0">
+        <div class="mt-1 mb-3 p-1 button-container bg-white border shadow-sm custom-tabs">
             <ul class="nav nav-tabs" id="myTab" role="tablist">
                 <li class="nav-item" role="presentation">
-                    <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home-tab-pane"
+                    <button style="border-radius: 20px 20px 0 0;" class="nav-link active" id="home-tab"
+                            data-bs-toggle="tab" data-bs-target="#home-tab-pane"
                             type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">Заказы
                     </button>
                 </li>
                 <li class="nav-item" role="presentation">
-                    <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile-tab-pane"
+                    <button style="border-radius: 20px 20px 0 0;" class="nav-link" id="profile-tab" data-bs-toggle="tab"
+                            data-bs-target="#profile-tab-pane"
                             type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="false">Оплаты
                     </button>
                 </li>
                 <li class="nav-item" role="presentation">
-                    <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact-tab-pane"
+                    <button style="border-radius: 20px 20px 0 0;" class="nav-link" id="contact-tab" data-bs-toggle="tab"
+                            data-bs-target="#contact-tab-pane"
                             type="button" role="tab" aria-controls="contact-tab-pane" aria-selected="false">Документы
                     </button>
                 </li>
@@ -185,56 +195,50 @@
             <div class="tab-content" id="myTabContent">
                 <div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab"
                      tabindex="0">
-                    <table id="dtBasicExample" class="table table-hover table-bordered table-sm" cellspacing="0"
-                           width="80%">
+                    <table id="dtBasicExample" class="table table-hover table-bordered table-sm" cellspacing="0">
                         <thead>
                         <tr>
-                            <th class="th-sm">Дата</th>
-                            <th class="th-sm">Филиал</th>
-                            <th class="th-sm">Комната</th>
-                            <th class="th-sm text-center"><i class="bi bi-clock-history"></i></th>
-                            <th class="th-sm">Сумма</th>
-                            <th class="th-sm">Комментарии</th>
-                            <th class="th-sm">Статус</th>
-                            <th class="text-center">Тип</th>
-                            <th class="th-sm">
-                                <div class="d-flex justify-content-center">
-                                </div>
-                            </th>
-                            <th class="th-sm">Автор</th>
+                            <th class="text-center">№</th>
+                            <th class="text-center">Дата создание</th>
+                            <th class="text-center">Дата</th>
+                            <th class="text-center">Филиал</th>
+                            <th class="text-center">Комната</th>
+                            <th class="text-center"><i class="bi bi-clock-history"></i></th>
+                            <th class="text-center">Сумма</th>
+                            <th class="text-center">Сумма скидкой</th>
+                            <th class="text-center">Комментарии</th>
+                            <th class="text-center">Тип оплаты</th>
+                            <th class="text-center">Автор</th>
+                            <th class="text-center">Статус оплаты</th>
                         </tr>
                         </thead>
                         <tbody>
+                        {% for o in orders %}
                         <tr>
-                            {% for o in orders %}
-                            <td style="width:10rem">{{ o.order_start.date }}<br>{{ o.order_start.time }}-
-                                {{ o.order_end.time }}
-                            </td>
+                            <td><b>{{o.pk}}</b></td>
+                            <td>{{o.created_at}}</td>
+                            <td>{{ o.order_start.date }}{{ o.order_start.time }}-{{ o.order_end.time }}</td>
                             <td>{{ o.filial }}</td>
                             <td>{{ o.product }}</td>
                             <td class="text-center">{{ o.hour }} час(а)</td>
-                            <td><span style="text-decoration:line-through">{{ o.summa }}</span><br>{{o.summa_with_discount}}
-                            </td>
-                            {% if o.is_deleted %}
-                            <td class="text-danger text-center">Удален за неуплату</td>
-                            <td></td>
-                            {% else %}
+                            <td>{{ o.summa }}</td>
+                            <td>{{o.summa_with_discount}}</td>
                             <td>{{ o.comment }}</td>
-                            <td>{{ o.status }}</td>
-                            {% endif %}
-                            <td class="text-center"> {% if o.payment == True %}
-                                💳
-                                {% else %}
-                                💵
-                                {% endif %}
-                            </td>
-                            <td class="text-center">{% if o.payment_status == True %}
-                                <i class="bi bi-check-circle-fill" style="color:green"></i>
-                                {% else %}
-                                <i class="bi bi-clock"></i>
-                                {% endif %}
-                            </td>
+                            <td>{% if o.payment != None %}{{o.payment}}{%endif%}</td>
                             <td>{{o.added_user}}</td>
+                            <td>
+                                <button style="width: 100%;height: 24px;text-align: center;line-height: 0;--bs-btn-active-color: #000000"
+                                        type="button" class="btn btn-outline-info"><a style="color:black" href="{{ o.get_absolute_url }}">Оплата</a>
+                                </button>
+                            </td>
+                            {%for payment in payments %}
+                            {% if payment.order.pk == o.pk %}
+                            <td>{{ payment.created_at }}</td>
+                            <td>{{ payment.summa }}</td>
+                            <td>{{ payment.payment }}</td>
+                            {% endif %}
+                            {% endfor %}
+
                         </tr>
                         {% endfor %}
                         </tbody>
@@ -243,45 +247,21 @@
                 </div>
                 <div class="tab-pane fade" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab"
                      tabindex="0">
-                    {% if abonement %}
-                    <table class="table table-hover table-bordered table-sm">
-                        <thead>
-                        <tr>
-                            <th>Абонемент</th>
-                            <th>День активации</th>
-                            <th>День деактивации</th>
-                            <th>Цена</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        {%for a in abonement%}
-                        <tr>
-                            <td>{{ a.abonement.title }}</td>
-                            <td>{{ a.subscription_start }}</td>
-                            <td>{{ a.subscription_end }}</td>
-                            <td>{{ a.abonement.price }}</td>
-                        </tr>
-                        {% endfor %}
-                        </tbody>
-                    </table>
-                    {% endif %}
-
                     <table class="table table-hover table-bordered table-sm">
                         <thead>
                         <tr>
                             <th>День оплаты</th>
                             <th>Сумма</th>
+                            <th>Сумма</th>
                         </tr>
                         </thead>
                         <tbody>
-                        {%for a in orders %}
-                        {% if a.payment_status %}
-
+                        {%for payment in payments %}
                         <tr>
-                            <td>{{ a.created_at }}</td>
-                            <td>{{ a.summa }}</td>
+                            <td>{{ payment.created_at }}</td>
+                            <td>{{ payment.summa }}</td>
+                            <td>{{ payment.payment }}</td>
                         </tr>
-                        {% endif %}
                         {% endfor %}
                         </tbody>
                     </table>
@@ -294,7 +274,6 @@
                     <div class="my-5 text-center">Нет прикрепленных документов</div>
                     {% endif %}
                 </div>
-
             </div>
         </div>
     </div>

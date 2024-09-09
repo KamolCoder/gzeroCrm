@@ -1,4 +1,6 @@
 from django.contrib import admin
+from django.utils.safestring import mark_safe
+
 from .models import *
 
 
@@ -35,8 +37,8 @@ class PriceAdmin(admin.TabularInline):
 
 @admin.register(Client)
 class ClientAdmin(admin.ModelAdmin):
-    list_display = ['name', 'surname', 'telegram_id', 'added_user', 'loyalty']
-    list_display_links = ['name', 'surname']
+    list_display = ['name', 'surname', 'telegram_id', 'added_user', 'loyalty','phone']
+    list_display_links = ['name', 'surname','phone']
 
     def image_preview(self, obj):
         if obj.image:
@@ -68,8 +70,8 @@ class Rooms_in_branchesAdmin(admin.ModelAdmin):
 @admin.register(Order)
 class OrderAdmin(admin.ModelAdmin):
     list_display = ['pk', 'is_deleted', 'client', 'filial', 'product', 'order_start', 'order_end',
-                    'status', 'created_at', 'added_user']
-    list_editable = ['filial', 'status']
+                    'payment_status', 'created_at', 'added_user']
+    list_editable = ['filial', 'payment_status']
     list_display_links = ['client']
 
 
@@ -116,3 +118,14 @@ class OfficeRentAdmin(admin.ModelAdmin):
 @admin.register(OfficePersons)
 class OfficePersonsAdmin(admin.ModelAdmin):
     list_display = ['id', 'office']
+
+
+@admin.register(Payments)
+class PaymentPersonsAdmin(admin.ModelAdmin):
+    list_display = ['created_at','payment',
+                    'payment_status',
+                    'summa',
+                    'order',
+                    'abonement',
+                    'officeRent',
+                    ]

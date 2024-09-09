@@ -1,16 +1,24 @@
 import datetime
-from .models import AbonementBuyList, Client, NotifyDate, Order
+from .models import AbonementBuyList, Client, NotifyDate, Order, OfficeRent
 
 
 def add_my_forms(request):
     try:
         noti = AbonementBuyList.objects.filter(is_active=True,
-                                               subscription_end__lt=datetime.date.today() + datetime.timedelta(days=5))
+                                               subscription_end__lt=datetime.date.today() + datetime.timedelta(days=3))
+        abonement_counts = noti.count()
     except AbonementBuyList.DoesNotExist:
         noti = []
-    counts = AbonementBuyList.objects.filter(is_active=True,
-                                             subscription_end__lt=datetime.date.today() + datetime.timedelta(
-                                                 days=5)).count()
+        abonement_counts = 0
+    try:
+        office_noti = OfficeRent.objects.filter(is_active=True,
+                                                rent_end__lt=datetime.date.today() + datetime.timedelta(days=3))
+        off_noti_counts = office_noti.count()
+    except OfficeRent.DoesNotExist:
+        office_noti = []
+        off_noti_counts = 0
+
+    counts = abonement_counts + off_noti_counts
     current_date = datetime.date.today()
     try:
         last_notify = NotifyDate.objects.filter().order_by('-pk')[0]
@@ -23,6 +31,7 @@ def add_my_forms(request):
         is_send = False
     return {
         'notifies': noti,
+        'office_notifies': office_noti,
         'current_date': current_date,
         'counts': counts,
         'is_send': is_send,
@@ -31,8 +40,8 @@ def add_my_forms(request):
 
 
 def deactivete_subscribtion(request):
-    eski_abonents = AbonementBuyList.objects.filter(subscription_end__lt=datetime.date.today())
-    eski_abonents.update(is_active=False)
+    eski_abonents = AbonementBuyList.objects.filter(subscription_end__lt=datetime.date.today()).update(is_active=False)
+    OfficeRent.objects.filter(rent_end__lt=datetime.date.today()).update(is_active=False)
     return {
         'eski_abonents': eski_abonents
     }

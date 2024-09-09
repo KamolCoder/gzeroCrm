@@ -1,6 +1,6 @@
 {% load static %}
 <div class="row header shadow-sm">
-    <div class="col-sm-2 text-center" style="width: 10%;padding: 0;">
+    <div class="col-sm-2 text-center" style="width: 8%;padding: 0;">
         <div class="mr-3 pt-2 pb-2 mb-0" style="background-color: #0D47A1;">
             <h3 class="logo">
                 <a href="{% url 'index' %}" class="text-white fs-4 text-decoration-none">
@@ -9,7 +9,7 @@
             </h3>
         </div>
     </div>
-    <div class="col-sm-10 text-center pt-2" style="width: 90%;">
+    <div class="col-sm-10 text-center pt-2" style="width: 92%;box-shadow: #0d47a133 10px 1px 22px -2px;">
         <div class="d-grid gap-2 d-md-flex justify-content-md-between">
             {% include 'crm/components/notifications.html' %}
             <span class="text-primary" style="font-size:20px;display: flex; align-items: center"><strong>{{ user.groups.all.0.name }}</strong></span>

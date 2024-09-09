@@ -1,3 +1,8 @@
+<style>
+
+    .btn-outline-info {
+    --bs-btn-active-color: #e4ff00;
+</style>
 <form action="{% url 'order_from_profile' %}" method="post" class="row g-3" enctype="multipart/form-data">
     {% csrf_token %}
     <div class="col-md-6">
@@ -25,17 +30,26 @@
     <div class="col-md-4">
         <label for="{{ form3.status.id_for_label }}" class="form-label">Статус заказа</label>{{form3.status}}
     </div>
-    <div class="col-md-6">
+    <div class="col-md-8">
         <h6>Тип оплаты</h6>
-        {{ form3.payment }}
+<!--                {{ form3.payment }}-->
+<!--        <input type="radio" class="btn-check"  name="options-outlined" id="CLICK" autocomplete="off" checked>-->
+<!--        <label style="font-weight: 700;" class="btn btn-outline-primary" for="CLICK">CLICK</label>-->
+
+<!--        <input type="radio" class="btn-check"  name="options-outlined" id="PAYME" autocomplete="off">-->
+<!--        <label style="font-weight: 700;" class="btn btn-outline-info" for="PAYME">PAYME</label>-->
+<!--        <input type="radio" class="btn-check"  name="options-outlined" id="CASH" autocomplete="off">-->
+<!--        <label style="font-weight: 700;" class="btn btn-outline-success" for="CASH">CASH</label>-->
     </div>
-    <div class="col-md-6">
+    <div class="col-md-4">
         <h6>Скидка</h6>
         {{ form3.discount }}
     </div>
     <div class="col-md-4">
-        <h6>Оплачен</h6>
-        {{ form3.payment_status }}
+        <!--        <h6>Оплачен</h6>-->
+        <!--        {{ form3.payment_status }}-->
+        <h6>Комментарии</h6>
+        {{form3.comment}}
     </div>
     <div class="col-12">
         <button type="submit" class="btn btn-success">Создать заказ</button>

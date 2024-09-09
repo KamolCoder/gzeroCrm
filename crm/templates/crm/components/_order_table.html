@@ -9,16 +9,15 @@
         <thead>
         <tr>
             <th>#</th>
-            <th>Дата</th>
+            <th>Дата создания</th>
             <th>Клиент</th>
             <th>Комната</th>
             <th>Филиал</th>
             <th>Часы</th>
             <th>Сумма</th>
-            <th>Скидка</th>
-            <th>Вид оплаты</th>
-            <th>Принял оплату</th>
+            <th>Сумма со скидкой</th>
             <th>Заказ создал</th>
+            <th></th>
             <th></th>
             <th></th>
         </tr>
@@ -27,7 +26,7 @@
         {% for o in orders %}
         <tr>
             <td style="padding:0px 5px">{{o.pk}}
-                {%if o.is_deleted %}
+                {% if o.is_deleted %}
                 <img src="{% static 'deleted_icon.svg' %}" width="10px">
                 {%endif%}
             </td>
@@ -40,50 +39,21 @@
             <td style="padding:0px 5px">{{ o.filial }}</td>
             <td style="padding:0px 5px">{{ o.hour }}</td>
             <td style="padding:0px 5px">
-                {% if o.discount %}
-                <span style="  text-decoration: line-through;">{{ o.summa }}</span>
-
-                {% else %}
                 {{ o.summa }}
-                {% endif %}
             </td>
-            <td style="padding:0px 5px">-{{ o.discount }}%</td>
-            <td style="padding:0px 5px" class="text-center">
-                {% if o.payment == True %}
-                <img src="{%static 'credit-card.png'%}" width="20px">
-                {% else %}
-                <img src="{%static 'money.png'%}" width="20px">
-                {% endif %}
+            <td style="padding:0px 5px">
+                {{ o.summa_with_discount }}
             </td>
-            <td class="text-center" style="padding:0px 5px">
-                {% if o.payment_status == True %}
-                <span class="badge text-bg-success">{{ o.pay_accept_user }}</span>
-                {% elif o.status == 'Cancelled' %}
-                Otmenen
-                {% else %}
-                <a href=""></a>
-                <form method="POST" action="{% url 'confirm_payment' o.pk 'Confirm' %}">
-                    {% csrf_token %}
-                    {{ form.as_p }}
-                    <button type="submit" class="badge text-bg-danger">Не оплачен</button>
-                </form>
-                {% endif %}
-            </td>
+
             {% if o.added_user %}
             <td style="padding:0px 5px">{{ o.added_user }}</td>
-            <td style="padding:0px 5px">{{ o.status }}</td>
-
             {% else %}
             <td style="padding:0px 5px">MobileApp</td>
             {% endif %}
-            {% if o.added_user == user %}
-            <td style="padding:0px 5px" class="align-middle m-0 p-0 text-center"><a href="{% url 'delete' o.pk %}"><i
-                    class="bi bi-trash-fill m-1" style="font-size:20px;color: red;"></i></a></td>
-            {% else %}
-            <td style="padding:0px 5px" class="align-middle m-0 p-0 text-center"><a><i class="bi bi-trash-fill m-1"
-                                                                                       style="font-size:20px;color: grey;"></i></a>
-            </td>
-            {% endif %}
+            <td style="background-color:#33e9141a;padding:0px 5px">{{ o.payment_info.summa }}</td>
+            <td style="background-color:#33e9141a;padding:0px 5px">{{ o.payment_info.payment }}</td>
+            <td style="background-color:#33e9141a;padding:0px 5px">{{ o.payment_info.payment_status }}</td>
+
         </tr>
         {% endfor %}
         </tbody>

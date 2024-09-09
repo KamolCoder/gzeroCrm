@@ -1,14 +1,13 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/dataTables.bootstrap5.min.css">
 
-<table id="example" class="table table-hover table-bordered" style="width:100%">
+<table id="example" class="table table-hover table-bordered">
     <thead>
     <tr>
         <th></th>
         <th>Имя</th>
         <th>Фамилия</th>
-        <th>ИД</th>
-        <th>ТГ-чат</th>
+        <th>Стаж клиента/день</th>
         <th>Контакт</th>
         <th>Дата создания</th>
         <th>Автор</th>
@@ -20,39 +19,30 @@
     {% for c in clients %}
 
     <tr onclick="window.location='{{ c.get_absolute_url }}'" style="cursor: pointer">
-        <td style="padding:0px 5px;text-align:center"><img src="{{ c.get_image }}" class='rounded-circle' style="width:25px "></td>
-        <td style="padding:0px 5px">{{ c.name }}</td>
+        <td style="padding:0px 5px;text-align:center"><img src="{{ c.get_image }}" class='rounded-circle'
+                                                           style="width: 25px;object-fit: cover;height: 25px; "></td>
+        <td style="padding:0px 5px">{{ c.name }} <span style="display:none">{{ c.telegram_id }}</span></td>
         <td style="padding:0px 5px">{{ c.surname }}</td>
-        <td style="padding:0px 5px">{{ c.telegram_id }}</td>
-        {% if c.username %}
-        <td style="padding:0px 5px"><a href="https://t.me/{{ c.username }}" class="text-primary" style="text-decoration: none"><i class="bi bi-telegram p-0 m-0"> </i>Chat</a>
-        </td>
-        {% else %}
-        <td style="padding:0px 5px"></td>
-        {% endif %}
+        <td style="padding:0px 5px">{{ c.loyalty }}</td>
         <td style="padding:0px 5px">{{ c.get_contact }}</td>
         <td style="padding:0px 5px">{{ c.created_at.date }}</td>
-        {% if c.added_user %}
         <td style="padding:0px 5px">{{ c.added_user }}</td>
-        {% else %}
-        <td style="padding:0px 5px">Telegram</td>
-        {% endif %}
         <td style="padding:0px 5px">{{ c.discount }}%</td>
         {% if c.activity == 1 %}
         <td class="p-0 text-center" style="padding:0px 5px"><i class="bi bi-reception-{{ c.activity }}"
-                                       style="color:red;font-size:30px"></i>
+                                                               style="color:red;font-size:30px"></i>
         </td>
         {% elif c.activity == 2 %}
         <td class="p-0 text-center" style="padding:0px 5px"><i class="bi bi-reception-{{ c.activity }}"
-                                       style="color:orange;font-size:30px"></i>
+                                                               style="color:orange;font-size:30px"></i>
         </td>
         {% elif c.activity == 3 %}
         <td class="p-0 text-center" style="padding:0px 5px"><i class="bi bi-reception-{{ c.activity }}"
-                                       style="color:green;font-size:30px"></i>
+                                                               style="color:green;font-size:30px"></i>
         </td>
         {% else %}
         <td class="p-0 text-center" style="padding:0px 5px"><i class="bi bi-reception-{{ c.activity }}"
-                                       style="color:green;font-size:20px"></i>
+                                                               style="color:green;font-size:20px"></i>
         </td>
         {% endif %}
     </tr>
@@ -63,8 +53,7 @@
         <th></th>
         <th>Имя</th>
         <th>Фамилия</th>
-        <th>ИД</th>
-        <th>ТГ-чат</th>
+        <th>Стаж клиента/день</th>
         <th>Контакт</th>
         <th>Дата создания</th>
         <th>Автор</th>

@@ -1,8 +1,28 @@
 {% load static %}
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<style>
+    li.parent { height:80px}
+    i {margin : 0}
+    li.parent a {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 0px 12px;
+        text-decoration: none;
+        border-radius: 10%;}
+    li.parent a:hover {
+        background-color:#54545440;
+    }
+    .sidebar-menu li {
+    border:none;}
+
+    a.{{selectMenu}} {
+    background-color:#54545440;
+    }
+</style>
 
 <div class="col-sm-2  p-0"
-     style="width:10%; background-color: #2e2e3a;height: auto;min-height: 95vh  ;transition: 200ms;">
+     style="width:8%; background-color: #2e2e3a;height: auto;min-height: 95vh  ;transition: 200ms;">
     <div class="inner-sidebar mr-3">
         <!--        <div class="avatar text-center pt-3">-->
         <!--            {% if user.is_superuser %}-->
@@ -16,54 +36,58 @@
         <!--            <span class="text-primary small"><strong>{{ user.groups.all.0.name }}</strong></span>-->
         <!--        </div>-->
         <div class="sidebar-menu-container">
-            <ul class="sidebar-menu mt-0 mb-4">
-                <li class="parent">
-                    <a href="/index/" style="padding:2px 7px;text-decoration:none"><i class="fa fa-dashboard mr-3"></i>
-                        <i class="bi bi-speedometer2" style="font-size:25px"></i>
-                        <span>Главная</span>
-                    </a>
-                </li>
-                <li class="parent">
-                    <a href="/clients/" style="padding:2px 7px;text-decoration:none"><i class="fas fa-user mr-3"></i>
-                        <span class="none"><i class="bi bi-people-fill" style="font-size:25px"></i>Клиенты</span>
-                    </a>
-                </li>
-                <li class="parent">
-                    <a href="/orders/" style="padding:2px 7px;text-decoration:none"><i class="fa fa-shopping-cart mr-3"></i>
-                        <span class="none"><i class="bi bi-cart-plus-fill" style="font-size:25px"></i>Заказы </span>
-                    </a>
-                </li>
-                <li class="parent">
-                    <a href="/offices/" style="padding:2px 7px;text-decoration:none"><i class="fa fa-shopping-cart mr-3"></i>
-                        <span class="none"><i class="bi bi-door-closed-fill" style="font-size:25px"></i>Офисы </span>
-                    </a>
 
+            <ul class="sidebar-menu mt-0 mb-4">
+                <li class="parent my-2">
+                    <a href="/index/" class="index">
+                        <i class="bi bi-speedometer2" style="font-size:25px"></i>
+                        <span style="">Главная</span>
+                    </a>
+                </li>
+                <li class="parent my-2">
+                    <a href="/clients/" class="clients">
+                        <i class="bi bi-people-fill" style="font-size:25px"></i>
+                        <span class="none">Клиенты</span>
+                    </a>
+                </li>
+                <li class="parent my-2">
+                    <a href="/orders/" class="orders"><i class="bi bi-cart-plus-fill" style="font-size:25px"></i>
+                        <span class="none">Заказы </span>
+                    </a>
+                </li>
+                <li class="parent my-2">
+                    <a href="/offices/" class="offices"><i class="bi bi-door-closed-fill" style="font-size:25px"></i>
+                        <span class="none">Офисы </span>
+                    </a>
                 </li>
                 {% if user.is_superuser%}
-                <li class="parent">
-                    <a href="/reports/" style="padding:2px 7px;text-decoration:none"><i class="fa fa-shopping-cart mr-3"></i>
-                        <span class="none"><i class="bi bi-cash-coin" style="font-size:25px"></i>Отчёты </span>
+                <li class="parent my-2">
+                    <a href="/reports/" class="reports"><i class="bi bi-list-columns" style="font-size:25px"></i>
+                        <span class="none">Отчёты </span>
                     </a>
                 </li>
                 {% endif %}
-                <li class="parent">
-                    <a href="/abonements_list/" style="padding:2px 7px;text-decoration:none"><i
-                            class="fa fa-suitcase mr-3"> </i>
-                        <span class="none"><i class="bi bi-briefcase-fill" style="font-size:25px"></i>Абонементы </span>
+                <li class="parent my-2">
+                    <a href="/abonements_list/" class="abonements"><i class="bi bi-briefcase-fill" style="font-size:25px"></i>
+                        <span class="none">Абонементы </span>
                     </a>
                 </li>
-                <li class="parent">
-                    <a href="/event_list/" style="padding:2px 7px;text-decoration:none">
-                        <i class="fa fa-suitcase mr-3"> </i>
-                        <span class="none"><i class="bi bi-briefcase-fill" style="font-size:25px"></i>Ивенты </span>
+                <li class="parent my-2">
+                    <a href="/event_list/" class="event_list">
+                        <i class="bi bi-mic-fill" style="font-size:25px"></i>
+                        <span class="none">Ивенты </span>
                     </a>
                 </li>
-                <li class="parent">
-                    <a href="/documentation/" style="padding:2px 7px;text-decoration:none"><i class="fa fa-suitcase mr-3"> </i>
-                        <span class="none"><i class="bi bi-info-square" style="font-size:25px"></i>Справка</span>
+                <li class="parent my-2">
+                    <a href="/documentation/" class="documentation"><i class="bi bi-info-square" style="font-size:25px"></i>
+                        <span class="none">Справка</span>
                     </a>
                 </li>
-
+                <li class="parent my-2">
+                    <a href="/payments/" class="payments"><i class="bi bi-bank" style="font-size:25px"></i>
+                        <span class="none">Оплаты</span>
+                    </a>
+                </li>
             </ul>
         </div>
     </div>
