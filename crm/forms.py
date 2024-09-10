@@ -174,6 +174,7 @@ class EventForm(forms.ModelForm):
     class Meta:
         model = Events
         fields = [
+            'status',
             'event_start_date',
             'event_locate',
             'title',
@@ -182,6 +183,33 @@ class EventForm(forms.ModelForm):
         widgets = {
             'event_start_date': forms.DateTimeInput(
                 attrs={'type': 'datetime-local', "class": 'form-control', 'style': 'width:200px'}),
+            'event_locate': forms.Select(attrs={
+                'class': 'form-control',
+            }),
+            'title': forms.TextInput(attrs={
+                'class': 'form-control',
+            }),
+            'event_description': forms.Textarea(attrs={
+                'class': 'form-control'
+            }),
+            'image': forms.FileInput(attrs={
+                'class': 'form-control '
+            })
+        }
+
+
+class EventEditForm(forms.ModelForm):
+    class Meta:
+        model = Events
+        fields = [
+                  'event_start_date',
+                  'event_locate',
+                  'title',
+                  'event_description',
+                  'image']
+        widgets = {
+            'event_start_date': forms.DateTimeInput(
+                attrs={"class": 'form-control', 'style': 'width:200px'}),
             'event_locate': forms.Select(attrs={
                 'class': 'form-control',
             }),

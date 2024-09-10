@@ -8,7 +8,7 @@ from django.contrib.auth import login, logout
 from django.contrib.auth.decorators import login_required
 from django.db.models import Case, When, Sum, Max, F, Count, Prefetch
 from django.db.models.functions import TruncMonth, TruncDay, TruncYear, TruncQuarter, Coalesce, Cast
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render, redirect
 from django.urls import reverse_lazy
 from django.utils.decorators import method_decorator
@@ -18,7 +18,7 @@ from django.views.generic import ListView, CreateView, TemplateView, UpdateView
 import xlwt
 from rest_framework import status
 from .forms import ClientForm, LoginForm, OrderForm, AbonementForm, EventForm, PaymentFormBooking, OfficeRentForm, \
-    PaymentFormOffice, ClientEditForm
+    PaymentFormOffice, ClientEditForm, EventEditForm
 from .models import *
 import datetime
 from django.db import transaction
@@ -999,23 +999,26 @@ def abonements_list(request):
 
 def event_list(request):
     event_members_queryset = EventMembers.objects.prefetch_related('members')
-    events = Events.objects.prefetch_related(
-        Prefetch('eventmembers', queryset=event_members_queryset)
-    ).order_by('-event_start_date')
+    events = Events.objects.prefetch_related(Prefetch('eventmembers', queryset=event_members_queryset)).order_by(
+        '-event_start_date')
     context = {'events': events, 'title': 'Ивенты', 'selectMenu': 'event_list'}
     return render(request, 'crm/events.html', context=context)
 
 
 def eventDetail(request, pk):
     event = Events.objects.get(pk=pk)
+    event_members = EventMembers.objects.filter(event=event.pk)
     if request.method == 'POST':
-        form = EventForm(request.POST, request.FILES,instance=event)
+        form = EventEditForm(request.POST, request.FILES, instance=event)
         if form.is_valid():
             form.save()
             return redirect('event_list')
+        else:
+            context = {'form': form}
+            return render(request, 'crm/eventsDetail.html', context=context)
     else:
-        form = EventForm(instance=event)
-        context = {'form': form}
+        form = EventEditForm(instance=event)
+        context = {'form': form, "event_members": event_members}
         return render(request, 'crm/eventsDetail.html', context=context)
 
 
@@ -1069,7 +1072,8 @@ class AddEventView(CreateView):
 
     def form_valid(self, form):
         messages.success(self.request, 'Мероприятия создан')
-        return super().form_valid(form)
+        response = super().form_valid(form)
+        return HttpResponseRedirect(reverse('event_list'))
 
     def form_invalid(self, form):
         messages.error(self.request, form.errors)
@@ -1202,8 +1206,8 @@ class CompanyView(APIView):
             {
                 'title': item['title'],
                 'is_working': item['is_active'],
-                'images': f"http://{settings.MAIN_HOST}/media/{item['image']}"
-                          or f"http://{settings.MAIN_HOST}/media/noimage.jpg"
+                'images': f"{settings.MAIN_HOST}/media/{item['image']}"
+                          or f"{settings.MAIN_HOST}/media/noimage.jpg"
             }
             for item in companies
         ]
@@ -1234,10 +1238,10 @@ class RoomsByFilialView(APIView):
                 'pk': item['id'],
                 'title': item['title'],
                 'is_working': item['is_working'],
-                'images': [f"http://{settings.MAIN_HOST}/media/{image['image']}" for image in
+                'images': [f"{settings.MAIN_HOST}/media/{image['image']}" for image in
                            fotki
                            if image['room'] == item['id']
-                           ] or [f"http://{settings.MAIN_HOST}/media/noimage.jpg"]
+                           ] or [f"{settings.MAIN_HOST}/media/noimage.jpg"]
             }
             for item in rooms
         ]
@@ -1261,7 +1265,7 @@ class Branchesapiview(APIView):
                 'latlang': [item['lat'], item['lang']],
 
                 'is_active': item['is_active'],
-                'images': [f"http://{settings.MAIN_HOST}/media/{image['image']}" for image in
+                'images': [f"{settings.MAIN_HOST}/media/{image['image']}" for image in
                            fotki if image['filial'] == item['id']]
             }
             for item in lst
@@ -1296,7 +1300,7 @@ class BranchByIDview(APIView):
                 'lat': item['lat'],
                 'lang': item['lang'],
 
-                'images': [f"http://{settings.MAIN_HOST}/media/{image['image']}" for image in
+                'images': [f"{settings.MAIN_HOST}/media/{image['image']}" for image in
                            fotki if image['filial'] == item['id']]
             }
             for item in lst
@@ -1306,7 +1310,9 @@ class BranchByIDview(APIView):
 
 class Eventsapiview(APIView):
     def get(self, request):
-        lst = Events.objects.filter(created_at__lte=datetime.datetime.now()).values(
+        lst = Events.objects.all().order_by("-event_start_date").values(
+            'pk',
+            'status',
             "created_at",
             "event_start_date",
             "event_locate__title",
@@ -1314,6 +1320,7 @@ class Eventsapiview(APIView):
             "event_description",
             "image",
         )
+        persons = EventMembers.objects.all().values('event', 'members__telegram_id')
 
         def convert_datetime_to_time_and_date(datetime_str):
             datetime_obj = datetime.datetime.fromisoformat(datetime_str)
@@ -1321,14 +1328,25 @@ class Eventsapiview(APIView):
             date_str = datetime_obj.strftime("%d-%m-%Y")
             return f"{date_str} {time_str}"
 
+        clients = Client.objects.all()
         data = [
             {
+                "pk": item["pk"],
+                "status": True if item["status"] == 'COMPLETED' else False,
                 "created_at": item["created_at"],
                 "event_start_date": convert_datetime_to_time_and_date(str(item["event_start_date"])),
                 "event_locate": item["event_locate__title"],
                 "title": item["title"],
                 "event_description": item["event_description"],
-                "image": f"http://{settings.MAIN_HOST}/media/{item['image']}",
+                "image": f"{settings.MAIN_HOST}/media/{item['image']}",
+                "members": [
+                    {
+                        'photo': settings.MAIN_HOST + clients.get(
+                            telegram_id=person['members__telegram_id']).get_image(),
+                        'id': person['members__telegram_id']
+                    }
+                    for person in persons if person['event'] == item['pk']
+                ]
             }
             for item in lst
         ]
@@ -1420,7 +1438,7 @@ class RoomDetailapiview(APIView):
                 'filial': item['filial__title'],
                 'title': item['title'],
                 'persons': item['persons'],
-                'images': [f"http://{settings.MAIN_HOST}/media/{image['image']}" for image in
+                'images': [f"{settings.MAIN_HOST}/media/{image['image']}" for image in
                            fotki if image['room'] == item['pk']],
                 'orders': result
             }
@@ -1458,7 +1476,7 @@ class RoomsByCatview(APIView):
                 'persons': item['persons'],
                 'area': item['area'],
                 'is_working': item['is_working'],
-                'images': [f"http://{settings.MAIN_HOST}/media/{image['image']}" for image in
+                'images': [f"{settings.MAIN_HOST}/media/{image['image']}" for image in
                            fotki if image['room'] == item['pk']],
 
             }
@@ -1490,7 +1508,7 @@ class RoomsByBranchview(APIView):
                 'persons': item['persons'],
                 'area': item['area'],
                 'is_working': item['is_working'],
-                'images': [f"http://{settings.MAIN_HOST}/media/{image['image']}" for image in
+                'images': [f"{settings.MAIN_HOST}/media/{image['image']}" for image in
                            fotki if image['room'] == item['pk']],
 
             }
@@ -1564,7 +1582,7 @@ class RoomByHourView(APIView):
                 'filialpk': item['filial'],
                 'title': item['title'],
                 'persons': item['persons'],
-                'images': [f"http://{settings.MAIN_HOST}/media/{image['image']}" for image in
+                'images': [f"{settings.MAIN_HOST}/media/{image['image']}" for image in
                            fotki if image['room'] == item['pk']],
                 'orders': result
             }
@@ -1632,10 +1650,7 @@ class OrderCreateAPIView(APIView):
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
     def get(self, request):
-        # Retrieve the 'telegram_id' from the query parameters
         telegram_id = request.query_params.get('telegram_id', None)
-        # Filter orders based on 'telegram_id'
-        print(telegram_id)
         if telegram_id:
             orders = Order.objects.filter(client=telegram_id)
         else:

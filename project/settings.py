@@ -2,7 +2,6 @@ import locale
 import os
 from pathlib import Path
 
-from celery.schedules import crontab
 from django.contrib import messages
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -16,7 +15,7 @@ SECRET_KEY = 'django-insecure-7_+slxw@6rntmkjz_v_yygaqk6ldphlfnlv!yy4l68q7bigagp
 # SECRET_KEY = os.getenv("SECRET_KEY")
 DEBUG = True
 # SECURITY WARNING: don't run with debug turned on in production!
-MAIN_HOST = 'covork.uz'
+MAIN_HOST = 'https://covork.uz'
 ALLOWED_HOSTS = ['*', 'covork.uz', 'www.covork.uz']
 # Application definition
 

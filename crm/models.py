@@ -358,12 +358,15 @@ class OfficePersons(models.Model):
 
 
 class Events(models.Model):
+    EVENT_STATUS = [('EXPECTED', 'ОЖИДАЕТСЯ '), ('COMPLETED', 'ЗАВЕРШЕН')]
     created_at = models.DateTimeField(auto_now_add=True)
     event_start_date = models.DateTimeField(verbose_name='Дата ивента')
     event_locate = models.ForeignKey(Filial, on_delete=models.PROTECT, verbose_name='Адрес ивента')
     title = models.TextField(max_length=255, verbose_name='Заголовка')
     event_description = models.TextField(verbose_name='Описания')
     image = models.ImageField(upload_to='images/', verbose_name='Постер', blank=True, null=True)
+    status = models.CharField(choices=EVENT_STATUS, max_length=15, verbose_name="Статус ивента",
+                              default="ОЖИДАЕТСЯ")
 
     def get_absolute_url(self):
         return reverse('event_detail', kwargs={'pk': self.pk})
@@ -379,8 +382,7 @@ class Events(models.Model):
         if self.image:
             return self.image.url
         else:
-            return '/static/user.png'
-
+            return ''
 
 
 class EventMembers(models.Model):
@@ -389,6 +391,9 @@ class EventMembers(models.Model):
 
     def __str__(self):
         return f"Event: {self.event.title} - Members Count: {self.members.count()}"
+
+    def get_count(self):
+        return self.members.count()
 
     class Meta:
         verbose_name = 'Участник мероприятия'

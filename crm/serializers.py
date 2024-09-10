@@ -29,7 +29,6 @@ class OrderSerializer(serializers.ModelSerializer):
         fields = (
             'client',
             'product',
-            'payment',
             'payment_status',
             'summa',
             'summa_with_discount',

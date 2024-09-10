@@ -1,5 +1,5 @@
 import datetime
-from .models import AbonementBuyList, Client, NotifyDate, Order, OfficeRent
+from .models import AbonementBuyList, Client, NotifyDate, Order, OfficeRent, Events
 
 
 def add_my_forms(request):
@@ -42,6 +42,7 @@ def add_my_forms(request):
 def deactivete_subscribtion(request):
     eski_abonents = AbonementBuyList.objects.filter(subscription_end__lt=datetime.date.today()).update(is_active=False)
     OfficeRent.objects.filter(rent_end__lt=datetime.date.today()).update(is_active=False)
+    Events.objects.filter(event_start_date__lt=datetime.date.today()).update(status='COMPLETED')
     return {
         'eski_abonents': eski_abonents
     }

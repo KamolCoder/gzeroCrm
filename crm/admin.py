@@ -135,5 +135,5 @@ class EventMembersInline(admin.TabularInline):
 
 @admin.register(Events)
 class EventAdmin(admin.ModelAdmin):
-    list_display = ['created_at', 'title', 'event_start_date']
+    list_display = ['created_at', 'title', 'event_start_date','status']
     inlines = [EventMembersInline]

@@ -20,28 +20,44 @@
         {% for event in events %}
         <div class="col">
             <div class="card h-100">
-                <img src="{{event.get_image}}" class="card-img-top" style="height:300px;object-fit: cover">
-                <div class="card-body">
+                <img src="{{event.get_image}}" class="card-img-top"
+                     style="position: relative;height:300px;object-fit: cover">
+
+                <div class="card-body p-1">
 
                     <div style="display: flex;justify-content: space-between;">
                         <small class="text-body-secondary">{{event.event_start_date}}</small>
-                        <span class="badge text-bg-success">Локация: {{event.event_locate}}</span>
+                        <span style="height:20px" class="badge text-bg-success">Локация: {{event.event_locate}}</span>
                     </div>
                     <h5 class="card-title">{{event.title}}</h5>
                     <p class="card-text">{{ event.event_description|truncatechars:50 }}</p>
                 </div>
                 <div class="m-1"
-                     style="display:flex;   height:40px; align-items: center;justify-content: space-between;">
+                     style="display:flex;height:40px; align-items: center;justify-content: space-between;">
                     <div>
                         {% for event_member in event.eventmembers.all %}
                         {% for client in event_member.members.all|slice:":5" %}
                         <a href="{{ client.get_absolute_url }}"><img src="{{ client.get_image }}" class="rounded-circle"
-                                                                     width="40" height="40"></a>
+                                                                     style="position:absolute;bottom:5px" width="40"
+                                                                     height="40">11</a>
                         {% endfor %}
+                        <div style="position:absolute;right:5px;bottom:10px">{{event_member.get_count}} участника</div>
                         {% endfor %}
+
                     </div>
-                    <a href="{{event.get_absolute_url}}" style="margin:2px;color:grey "><i
+
+                    <a href="{{event.get_absolute_url}}"
+                       style="position: absolute;top: 0;right: 5px;margin:2px;color:#ffffff7a "><i
                             class="bi bi-pencil-square"></i></a>
+                    {% if event.status == 'COMPLETED'%}
+                    <div style="position: absolute;top: 0;left:0;background-color:#000000a1;width:100%;height:100%;border-radius:0.375rem">
+                        <h2 style="    margin-top: 50%;
+    font-weight: 500;
+    color: #ffffff8c;
+    transform: rotate(-45deg);
+    display: flex;
+    justify-content: center;">{{event.get_status_display}}</h2></div>
+                    {%endif%}
                 </div>
             </div>
         </div>
