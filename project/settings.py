@@ -109,7 +109,6 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'ru'
 TIME_ZONE = 'Asia/Tashkent'
-locale.setlocale(locale.LC_ALL, 'ru.UTF-8')
 USE_I18N = True
 USE_TZ = False
 DEFAULT_CHARSET = "utf-8"

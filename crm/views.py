@@ -1652,9 +1652,34 @@ class OrderCreateAPIView(APIView):
     def get(self, request):
         telegram_id = request.query_params.get('telegram_id', None)
         if telegram_id:
-            orders = Order.objects.filter(client=telegram_id)
+            orders = Order.objects.filter(client=telegram_id).values(
+                'product',
+                'product__title',
+                'filial__title',
+                'hour',
+                'payment_status',
+                'summa',
+                'summa_with_discount',
+                'order_start',
+                'order_end',
+                'discount'
+            )
         else:
             orders = []
-        # Serialize the filtered orders
-        serializer = OrderSerializer(orders, many=True)
-        return Response(serializer.data, status=status.HTTP_200_OK)
+        room_imgs = GalleryRooms.objects.all().values('room', 'image')
+        data = [
+            {
+                'product': order['product__title'],
+                'filial': order['filial__title'],
+                'hour': order['hour'],
+                'payment_status': order['payment_status'],
+                'summa': order['summa'],
+                'summa_with_discount': order['summa_with_discount'],
+                'order_start': str(order['order_start']).replace("T",""),
+                'order_end': str(order['order_end']).replace("T",""),
+                'discount': order['discount'],
+                'images':[f"{settings.MAIN_HOST}/media/{i['image']}" for i in room_imgs if i['room']==order['product']]
+            }
+            for order in orders
+        ]
+        return Response(list(data))

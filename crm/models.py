@@ -258,11 +258,9 @@ class Order(models.Model):
     filial = models.ForeignKey(Filial, on_delete=models.CASCADE)
     product = models.ForeignKey(Rooms, on_delete=models.CASCADE)
     hour = models.PositiveSmallIntegerField(verbose_name='Длительность')
-    payment_status = models.CharField(choices=PAYMENT_STATUS, max_length=30, verbose_name="Статус оплаты",
-                                      default="UNPAID")
+    payment_status = models.CharField(choices=PAYMENT_STATUS, max_length=30, verbose_name="Статус оплаты", default="UNPAID")
     summa = models.DecimalField(decimal_places=2, max_digits=12, verbose_name='Сумма', blank=True, null=True)
-    summa_with_discount = models.DecimalField(decimal_places=2, max_digits=12, verbose_name='Сумма со скидкой',
-                                              blank=True, null=True)
+    summa_with_discount = models.DecimalField(decimal_places=2, max_digits=12, verbose_name='Сумма со скидкой',blank=True, null=True)
     order_start = models.DateTimeField(verbose_name='Бронировать от :')
     order_end = models.DateTimeField(verbose_name='Бронировать до :')
     added_user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, null=True, blank=True)
