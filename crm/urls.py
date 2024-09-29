@@ -31,22 +31,25 @@ urlpatterns = [
     # path('reports/', payment_report, name='reports'),
     path('sale_subscribtion/', sale_subscribtion, name='sale_subscribtion'),
 
+    path('api/auth/sendOTP', SendOTPView.as_view()),
+    path('api/auth/verifyOTP', VerifyOtpView.as_view()),
+    path('api/auth/client/<str:pk>', ClientChangesView.as_view()),
+
+    path('api/abonements', AbonementView.as_view()),
+    path('api/addOrder', OrderCreateAPIView.as_view()),
     path('apiclient/<str:id>/', Clientapiview.as_view()),
-    path('api/companies/', CompanyView.as_view()),
-    path('api/categories/', CategoryView.as_view()),
     path('api/branches/<int:company_id>', Branchesapiview.as_view()),
     path('api/branchByID/<int:filial_id>', BranchByIDview.as_view()),
     path('api/branchRooms/<int:branch_pk>/', RoomsByFilialView.as_view()),
+    path('api/companies/', CompanyView.as_view()),
+    path('api/categories/', CategoryView.as_view()),
+    path('api/events', Eventsapiview.as_view()),
+    path('api/event/<int:eventPK>', EventDetail.as_view()),
+    path('api/eventsubs', EventSubs.as_view()),
     path('api/room/<int:room_id>', RoomDetailapiview.as_view()),
     path('api/roomByCat/<int:category_id>', RoomsByCatview.as_view()),
     path('api/roomByBranch/<int:branchPK>', RoomsByBranchview.as_view()),
-    path('api/events', Eventsapiview.as_view()),
-    path('api/auth/sendOTP', SendOTPView.as_view()),
-    path('api/auth/verifyOTP', VerifyOtpView.as_view()),
     path('api/roomByHour/<int:room_id>/<int:hour2>', RoomByHourView.as_view()),
-    path('api/auth/client/<str:pk>', ClientChangesView.as_view()),
-    path('api/abonements', AbonementView.as_view()),
-    path('api/addOrder', OrderCreateAPIView.as_view()),
 
     # path('pyclick/process/click/transaction/create/', name='click')
 

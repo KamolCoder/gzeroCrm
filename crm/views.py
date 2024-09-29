@@ -1320,7 +1320,7 @@ class Eventsapiview(APIView):
             "event_description",
             "image",
         )
-        persons = EventMembers.objects.all().values('event', 'members__telegram_id')
+        persons = EventMembers.objects.all().values('event', 'members__telegram_id', 'members__name')
 
         def convert_datetime_to_time_and_date(datetime_str):
             datetime_obj = datetime.datetime.fromisoformat(datetime_str)
@@ -1332,7 +1332,7 @@ class Eventsapiview(APIView):
         data = [
             {
                 "pk": item["pk"],
-                "status": True if item["status"] == 'COMPLETED' else False,
+                "status": False if item["status"] == 'COMPLETED' else True,
                 "created_at": item["created_at"],
                 "event_start_date": convert_datetime_to_time_and_date(str(item["event_start_date"])),
                 "event_locate": item["event_locate__title"],
@@ -1343,7 +1343,8 @@ class Eventsapiview(APIView):
                     {
                         'photo': settings.MAIN_HOST + clients.get(
                             telegram_id=person['members__telegram_id']).get_image(),
-                        'id': person['members__telegram_id']
+                        'id': person['members__telegram_id'],
+                        'name': person['members__name']
                     }
                     for person in persons if person['event'] == item['pk']
                 ]
@@ -1351,6 +1352,56 @@ class Eventsapiview(APIView):
             for item in lst
         ]
         return Response(data)
+
+
+class EventDetail(APIView):
+    def get(self, request, eventPK):
+        event = Events.objects.filter(pk=eventPK).values(
+            "pk",
+            "created_at",
+            "event_start_date",
+            "event_locate",
+            "title",
+            "event_description",
+            "image",
+            "status"
+        )
+        persons = EventMembers.objects.all().values('event', 'members__telegram_id', 'members__name')
+
+        clients = Client.objects.all()
+
+        data = [
+            {"pk": item["pk"],
+             "status": False if item["status"] == 'COMPLETED' else True,
+             "created_at": item["created_at"],
+             "event_start_date": item["event_start_date"],
+             "event_locate": item["event_locate"],
+             "title": item["title"],
+             "event_description": item["event_description"],
+             "image": item["image"],
+             "members": [
+                 {
+                     'photo': settings.MAIN_HOST + clients.get(
+                         telegram_id=person['members__telegram_id']).get_image(),
+                     'id': person['members__telegram_id'],
+                     'name': person['members__name']
+                 }
+                 for person in persons if person['event'] == item['pk']
+             ]
+             }
+            for item in event
+        ]
+        return Response(data)
+
+
+class EventSubs(APIView):
+    def post(self, request):
+        client_telegram_id = request.data.get('client_telegram_id')
+        event_id = request.data.get('event_id')
+        event_members, created = EventMembers.objects.get_or_create(event_id=event_id)
+        event_members.members.add(Client.objects.get(telegram_id=client_telegram_id))
+        return Response({
+            'status': status.HTTP_200_OK, 'message': 'Client added to event'})
 
 
 class RoomDetailapiview(APIView):
@@ -1675,10 +1726,11 @@ class OrderCreateAPIView(APIView):
                 'payment_status': order['payment_status'],
                 'summa': order['summa'],
                 'summa_with_discount': order['summa_with_discount'],
-                'order_start': str(order['order_start']).replace("T",""),
-                'order_end': str(order['order_end']).replace("T",""),
+                'order_start': str(order['order_start']).replace("T", ""),
+                'order_end': str(order['order_end']).replace("T", ""),
                 'discount': order['discount'],
-                'images':[f"{settings.MAIN_HOST}/media/{i['image']}" for i in room_imgs if i['room']==order['product']]
+                'images': [f"{settings.MAIN_HOST}/media/{i['image']}" for i in room_imgs if
+                           i['room'] == order['product']]
             }
             for order in orders
         ]
